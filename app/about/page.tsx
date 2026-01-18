@@ -289,41 +289,17 @@ const concerns = [
   {
     image: '/concern-1.png',
     title: '集団塾のペースに追いつけない',
-    description: (
-      <>
-        毎月のテストも復習したいが、毎週の宿題で手一杯。すべてやりきれないが、何を捨てて、どれには絶対に取り組むべきなのかの取捨選択が難しい。着実に偏差値が伸びる
-        <span className="border-b-2 border-yellow-400 bg-yellow-100">
-          学習サイクルを作りたい
-        </span>
-        。
-      </>
-    ),
+    description: '毎月のテストも復習したいが、毎週の宿題で手一杯。すべてやりきれないが、何を捨てて、どれには絶対に取り組むべきなのかの取捨選択が難しい。着実に偏差値が伸びる学習サイクルを作りたい。',
   },
   {
     image: '/concern-2.png',
     title: 'お子さんが親の言うことを聞いてくれない',
-    description: (
-      <>
-        学年が上がるにつれて、お子さんはなかなか親の言うことを素直に受け入れてくれなくなってしまうもの。宿題をやってほしいだけなのに喜嘩となり、
-        <span className="border-b-2 border-yellow-400 bg-yellow-100">
-          親のストレスもたまってしまう
-        </span>
-        。
-      </>
-    ),
+    description: '学年が上がるにつれて、お子さんはなかなか親の言うことを素直に受け入れてくれなくなってしまうもの。宿題をやってほしいだけなのに喜嘩となり、親のストレスもたまってしまう。',
   },
   {
     image: '/concern-3.png',
     title: '親の負担が大きい／親が共働き',
-    description: (
-      <>
-        学年が上がると中学受験の内容は大人でも理解が難しいものがたくさん。また、親が仕事をしていると、毎週の塾の宿題の実施状況だけでも追うのが難しいのに、
-        <span className="border-b-2 border-yellow-400 bg-yellow-100">
-          中身までフォローする余裕がない
-        </span>
-        。
-      </>
-    ),
+    description: '学年が上がると中学受験の内容は大人でも理解が難しいものがたくさん。また、親が仕事をしていると、毎週の塾の宿題の実施状況だけでも追うのが難しいのに、中身までフォローする余裕がない。',
   },
 ];
 
@@ -613,8 +589,8 @@ export default function AboutPage() {
       {/* Section 4: TwoWays */}
       <section className="mb-20">
         <div className="mb-8 text-center">
-          <h2 className="text-3xl font-bold text-navy-800 md:text-4xl">LEFYには2つの通い方があります</h2>
-          <div className="mx-auto mt-3 h-1 w-16 bg-blue-600"></div>
+          <h2 className="text-3xl font-bold text-navy-800 md:text-4xl">LEFYには<br />2つの通い方があります</h2>
+          <div className="mx-auto mt-3 h-1 w-32 bg-blue-600"></div>
         </div>
         <p className="mb-6 text-base text-navy-600">
           実際には、併用のご家庭が多い一方で、LEFY中心で進めるケースもあります。
@@ -709,7 +685,7 @@ export default function AboutPage() {
       <section className="mb-20">
         <div className="mb-8 text-center">
           <h2 className="text-3xl font-bold text-navy-800 md:text-4xl">LEFYの塾長</h2>
-          <div className="mx-auto mt-3 h-1 w-16 bg-blue-600"></div>
+          <div className="mx-auto mt-3 h-1 w-32 bg-blue-600"></div>
         </div>
         {/* 新しいレイアウト：写真を大きく、より魅力的に */}
         <div className="grid gap-8 md:grid-cols-2">
@@ -798,7 +774,7 @@ export default function AboutPage() {
       <section className="mb-20">
         <div className="mb-8 text-center">
           <h2 className="text-3xl font-bold text-navy-800 md:text-4xl">合格実績</h2>
-          <div className="mx-auto mt-3 h-1 w-16 bg-blue-600"></div>
+          <div className="mx-auto mt-3 h-1 w-32 bg-blue-600"></div>
         </div>
         <p className="mb-6 text-base text-navy-600">
           LEFYの生徒たちが合格した学校の一覧です。
@@ -876,11 +852,11 @@ export default function AboutPage() {
       </section>
 
       {/* Section 5.6: 合格者の声 - 新規追加 */}
-      <section className="mb-16">
-        <SectionHeader
-          title="合格者の声"
-          icon={MessageCircle}
-        />
+      <section className="mb-20">
+        <div className="mb-8 text-center">
+          <h2 className="text-3xl font-bold text-navy-800 md:text-4xl">合格者の声</h2>
+          <div className="mx-auto mt-3 h-1 w-32 bg-blue-600"></div>
+        </div>
         <p className="mb-6 text-base text-navy-600">
           LEFYで夢を叶えた生徒と保護者の声をご紹介します。
         </p>
@@ -931,11 +907,11 @@ export default function AboutPage() {
       </section>
 
       {/* Section 6: Teachers */}
-      <section className="mb-16">
-        <SectionHeader
-          title="講師は「中学受験のプロ」と「最難関卒の伴走者」"
-          icon={Users}
-        />
+      <section className="mb-20">
+        <div className="mb-8 text-center">
+          <h2 className="text-3xl font-bold text-navy-800 md:text-4xl">講師は「中学受験のプロ」と「最難関卒の伴走者」</h2>
+          <div className="mx-auto mt-3 h-1 w-32 bg-blue-600"></div>
+        </div>
         <p className="mb-6 text-base leading-relaxed text-navy-700">
           プロ講師に加えて、最難関中高一貫校を卒業し、東大など最難関大に在籍する大学生／大学院生が中心です。
           <br />
@@ -958,8 +934,11 @@ export default function AboutPage() {
       </section>
 
       {/* Section 7: Support */}
-      <section className="mb-16">
-        <SectionHeader title="授業だけで終わらせない、「ダブル伴走」" />
+      <section className="mb-20">
+        <div className="mb-8 text-center">
+          <h2 className="text-3xl font-bold text-navy-800 md:text-4xl">授業だけで終わらせない、「ダブル伴走」</h2>
+          <div className="mx-auto mt-3 h-1 w-32 bg-blue-600"></div>
+        </div>
         <div className="grid gap-4 sm:grid-cols-3">
           <div className="rounded-lg border border-navy-100 bg-white p-5 text-center shadow-sm">
             <h4 className="mb-2 text-base font-bold text-navy-800">2名以上担当制</h4>
