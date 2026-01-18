@@ -453,16 +453,17 @@ export default function AboutPage() {
         <div className="grid gap-8 lg:grid-cols-2">
           {/* 左側 */}
           <div>
-            <div className="mb-2 flex items-center gap-2 text-xs text-navy-400">
-              <Clock className="h-3.5 w-3.5" />
-              読む目安 6分
+            {/* Hero Banner Image */}
+            <div className="mb-6 overflow-hidden rounded-2xl shadow-2xl">
+              <Image
+                src="/hero-banner.png"
+                alt="大手集団塾での偏差値を着実に伸ばしたい方へ - LEFY"
+                width={1920}
+                height={600}
+                className="h-auto w-full"
+                priority
+              />
             </div>
-            <h1 className="mb-6 text-4xl font-bold leading-tight text-navy-800 sm:text-5xl">
-              大手集団塾での<br />
-              <span className="text-blue-600">偏差値を着実に</span>
-              <br />
-              伸ばしたい方へ
-            </h1>
             <div className="mb-6 space-y-3 text-base leading-relaxed text-navy-700">
               <p>
                 <span className="font-semibold text-navy-800">SAPIX・グノーブル・日能研・四谷大塚・希学園・浜学園</span>
