@@ -670,36 +670,54 @@ export default function AboutPage() {
       {/* Section 5: Principal（塾長紹介）- テキスト更新 */}
       <section className="mb-16">
         <SectionHeader title="LEFYの塾長" icon={User} />
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="flex flex-col items-center rounded-lg border border-navy-100 bg-white p-3 text-center shadow-sm">
-            <div className="mb-2 h-20 w-20 overflow-hidden rounded-full border border-blue-100">
-              <Image
-                src="/principal-1.jpg"
-                alt="山本航士"
-                width={80}
-                height={80}
-                className="h-full w-full object-cover"
-              />
+        {/* 新しいレイアウト：写真を大きく、より魅力的に */}
+        <div className="grid gap-8 md:grid-cols-2">
+          {/* 山本航士 */}
+          <div className="group overflow-hidden rounded-2xl border-2 border-blue-100 bg-gradient-to-br from-white to-blue-50 shadow-lg transition-all hover:shadow-2xl">
+            <div className="p-6">
+              <div className="mx-auto mb-5 h-40 w-40 overflow-hidden rounded-2xl border-4 border-blue-200 shadow-xl transition-transform group-hover:scale-105">
+                <Image
+                  src="/principal-1.jpg"
+                  alt="山本航士"
+                  width={160}
+                  height={160}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="text-center">
+                <h3 className="mb-2 text-xl font-bold text-navy-800">山本 航士</h3>
+                <div className="mb-3 inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
+                  代表
+                </div>
+                <p className="text-sm leading-relaxed text-navy-600">
+                  聖光学院高等学校を卒業し、慶應義塾大学経済学部に入学。慶應義塾大学在学時に服部と出会い、共に学生団体を立ち上げ、法人化。大学卒業後は、コンサルティング会社に入社し、退職後、LEFYを創業。
+                </p>
+              </div>
             </div>
-            <h3 className="mb-1 text-sm font-bold text-navy-800">山本 航士</h3>
-            <p className="text-xs leading-relaxed text-navy-600">
-              聖光学院高等学校を卒業し、慶應義塾大学経済学部に入学。慶應義塾大学在学時に服部と出会い、共に学生団体を立ち上げ、法人化。大学卒業後は、コンサルティング会社に入社し、退職後、LEFYを創業。
-            </p>
           </div>
-          <div className="flex flex-col items-center rounded-lg border border-navy-100 bg-white p-3 text-center shadow-sm">
-            <div className="mb-2 h-20 w-20 overflow-hidden rounded-full border border-blue-100">
-              <Image
-                src="/principal-2.jpg"
-                alt="服部貴哉"
-                width={80}
-                height={80}
-                className="h-full w-full object-cover"
-              />
+
+          {/* 服部貴哉 */}
+          <div className="group overflow-hidden rounded-2xl border-2 border-blue-100 bg-gradient-to-br from-white to-blue-50 shadow-lg transition-all hover:shadow-2xl">
+            <div className="p-6">
+              <div className="mx-auto mb-5 h-40 w-40 overflow-hidden rounded-2xl border-4 border-blue-200 shadow-xl transition-transform group-hover:scale-105">
+                <Image
+                  src="/principal-2.jpg"
+                  alt="服部貴哉"
+                  width={160}
+                  height={160}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="text-center">
+                <h3 className="mb-2 text-xl font-bold text-navy-800">服部 貴哉</h3>
+                <div className="mb-3 inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
+                  代表
+                </div>
+                <p className="text-sm leading-relaxed text-navy-600">
+                  神奈川大学附属高等学校を卒業し、慶應義塾大学法学部に入学。慶應義塾大学在学時に山本と出会い、共に学生団体を立ち上げ、法人化。大学卒業後は、東証プライム市場上場企業の総合商社に入社し、LEFYの創業を機に退職。
+                </p>
+              </div>
             </div>
-            <h3 className="mb-1 text-sm font-bold text-navy-800">服部 貴哉</h3>
-            <p className="text-xs leading-relaxed text-navy-600">
-              神奈川大学附属高等学校を卒業し、慶應義塾大学法学部に入学。慶應義塾大学在学時に山本と出会い、共に学生団体を立ち上げ、法人化。大学卒業後は、東証プライム市場上場企業の総合商社に入社し、LEFYの創業を機に退職。
-            </p>
           </div>
         </div>
 
@@ -833,25 +851,41 @@ export default function AboutPage() {
               testimonial={testimonial}
             />
           ))}
-        </div>
 
-        {/* Google口コミリンク */}
-        <div className="mt-8 rounded-xl border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-white p-6 text-center">
-          <h3 className="mb-3 text-lg font-bold text-navy-800">Google口コミ</h3>
-          <p className="mb-4 text-sm text-navy-600">
-            Googleマップでも多くの保護者様から高評価をいただいています
-          </p>
-          <Link
-            href="https://www.google.com/search?q=%E3%83%AC%E3%83%95%E3%82%A3%E3%83%BC&oq=%E3%83%AC%E3%83%95%E3%82%A3%E3%83%BC&gs_lcrp=EgZjaHJvbWUyDggAEEUYJxg5GIAEGIoFMgYIARAjGCcyDAgCEAAYQxiABBiKBTIHCAMQABiABDIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPTIGCAcQRRhB0gEHODM5ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8#lrd=0x60185db976248c43:0xde4021bfa552cd8a,1,,,,"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:bg-blue-700 hover:shadow-xl"
-          >
-            Google口コミを見る
-            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-          </Link>
+          {/* 口コミリンク - Google + 塗選 */}
+          <div className="mt-8 rounded-xl border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-white p-6 text-center">
+            <h3 className="mb-3 text-lg font-bold text-navy-800">口コミ</h3>
+            <p className="mb-5 text-sm text-navy-600">
+              外部プラットフォームでも多くの保護者様から高評価をいただいています
+            </p>
+            <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+              {/* Google口コミ */}
+              <Link
+                href="https://search.google.com/local/reviews?placeid=ChIJQ4wkdrldGGARis1Spb8hQN4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:bg-blue-700 hover:shadow-xl"
+              >
+                Google口コミを見る
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </Link>
+
+              {/* 塗選口コミ */}
+              <Link
+                href="https://bestjuku.com/juku/7448/review/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-green-600 px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:bg-green-700 hover:shadow-xl"
+              >
+                塗選（ジュクセン）で口コミを見る
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
