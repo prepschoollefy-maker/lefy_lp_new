@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { ArrowLeft, CheckCircle2, Target, Calendar, Users, MessageCircle, BookOpen, TrendingUp, Clock, User, Award, GraduationCap, Star } from 'lucide-react';
 import { SectionHeader } from '@/components/lefy/section-header';
 import { CTASection } from '@/components/lefy/cta-section';
+import { JukenFlowDiagnosis } from '@/components/lefy/juke-flow-diagnosis';
 
 // 大手塾名データ（市進を削除）
 const cramSchools = [
@@ -257,6 +258,11 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Section 3.5: 診断フローチャート - 新規追加 */}
+      <section className="mb-16">
+        <JukenFlowDiagnosis />
+      </section>
+
       {/* Section 4: TwoWays */}
       <section className="mb-16">
         <SectionHeader title="LEFYは2つの通い方があります" />
@@ -306,10 +312,10 @@ export default function AboutPage() {
             </p>
           </div>
 
-          {/* 右：LEFY中心 - 青系を維持 */}
-          <div className="rounded-lg border-2 border-blue-200 bg-white p-6 shadow-sm">
+          {/* 右：LEFY中心 - オレンジ系に変更 */}
+          <div className="rounded-lg border-2 border-orange-200 bg-white p-6 shadow-sm">
             <div className="mb-4">
-              <span className="mb-2 inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
+              <span className="mb-2 inline-block rounded-full bg-orange-100 px-3 py-1 text-xs font-semibold text-orange-700">
                 LEFY中心
               </span>
               <h3 className="mt-2 text-lg font-bold text-navy-800">オーダーメイド受験</h3>
@@ -318,7 +324,7 @@ export default function AboutPage() {
               {['習慣づくり', '土台', '志望校対策'].map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-600"
+                  className="rounded-full bg-orange-50 px-3 py-1 text-xs font-medium text-orange-600"
                 >
                   {tag}
                 </span>
@@ -326,19 +332,19 @@ export default function AboutPage() {
             </div>
             <ul className="mb-4 space-y-2">
               <li className="flex items-start gap-2 text-sm text-navy-700">
-                <span className="mt-1 text-blue-600">▸</span>
+                <span className="mt-1 text-orange-600">▸</span>
                 現状診断→合格までの最短ルート設計
               </li>
               <li className="flex items-start gap-2 text-sm text-navy-700">
-                <span className="mt-1 text-blue-600">▸</span>
+                <span className="mt-1 text-orange-600">▸</span>
                 習慣→土台→志望校対策の順で積み上げ
               </li>
               <li className="flex items-start gap-2 text-sm text-navy-700">
-                <span className="mt-1 text-blue-600">▸</span>
+                <span className="mt-1 text-orange-600">▸</span>
                 知識・手順の"ピース"を整理して再構築
               </li>
               <li className="flex items-start gap-2 text-sm text-navy-700">
-                <span className="mt-1 text-blue-600">▸</span>
+                <span className="mt-1 text-orange-600">▸</span>
                 小さな成功体験で自信と再現性を作る
               </li>
             </ul>
