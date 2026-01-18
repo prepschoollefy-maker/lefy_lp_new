@@ -447,6 +447,58 @@ export default function AboutPage() {
         トップに戻る
       </Link>
 
+
+      {/* Hero Image Section - 新規追加 */}
+      <section className="relative mb-16 overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 shadow-2xl">
+        <div className="grid items-center gap-0 lg:grid-cols-2">
+          {/* 左側：画像 */}
+          <div className="relative h-64 lg:h-96">
+            <Image
+              src="/hero-student.jpg"
+              alt="笑顔で勉強する生徒"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/40 to-transparent lg:from-blue-900/60" />
+          </div>
+
+          {/* 右側：テキスト */}
+          <div className="p-8 text-white lg:p-12">
+            <div className="mb-3 inline-block rounded-full bg-white/20 px-4 py-1.5 text-sm font-semibold backdrop-blur-sm">
+              LEFYってどんな塾？
+            </div>
+            <h2 className="mb-4 text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
+              笑顔で学ぶ。
+              <br />
+              確実に伸びる。
+            </h2>
+            <p className="mb-6 text-lg leading-relaxed text-blue-50">
+              一人ひとりに寄り添った指導で、
+              <br className="hidden sm:block" />
+              大手集団塾との併用で偏差値を着実に伸ばします。
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-lg bg-white px-6 py-3 text-base font-bold text-blue-700 shadow-lg transition-all hover:bg-blue-50 hover:shadow-xl"
+              >
+                無料相談を予約する
+              </Link>
+              <Link
+                href="https://lin.ee/P0lR1LD"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/50 bg-white/10 px-6 py-3 text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20"
+              >
+                <MessageCircle className="h-5 w-5" />
+                LINEで相談
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Section 1: Hero */}
       <section className="mb-16">
         <div className="grid gap-8 lg:grid-cols-2">
