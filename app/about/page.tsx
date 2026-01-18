@@ -448,537 +448,522 @@ export default function AboutPage() {
       </Link>
 
 
-      {/* Section 1: Hero */}
-      <section className="mb-16">
-        <div className="grid gap-8 lg:grid-cols-2">
-          {/* 左側 */}
-          <div>
-            {/* Hero Banner Image */}
-            <div className="mb-6 overflow-hidden rounded-2xl shadow-2xl">
-              <Image
-                src="/hero-banner.png"
-                alt="大手集団塾での偏差値を着実に伸ばしたい方へ - LEFY"
-                width={1920}
-                height={600}
-                className="h-auto w-full"
-                priority
-              />
-            </div>
-            <div className="mb-6 space-y-3 text-base leading-relaxed text-navy-700">
-              <p>
-                <span className="font-semibold text-navy-800">SAPIX・グノーブル・日能研・四谷大塚・希学園・浜学園</span>
-                など、集団塾の学習サイクルに合わせます。
-              </p>
-              <p className="rounded-lg bg-blue-50 p-3 text-base">
-                <span className="font-semibold text-blue-700">LEFYのみの個別指導もOK。</span>
-                <br />
-                集団塾が合わないタイプのお子様には個別指導だけの最短ルートも設計します。
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:bg-blue-700 hover:shadow-xl"
-              >
-                無料相談を予約する
-              </Link>
-              <Link
-                href="https://lin.ee/P0lR1LD"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-line px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-line-dark"
-              >
-                <MessageCircle className="h-4 w-4" />
-                LINEで相談する
-              </Link>
-            </div>
-          </div>
+      {/* Section 1: Hero Banner - 画面横いっぱい */}
+      <section className="-mx-4 mb-12 md:-mx-8">
+        <Image
+          src="/hero-banner.png"
+          alt="大手集団塾での偏差値を着実に伸ばしたい方へ - LEFY"
+          width={1920}
+          height={600}
+          className="h-auto w-full"
+          priority
+        />
+      </section>
 
-          {/* 右側：3つのミニカード - デザイン改善 */}
-          <div className="space-y-4">
-            <div className="group rounded-xl border-2 border-blue-100 bg-gradient-to-br from-blue-50 to-white p-6 shadow-md transition-all hover:border-blue-300 hover:shadow-lg">
-              <div className="mb-3 flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 shadow-md">
-                  <Award className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-navy-800">中学受験専門</h3>
-              </div>
-              <p className="text-base leading-relaxed text-navy-700">
-                中学受験のプロが手厚いサポートで着実に成績を伸ばす
-              </p>
+      {/* Section 1.5: 説明とミニカード */}
+      <section className="mb-16">
+        {/* コンパクトなバッジカード */}
+        <div className="mb-8 flex flex-wrap justify-center gap-3">
+          <div className="flex items-center gap-2 rounded-full border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-white px-4 py-2 shadow-sm">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-600">
+              <Award className="h-4 w-4 text-white" />
             </div>
-            <div className="group rounded-xl border-2 border-blue-100 bg-gradient-to-br from-blue-50 to-white p-6 shadow-md transition-all hover:border-blue-300 hover:shadow-lg">
-              <div className="mb-3 flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 shadow-md">
-                  <Users className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-navy-800">完全1対1</h3>
-              </div>
-              <p className="text-base leading-relaxed text-navy-700">
-                手元と考え方を見て修正
-              </p>
+            <span className="text-sm font-bold text-navy-800">中学受験専門</span>
+          </div>
+          <div className="flex items-center gap-2 rounded-full border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-white px-4 py-2 shadow-sm">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-600">
+              <Users className="h-4 w-4 text-white" />
             </div>
-            <div className="group rounded-xl border-2 border-blue-100 bg-gradient-to-br from-blue-50 to-white p-6 shadow-md transition-all hover:border-blue-300 hover:shadow-lg">
-              <div className="mb-3 flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 shadow-md">
-                  <GraduationCap className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-navy-800">講師層</h3>
-              </div>
-              <p className="text-base leading-relaxed text-navy-700">
-                プロ講師＋最難関中高一貫卒→東大等の学生/院生中心
-              </p>
+            <span className="text-sm font-bold text-navy-800">完全1対1</span>
+          </div>
+          <div className="flex items-center gap-2 rounded-full border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-white px-4 py-2 shadow-sm">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-600">
+              <GraduationCap className="h-4 w-4 text-white" />
             </div>
+            <span className="text-sm font-bold text-navy-800">プロ+最難関卒講師</span>
           </div>
         </div>
 
-        {/* 大手塾名バッジ行 - グリッドレイアウトで統一 */}
-        <div className="mt-10 rounded-xl border-2 border-blue-100 bg-gradient-to-r from-blue-50 to-white p-6">
-          <h3 className="mb-5 text-center text-base font-semibold text-navy-700">
-            LEFYの塾生が通っている大手集団塾
-          </h3>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
-            {cramSchools.map((school) => (
+        {/* 説明テキスト */}
+        <div className="mb-6 space-y-3 text-base leading-relaxed text-navy-700">
+          <p className="text-center">
+            <span className="font-semibold text-navy-800">SAPIX・グノーブル・日能研・四谷大塚・希学園・浜学園</span>
+            など、集団塾の学習サイクルに合わせます。
+          </p>
+          <p className="mx-auto max-w-2xl rounded-lg bg-blue-50 p-3 text-center text-base">
+            <span className="font-semibold text-blue-700">LEFYのみの個別指導もOK。</span>
+            <br />
+            集団塾が合わないタイプのお子様には個別指導だけの最短ルートも設計します。
+          </p>
+        </div>
+
+        {/* CTAボタン */}
+        <div className="flex flex-wrap justify-center gap-3">
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:bg-blue-700 hover:shadow-xl"
+          >
+            無料相談を予約する
+          </Link>
+          <Link
+            href="https://lin.ee/P0lR1LD"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-line px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-line-dark"
+          >
+            <MessageCircle className="h-4 w-4" />
+            LINEで相談する
+          </Link>
+        </div>
+      </section>
+
+      {/* 大手塾名バッジ行 - グリッドレイアウトで統一 */}
+      <div className="mt-10 rounded-xl border-2 border-blue-100 bg-gradient-to-r from-blue-50 to-white p-6">
+        <h3 className="mb-5 text-center text-base font-semibold text-navy-700">
+          LEFYの塾生が通っている大手集団塾
+        </h3>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
+          {cramSchools.map((school) => (
+            <div
+              key={school}
+              className="flex items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-3.5 text-center text-base font-bold text-white shadow-md transition-all hover:from-blue-700 hover:to-blue-800 hover:shadow-lg"
+            >
+              {school}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+      {/* Section 2: PainChecklist */ }
+  <section className="mb-16">
+    <SectionHeader title="こんなお悩みはありませんか？" icon={CheckCircle2} />
+    <p className="mb-5 text-base text-navy-600">
+      1つでも当てはまれば、回し方を整えるだけで伸びやすくなります
+    </p>
+    <div className="grid gap-3 sm:grid-cols-2">
+      {concerns.map((concern, index) => (
+        <div
+          key={index}
+          className="flex items-start gap-3 rounded-lg border border-navy-100 bg-white p-4 shadow-sm"
+        >
+          {/* 青色に変更 */}
+          <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-blue-600" />
+          <p className="text-base text-navy-700">{concern}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+
+
+  {/* Section 3.5: 診断フローチャート - 新規追加 */ }
+  <section className="mb-16">
+    <JukenFlowDiagnosis />
+  </section>
+
+  {/* Section 4: TwoWays */ }
+  <section className="mb-16">
+    <SectionHeader title="LEFYは2つの通い方があります" />
+    <p className="mb-6 text-base text-navy-600">
+      実際には、併用のご家庭が多い一方で、LEFY中心で進めるケースもあります。
+    </p>
+    <div className="grid gap-6 lg:grid-cols-2">
+      {/* 左：集団塾併用 - 青色ベースに変更 */}
+      <div className="rounded-lg border-2 border-blue-200 bg-white p-6 shadow-sm">
+        <div className="mb-4">
+          <span className="mb-2 inline-block rounded-full bg-blue-100 px-3 py-1 text-sm font-semibold text-blue-700">
+            集団塾併用
+          </span>
+          {/* 文言変更 */}
+          <h3 className="mt-2 text-lg font-bold text-navy-800">集団塾での偏差値UP</h3>
+        </div>
+        <div className="mb-4 flex flex-wrap gap-2">
+          {['SAPIX', 'Gnoble', '日能研', '四谷', '希', '浜'].map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-600"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+        <ul className="mb-4 space-y-2">
+          <li className="flex items-start gap-2 text-sm text-navy-700">
+            <span className="mt-1 text-blue-600">▸</span>
+            宿題の整理と取捨選択
+          </li>
+          <li className="flex items-start gap-2 text-sm text-navy-700">
+            <span className="mt-1 text-blue-600">▸</span>
+            マンスリー/組分け等の直しを得点化
+          </li>
+          <li className="flex items-start gap-2 text-sm text-navy-700">
+            <span className="mt-1 text-blue-600">▸</span>
+            算数の穴補強と解法の安定
+          </li>
+          <li className="flex items-start gap-2 text-sm text-navy-700">
+            <span className="mt-1 text-blue-600">▸</span>
+            志望校特訓/過去問の優先順位づけ
+          </li>
+        </ul>
+        <p className="text-sm italic text-navy-600">
+          "回る"だけで、点数のブレが減っていきます。
+        </p>
+      </div>
+
+      {/* 右：LEFY中心 - 薄い赤色に変更 */}
+      <div className="rounded-lg border-2 border-rose-200 bg-white p-6 shadow-sm">
+        <div className="mb-4">
+          <span className="mb-2 inline-block rounded-full bg-rose-100 px-3 py-1 text-sm font-semibold text-rose-700">
+            LEFY中心
+          </span>
+          <h3 className="mt-2 text-xl font-bold text-navy-800">オーダーメイド受験</h3>
+        </div>
+        <div className="mb-4 flex flex-wrap gap-2">
+          {['習慣づくり', '土台', '志望校対策'].map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full bg-rose-50 px-3 py-1 text-sm font-medium text-rose-600"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+        <ul className="mb-4 space-y-2">
+          <li className="flex items-start gap-2 text-base text-navy-700">
+            <span className="mt-1 text-rose-600">▸</span>
+            現状診断→合格までの最短ルート設計
+          </li>
+          <li className="flex items-start gap-2 text-base text-navy-700">
+            <span className="mt-1 text-rose-600">▸</span>
+            習慣→土台→志望校対策の順で積み上げ
+          </li>
+          <li className="flex items-start gap-2 text-base text-navy-700">
+            <span className="mt-1 text-rose-600">▸</span>
+            知識・手順の"ピース"を整理して再構築
+          </li>
+          <li className="flex items-start gap-2 text-base text-navy-700">
+            <span className="mt-1 text-rose-600">▸</span>
+            小さな成功体験で自信と再現性を作る
+          </li>
+        </ul>
+        <p className="text-base italic text-navy-600">
+          親の管理負担が減り、お子さまが自走しやすくなります。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* Section 5: Principal（塾長紹介）- テキスト更新 */ }
+  <section className="mb-16">
+    <SectionHeader title="LEFYの塾長" icon={User} />
+    {/* 新しいレイアウト：写真を大きく、より魅力的に */}
+    <div className="grid gap-8 md:grid-cols-2">
+      {/* 山本航士 */}
+      <div className="group overflow-hidden rounded-2xl border-2 border-blue-100 bg-gradient-to-br from-white to-blue-50 shadow-lg transition-all hover:shadow-2xl">
+        <div className="p-6">
+          <div className="mx-auto mb-5 h-40 w-40 overflow-hidden rounded-2xl border-4 border-blue-200 shadow-xl transition-transform group-hover:scale-105">
+            <Image
+              src="/principal-1.jpg"
+              alt="山本航士"
+              width={160}
+              height={160}
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div className="text-center">
+            <h3 className="mb-2 text-xl font-bold text-navy-800">山本 航士</h3>
+            <div className="mb-3 inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
+              代表
+            </div>
+            <p className="text-sm leading-relaxed text-navy-600">
+              聖光学院高等学校を卒業し、慶應義塾大学経済学部に入学。慶應義塾大学在学時に服部と出会い、共に学生団体を立ち上げ、法人化。大学卒業後は、コンサルティング会社に入社し、退職後、LEFYを創業。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* 服部貴哉 */}
+      <div className="group overflow-hidden rounded-2xl border-2 border-blue-100 bg-gradient-to-br from-white to-blue-50 shadow-lg transition-all hover:shadow-2xl">
+        <div className="p-6">
+          <div className="mx-auto mb-5 h-40 w-40 overflow-hidden rounded-2xl border-4 border-blue-200 shadow-xl transition-transform group-hover:scale-105">
+            <Image
+              src="/principal-2.jpg"
+              alt="服部貴哉"
+              width={160}
+              height={160}
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div className="text-center">
+            <h3 className="mb-2 text-xl font-bold text-navy-800">服部 貴哉</h3>
+            <div className="mb-3 inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
+              代表
+            </div>
+            <p className="text-sm leading-relaxed text-navy-600">
+              神奈川大学附属高等学校を卒業し、慶應義塾大学法学部に入学。慶應義塾大学在学時に山本と出会い、共に学生団体を立ち上げ、法人化。大学卒業後は、東証プライム市場上場企業の総合商社に入社し、LEFYの創業を機に退職。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* YouTube動画 */}
+    <div className="mt-8 space-y-6">
+      <h3 className="text-center text-lg font-bold text-navy-800">LEFYの紹介動画</h3>
+      <div className="grid gap-6 md:grid-cols-2">
+        {/* 動画1 */}
+        <div className="overflow-hidden rounded-lg shadow-lg">
+          <div className="relative" style={{ paddingBottom: '56.25%' }}>
+            <iframe
+              className="absolute inset-0 h-full w-full"
+              src="https://www.youtube.com/embed/TDDp59h-fmQ"
+              title="LEFY紹介動画1"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+        {/* 動画2 */}
+        <div className="overflow-hidden rounded-lg shadow-lg">
+          <div className="relative" style={{ paddingBottom: '56.25%' }}>
+            <iframe
+              className="absolute inset-0 h-full w-full"
+              src="https://www.youtube.com/embed/nTHk_M8VvV4"
+              title="LEFY紹介動画2"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Section 5.5: 2025年合格実績 - 新規追加 */ }
+  <section className="mb-16">
+    <SectionHeader
+      title="合格実績"
+      icon={Award}
+    />
+    <p className="mb-6 text-base text-navy-600">
+      LEFYの生徒たちが合格した学校の一覧です。
+    </p>
+
+    {/* 年度選択ボタン */}
+    <div className="mb-6 flex justify-center gap-3">
+      {([2025, 2024, 2023] as const).map((year) => (
+        <button
+          key={year}
+          onClick={() => setSelectedYear(year)}
+          className={`rounded-lg px-6 py-2.5 text-base font-semibold transition-all ${selectedYear === year
+            ? 'bg-blue-600 text-white shadow-md'
+            : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            }`}
+        >
+          {year}年
+        </button>
+      ))}
+    </div>
+
+    {/* 選択された年度の合格校 - カテゴリ別表示 */}
+    <div className="space-y-6">
+      {/* 男子校セクション */}
+      {resultsByYear[selectedYear].boys.length > 0 && (
+        <div>
+          <h4 className="mb-3 text-sm font-semibold text-blue-700">男子校</h4>
+          <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
+            {resultsByYear[selectedYear].boys.map((school: string, index: number) => (
               <div
-                key={school}
-                className="flex items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-3.5 text-center text-base font-bold text-white shadow-md transition-all hover:from-blue-700 hover:to-blue-800 hover:shadow-lg"
+                key={index}
+                className="flex items-center justify-center rounded border-2 border-blue-400 bg-white px-2 py-1.5 text-center text-sm font-semibold text-navy-800 shadow-sm transition-all hover:border-blue-600 hover:shadow-md"
               >
                 {school}
               </div>
             ))}
           </div>
         </div>
-      </section>
+      )}
 
-      {/* Section 2: PainChecklist */}
-      <section className="mb-16">
-        <SectionHeader title="こんなお悩みはありませんか？" icon={CheckCircle2} />
-        <p className="mb-5 text-base text-navy-600">
-          1つでも当てはまれば、回し方を整えるだけで伸びやすくなります
-        </p>
-        <div className="grid gap-3 sm:grid-cols-2">
-          {concerns.map((concern, index) => (
-            <div
-              key={index}
-              className="flex items-start gap-3 rounded-lg border border-navy-100 bg-white p-4 shadow-sm"
-            >
-              {/* 青色に変更 */}
-              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-blue-600" />
-              <p className="text-base text-navy-700">{concern}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-
-
-      {/* Section 3.5: 診断フローチャート - 新規追加 */}
-      <section className="mb-16">
-        <JukenFlowDiagnosis />
-      </section>
-
-      {/* Section 4: TwoWays */}
-      <section className="mb-16">
-        <SectionHeader title="LEFYは2つの通い方があります" />
-        <p className="mb-6 text-base text-navy-600">
-          実際には、併用のご家庭が多い一方で、LEFY中心で進めるケースもあります。
-        </p>
-        <div className="grid gap-6 lg:grid-cols-2">
-          {/* 左：集団塾併用 - 青色ベースに変更 */}
-          <div className="rounded-lg border-2 border-blue-200 bg-white p-6 shadow-sm">
-            <div className="mb-4">
-              <span className="mb-2 inline-block rounded-full bg-blue-100 px-3 py-1 text-sm font-semibold text-blue-700">
-                集団塾併用
-              </span>
-              {/* 文言変更 */}
-              <h3 className="mt-2 text-lg font-bold text-navy-800">集団塾での偏差値UP</h3>
-            </div>
-            <div className="mb-4 flex flex-wrap gap-2">
-              {['SAPIX', 'Gnoble', '日能研', '四谷', '希', '浜'].map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-600"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-            <ul className="mb-4 space-y-2">
-              <li className="flex items-start gap-2 text-sm text-navy-700">
-                <span className="mt-1 text-blue-600">▸</span>
-                宿題の整理と取捨選択
-              </li>
-              <li className="flex items-start gap-2 text-sm text-navy-700">
-                <span className="mt-1 text-blue-600">▸</span>
-                マンスリー/組分け等の直しを得点化
-              </li>
-              <li className="flex items-start gap-2 text-sm text-navy-700">
-                <span className="mt-1 text-blue-600">▸</span>
-                算数の穴補強と解法の安定
-              </li>
-              <li className="flex items-start gap-2 text-sm text-navy-700">
-                <span className="mt-1 text-blue-600">▸</span>
-                志望校特訓/過去問の優先順位づけ
-              </li>
-            </ul>
-            <p className="text-sm italic text-navy-600">
-              "回る"だけで、点数のブレが減っていきます。
-            </p>
-          </div>
-
-          {/* 右：LEFY中心 - 薄い赤色に変更 */}
-          <div className="rounded-lg border-2 border-rose-200 bg-white p-6 shadow-sm">
-            <div className="mb-4">
-              <span className="mb-2 inline-block rounded-full bg-rose-100 px-3 py-1 text-sm font-semibold text-rose-700">
-                LEFY中心
-              </span>
-              <h3 className="mt-2 text-xl font-bold text-navy-800">オーダーメイド受験</h3>
-            </div>
-            <div className="mb-4 flex flex-wrap gap-2">
-              {['習慣づくり', '土台', '志望校対策'].map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full bg-rose-50 px-3 py-1 text-sm font-medium text-rose-600"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-            <ul className="mb-4 space-y-2">
-              <li className="flex items-start gap-2 text-base text-navy-700">
-                <span className="mt-1 text-rose-600">▸</span>
-                現状診断→合格までの最短ルート設計
-              </li>
-              <li className="flex items-start gap-2 text-base text-navy-700">
-                <span className="mt-1 text-rose-600">▸</span>
-                習慣→土台→志望校対策の順で積み上げ
-              </li>
-              <li className="flex items-start gap-2 text-base text-navy-700">
-                <span className="mt-1 text-rose-600">▸</span>
-                知識・手順の"ピース"を整理して再構築
-              </li>
-              <li className="flex items-start gap-2 text-base text-navy-700">
-                <span className="mt-1 text-rose-600">▸</span>
-                小さな成功体験で自信と再現性を作る
-              </li>
-            </ul>
-            <p className="text-base italic text-navy-600">
-              親の管理負担が減り、お子さまが自走しやすくなります。
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 5: Principal（塾長紹介）- テキスト更新 */}
-      <section className="mb-16">
-        <SectionHeader title="LEFYの塾長" icon={User} />
-        {/* 新しいレイアウト：写真を大きく、より魅力的に */}
-        <div className="grid gap-8 md:grid-cols-2">
-          {/* 山本航士 */}
-          <div className="group overflow-hidden rounded-2xl border-2 border-blue-100 bg-gradient-to-br from-white to-blue-50 shadow-lg transition-all hover:shadow-2xl">
-            <div className="p-6">
-              <div className="mx-auto mb-5 h-40 w-40 overflow-hidden rounded-2xl border-4 border-blue-200 shadow-xl transition-transform group-hover:scale-105">
-                <Image
-                  src="/principal-1.jpg"
-                  alt="山本航士"
-                  width={160}
-                  height={160}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="text-center">
-                <h3 className="mb-2 text-xl font-bold text-navy-800">山本 航士</h3>
-                <div className="mb-3 inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
-                  代表
-                </div>
-                <p className="text-sm leading-relaxed text-navy-600">
-                  聖光学院高等学校を卒業し、慶應義塾大学経済学部に入学。慶應義塾大学在学時に服部と出会い、共に学生団体を立ち上げ、法人化。大学卒業後は、コンサルティング会社に入社し、退職後、LEFYを創業。
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* 服部貴哉 */}
-          <div className="group overflow-hidden rounded-2xl border-2 border-blue-100 bg-gradient-to-br from-white to-blue-50 shadow-lg transition-all hover:shadow-2xl">
-            <div className="p-6">
-              <div className="mx-auto mb-5 h-40 w-40 overflow-hidden rounded-2xl border-4 border-blue-200 shadow-xl transition-transform group-hover:scale-105">
-                <Image
-                  src="/principal-2.jpg"
-                  alt="服部貴哉"
-                  width={160}
-                  height={160}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="text-center">
-                <h3 className="mb-2 text-xl font-bold text-navy-800">服部 貴哉</h3>
-                <div className="mb-3 inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
-                  代表
-                </div>
-                <p className="text-sm leading-relaxed text-navy-600">
-                  神奈川大学附属高等学校を卒業し、慶應義塾大学法学部に入学。慶應義塾大学在学時に山本と出会い、共に学生団体を立ち上げ、法人化。大学卒業後は、東証プライム市場上場企業の総合商社に入社し、LEFYの創業を機に退職。
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* YouTube動画 */}
-        <div className="mt-8 space-y-6">
-          <h3 className="text-center text-lg font-bold text-navy-800">LEFYの紹介動画</h3>
-          <div className="grid gap-6 md:grid-cols-2">
-            {/* 動画1 */}
-            <div className="overflow-hidden rounded-lg shadow-lg">
-              <div className="relative" style={{ paddingBottom: '56.25%' }}>
-                <iframe
-                  className="absolute inset-0 h-full w-full"
-                  src="https://www.youtube.com/embed/TDDp59h-fmQ"
-                  title="LEFY紹介動画1"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            </div>
-            {/* 動画2 */}
-            <div className="overflow-hidden rounded-lg shadow-lg">
-              <div className="relative" style={{ paddingBottom: '56.25%' }}>
-                <iframe
-                  className="absolute inset-0 h-full w-full"
-                  src="https://www.youtube.com/embed/nTHk_M8VvV4"
-                  title="LEFY紹介動画2"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 5.5: 2025年合格実績 - 新規追加 */}
-      <section className="mb-16">
-        <SectionHeader
-          title="合格実績"
-          icon={Award}
-        />
-        <p className="mb-6 text-base text-navy-600">
-          LEFYの生徒たちが合格した学校の一覧です。
-        </p>
-
-        {/* 年度選択ボタン */}
-        <div className="mb-6 flex justify-center gap-3">
-          {([2025, 2024, 2023] as const).map((year) => (
-            <button
-              key={year}
-              onClick={() => setSelectedYear(year)}
-              className={`rounded-lg px-6 py-2.5 text-base font-semibold transition-all ${selectedYear === year
-                ? 'bg-blue-600 text-white shadow-md'
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
-            >
-              {year}年
-            </button>
-          ))}
-        </div>
-
-        {/* 選択された年度の合格校 - カテゴリ別表示 */}
-        <div className="space-y-6">
-          {/* 男子校セクション */}
-          {resultsByYear[selectedYear].boys.length > 0 && (
-            <div>
-              <h4 className="mb-3 text-sm font-semibold text-blue-700">男子校</h4>
-              <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
-                {resultsByYear[selectedYear].boys.map((school: string, index: number) => (
-                  <div
-                    key={index}
-                    className="flex items-center justify-center rounded border-2 border-blue-400 bg-white px-2 py-1.5 text-center text-sm font-semibold text-navy-800 shadow-sm transition-all hover:border-blue-600 hover:shadow-md"
-                  >
-                    {school}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* 女子校セクション */}
-          {resultsByYear[selectedYear].girls.length > 0 && (
-            <div>
-              <h4 className="mb-3 text-sm font-semibold text-rose-700">女子校</h4>
-              <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
-                {resultsByYear[selectedYear].girls.map((school: string, index: number) => (
-                  <div
-                    key={index}
-                    className="flex items-center justify-center rounded border-2 border-rose-400 bg-white px-2 py-1.5 text-center text-sm font-semibold text-navy-800 shadow-sm transition-all hover:border-rose-600 hover:shadow-md"
-                  >
-                    {school}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* 共学セクション */}
-          {resultsByYear[selectedYear].coed.length > 0 && (
-            <div>
-              <h4 className="mb-3 text-sm font-semibold text-green-700">共学</h4>
-              <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
-                {resultsByYear[selectedYear].coed.map((school: string, index: number) => (
-                  <div
-                    key={index}
-                    className="flex items-center justify-center rounded border-2 border-green-400 bg-white px-2 py-1.5 text-center text-sm font-semibold text-navy-800 shadow-sm transition-all hover:border-green-600 hover:shadow-md"
-                  >
-                    {school}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Section 5.6: 合格者の声 - 新規追加 */}
-      <section className="mb-16">
-        <SectionHeader
-          title="合格者の声"
-          icon={MessageCircle}
-        />
-        <p className="mb-6 text-base text-navy-600">
-          LEFYで夢を叶えた生徒と保護者の声をご紹介します。
-        </p>
-
-        <div className="space-y-4">
-          {testimonials.map((testimonial) => (
-            <TestimonialCard
-              key={testimonial.id}
-              testimonial={testimonial}
-            />
-          ))}
-
-          {/* 口コミリンク - Google + 塗選 */}
-          <div className="mt-8 rounded-xl border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-white p-6 text-center">
-            <h3 className="mb-3 text-lg font-bold text-navy-800">口コミ</h3>
-            <p className="mb-5 text-sm text-navy-600">
-              外部プラットフォームでも多くの保護者様から高評価をいただいています
-            </p>
-            <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
-              {/* Google口コミ */}
-              <Link
-                href="https://search.google.com/local/reviews?placeid=ChIJQ4wkdrldGGARis1Spb8hQN4"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:bg-blue-700 hover:shadow-xl"
+      {/* 女子校セクション */}
+      {resultsByYear[selectedYear].girls.length > 0 && (
+        <div>
+          <h4 className="mb-3 text-sm font-semibold text-rose-700">女子校</h4>
+          <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
+            {resultsByYear[selectedYear].girls.map((school: string, index: number) => (
+              <div
+                key={index}
+                className="flex items-center justify-center rounded border-2 border-rose-400 bg-white px-2 py-1.5 text-center text-sm font-semibold text-navy-800 shadow-sm transition-all hover:border-rose-600 hover:shadow-md"
               >
-                Google口コミを見る
-                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </Link>
+                {school}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
-              {/* 塗選口コミ */}
-              <Link
-                href="https://bestjuku.com/juku/7448/review/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-green-600 px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:bg-green-700 hover:shadow-xl"
+      {/* 共学セクション */}
+      {resultsByYear[selectedYear].coed.length > 0 && (
+        <div>
+          <h4 className="mb-3 text-sm font-semibold text-green-700">共学</h4>
+          <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
+            {resultsByYear[selectedYear].coed.map((school: string, index: number) => (
+              <div
+                key={index}
+                className="flex items-center justify-center rounded border-2 border-green-400 bg-white px-2 py-1.5 text-center text-sm font-semibold text-navy-800 shadow-sm transition-all hover:border-green-600 hover:shadow-md"
               >
-                塗選（ジュクセン）で口コミを見る
-                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </Link>
-            </div>
+                {school}
+              </div>
+            ))}
           </div>
         </div>
-      </section>
-
-      {/* Section 6: Teachers */}
-      <section className="mb-16">
-        <SectionHeader
-          title="講師は「中学受験のプロ」と「最難関卒の伴走者」"
-          icon={Users}
-        />
-        <p className="mb-6 text-base leading-relaxed text-navy-700">
-          プロ講師に加えて、最難関中高一貫校を卒業し、東大など最難関大に在籍する大学生／大学院生が中心です。
-          <br />
-          1対1だからこそ、相性まで重視して担当を決めます。
-        </p>
-        <div className="grid gap-4 sm:grid-cols-3">
-          {teacherTypes.map((teacher, index) => (
-            <div
-              key={index}
-              className="rounded-lg border border-navy-100 bg-white p-5 text-center shadow-sm"
-            >
-              <h4 className="mb-2 text-base font-bold text-navy-800">{teacher.title}</h4>
-              <p className="text-sm leading-relaxed text-navy-600">{teacher.description}</p>
-            </div>
-          ))}
-        </div>
-        <p className="mt-4 text-sm text-navy-500">
-          担当は学年・目的・相性に合わせて最適にマッチングします。
-        </p>
-      </section>
-
-      {/* Section 7: Support */}
-      <section className="mb-16">
-        <SectionHeader title="授業だけで終わらせない、「ダブル伴走」" />
-        <div className="grid gap-4 sm:grid-cols-3">
-          <div className="rounded-lg border border-navy-100 bg-white p-5 text-center shadow-sm">
-            <h4 className="mb-2 text-base font-bold text-navy-800">2名以上担当制</h4>
-            <p className="text-sm text-navy-600">授業担当＋学習設計担当</p>
-          </div>
-          <div className="rounded-lg border border-navy-100 bg-white p-5 text-center shadow-sm">
-            <h4 className="mb-2 text-base font-bold text-navy-800">定期報告/面談</h4>
-            <p className="text-sm text-navy-600">状況と方針を共有</p>
-          </div>
-          <div className="rounded-lg border border-navy-100 bg-white p-5 text-center shadow-sm">
-            <h4 className="mb-2 text-base font-bold text-navy-800">次の打ち手を明確に</h4>
-            <p className="text-sm text-navy-600">次週の最優先を決める</p>
-          </div>
-        </div>
-        <p className="mt-4 text-base text-navy-600">
-          "何をどこまでやるか"が明確になると、ご家庭の不安が減ります。
-        </p>
-      </section>
-
-      {/* Section 8: Final Inspiring Message + CTA */}
-      <section className="mb-16">
-        <div className="rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 p-8 text-center shadow-xl md:p-12">
-          <h2 className="mb-4 text-2xl font-bold leading-tight text-white md:text-3xl lg:text-4xl">
-            偏差値が伸びるからやる気がでるサイクルを
-            <br />
-            一緒につくりましょう
-          </h2>
-          <p className="mx-auto max-w-2xl text-base text-blue-50 md:text-lg">
-            正しい努力が確実に結果につながる。LEFYでそのサイクルを体感してください。
-          </p>
-        </div>
-
-        {/* CTA Box */}
-        <div className="mt-8">
-          <CTASection />
-        </div>
-      </section>
-
-      {/* Section 9: FAQ */}
-      <section className="mb-16">
-        <SectionHeader title="よくある質問" />
-        <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <details
-              key={index}
-              className="group rounded-lg border border-navy-100 bg-white p-5 shadow-sm"
-            >
-              <summary className="cursor-pointer text-base font-semibold text-navy-800 transition-colors hover:text-blue-600">
-                Q: {faq.q}
-              </summary>
-              <p className="mt-3 text-base leading-relaxed text-navy-600">A: {faq.a}</p>
-            </details>
-          ))}
-        </div>
-      </section>
-
-      {/* Section 10: Final CTA */}
-      <CTASection variant="compact" />
+      )}
     </div>
+  </section>
+
+  {/* Section 5.6: 合格者の声 - 新規追加 */ }
+  <section className="mb-16">
+    <SectionHeader
+      title="合格者の声"
+      icon={MessageCircle}
+    />
+    <p className="mb-6 text-base text-navy-600">
+      LEFYで夢を叶えた生徒と保護者の声をご紹介します。
+    </p>
+
+    <div className="space-y-4">
+      {testimonials.map((testimonial) => (
+        <TestimonialCard
+          key={testimonial.id}
+          testimonial={testimonial}
+        />
+      ))}
+
+      {/* 口コミリンク - Google + 塗選 */}
+      <div className="mt-8 rounded-xl border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-white p-6 text-center">
+        <h3 className="mb-3 text-lg font-bold text-navy-800">口コミ</h3>
+        <p className="mb-5 text-sm text-navy-600">
+          外部プラットフォームでも多くの保護者様から高評価をいただいています
+        </p>
+        <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+          {/* Google口コミ */}
+          <Link
+            href="https://search.google.com/local/reviews?placeid=ChIJQ4wkdrldGGARis1Spb8hQN4"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:bg-blue-700 hover:shadow-xl"
+          >
+            Google口コミを見る
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </Link>
+
+          {/* 塗選口コミ */}
+          <Link
+            href="https://bestjuku.com/juku/7448/review/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-green-600 px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:bg-green-700 hover:shadow-xl"
+          >
+            塗選（ジュクセン）で口コミを見る
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </Link>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Section 6: Teachers */ }
+  <section className="mb-16">
+    <SectionHeader
+      title="講師は「中学受験のプロ」と「最難関卒の伴走者」"
+      icon={Users}
+    />
+    <p className="mb-6 text-base leading-relaxed text-navy-700">
+      プロ講師に加えて、最難関中高一貫校を卒業し、東大など最難関大に在籍する大学生／大学院生が中心です。
+      <br />
+      1対1だからこそ、相性まで重視して担当を決めます。
+    </p>
+    <div className="grid gap-4 sm:grid-cols-3">
+      {teacherTypes.map((teacher, index) => (
+        <div
+          key={index}
+          className="rounded-lg border border-navy-100 bg-white p-5 text-center shadow-sm"
+        >
+          <h4 className="mb-2 text-base font-bold text-navy-800">{teacher.title}</h4>
+          <p className="text-sm leading-relaxed text-navy-600">{teacher.description}</p>
+        </div>
+      ))}
+    </div>
+    <p className="mt-4 text-sm text-navy-500">
+      担当は学年・目的・相性に合わせて最適にマッチングします。
+    </p>
+  </section>
+
+  {/* Section 7: Support */ }
+  <section className="mb-16">
+    <SectionHeader title="授業だけで終わらせない、「ダブル伴走」" />
+    <div className="grid gap-4 sm:grid-cols-3">
+      <div className="rounded-lg border border-navy-100 bg-white p-5 text-center shadow-sm">
+        <h4 className="mb-2 text-base font-bold text-navy-800">2名以上担当制</h4>
+        <p className="text-sm text-navy-600">授業担当＋学習設計担当</p>
+      </div>
+      <div className="rounded-lg border border-navy-100 bg-white p-5 text-center shadow-sm">
+        <h4 className="mb-2 text-base font-bold text-navy-800">定期報告/面談</h4>
+        <p className="text-sm text-navy-600">状況と方針を共有</p>
+      </div>
+      <div className="rounded-lg border border-navy-100 bg-white p-5 text-center shadow-sm">
+        <h4 className="mb-2 text-base font-bold text-navy-800">次の打ち手を明確に</h4>
+        <p className="text-sm text-navy-600">次週の最優先を決める</p>
+      </div>
+    </div>
+    <p className="mt-4 text-base text-navy-600">
+      "何をどこまでやるか"が明確になると、ご家庭の不安が減ります。
+    </p>
+  </section>
+
+  {/* Section 8: Final Inspiring Message + CTA */ }
+  <section className="mb-16">
+    <div className="rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 p-8 text-center shadow-xl md:p-12">
+      <h2 className="mb-4 text-2xl font-bold leading-tight text-white md:text-3xl lg:text-4xl">
+        偏差値が伸びるからやる気がでるサイクルを
+        <br />
+        一緒につくりましょう
+      </h2>
+      <p className="mx-auto max-w-2xl text-base text-blue-50 md:text-lg">
+        正しい努力が確実に結果につながる。LEFYでそのサイクルを体感してください。
+      </p>
+    </div>
+
+    {/* CTA Box */}
+    <div className="mt-8">
+      <CTASection />
+    </div>
+  </section>
+
+  {/* Section 9: FAQ */ }
+  <section className="mb-16">
+    <SectionHeader title="よくある質問" />
+    <div className="space-y-4">
+      {faqs.map((faq, index) => (
+        <details
+          key={index}
+          className="group rounded-lg border border-navy-100 bg-white p-5 shadow-sm"
+        >
+          <summary className="cursor-pointer text-base font-semibold text-navy-800 transition-colors hover:text-blue-600">
+            Q: {faq.q}
+          </summary>
+          <p className="mt-3 text-base leading-relaxed text-navy-600">A: {faq.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  {/* Section 10: Final CTA */ }
+  <CTASection variant="compact" />
+    </div >
   );
 }
