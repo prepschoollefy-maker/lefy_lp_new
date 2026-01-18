@@ -448,20 +448,9 @@ export default function AboutPage() {
       </Link>
 
 
-      {/* Section 1: Hero - 背景画像付き */}
-      <section className="relative mb-16 overflow-hidden rounded-2xl">
-        {/* 背景画像 */}
-        <div className="absolute inset-0">
-          <Image
-            src="/hero-student.jpg"
-            alt="笑顔で勉強する生徒"
-            fill
-            className="object-cover opacity-20"
-            priority
-          />
-        </div>
-        {/* コンテンツ */}
-        <div className="relative grid gap-8 lg:grid-cols-2">
+      {/* Section 1: Hero */}
+      <section className="mb-16">
+        <div className="grid gap-8 lg:grid-cols-2">
           {/* 左側 */}
           <div>
             <div className="mb-2 flex items-center gap-2 text-xs text-navy-400">
