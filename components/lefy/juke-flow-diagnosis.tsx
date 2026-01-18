@@ -158,9 +158,14 @@ export function JukenFlowDiagnosis() {
                                 <button
                                     key={index}
                                     onClick={() => handleOption(option.next)}
-                                    className="rounded-lg border-2 border-blue-600 bg-white px-6 py-3 text-left text-sm font-semibold text-blue-700 transition-all hover:bg-blue-600 hover:text-white"
+                                    className="group relative overflow-hidden rounded-xl border-2 border-blue-400 bg-gradient-to-r from-blue-50 to-white px-6 py-4 text-left font-semibold text-blue-700 shadow-md transition-all hover:scale-[1.02] hover:border-blue-600 hover:from-blue-600 hover:to-blue-700 hover:text-white hover:shadow-xl"
                                 >
-                                    {option.label}
+                                    <span className="relative z-10 flex items-center gap-2 text-base">
+                                        <svg className="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                        </svg>
+                                        {option.label}
+                                    </span>
                                 </button>
                             ))}
                         </div>

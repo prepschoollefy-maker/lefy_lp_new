@@ -533,7 +533,7 @@ export default function AboutPage() {
         {/* 大手塾名バッジ行 - グリッドレイアウトで統一 */}
         <div className="mt-10 rounded-xl border-2 border-blue-100 bg-gradient-to-r from-blue-50 to-white p-6">
           <h3 className="mb-5 text-center text-base font-semibold text-navy-700">
-            大手集団塾との併用実績
+            LEFYの塾生が通っている大手集団塾
           </h3>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
             {cramSchools.map((school) => (
@@ -568,36 +568,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Section 3: Value3Cards */}
-      <section className="mb-16">
-        <SectionHeader title="LEFYがやること" icon={BookOpen} />
-        <div className="grid gap-6 sm:grid-cols-3">
-          {values.map((value, index) => {
-            const Icon = value.icon;
-            return (
-              <div
-                key={index}
-                className="rounded-lg border border-navy-100 bg-white p-6 shadow-sm"
-              >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-blue-800 text-white shadow-md">
-                  <Icon className="h-6 w-6" />
-                </div>
-                <h3 className="mb-1 text-lg font-bold text-navy-800">{value.title}</h3>
-                <p className="mb-4 text-sm text-navy-500">{value.subtitle}</p>
-                <ul className="space-y-2">
-                  {value.points.map((point, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-base text-navy-700">
-                      {/* 青色に変更 */}
-                      <span className="mt-1 text-blue-600">●</span>
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            );
-          })}
-        </div>
-      </section>
+
 
       {/* Section 3.5: 診断フローチャート - 新規追加 */}
       <section className="mb-16">
@@ -700,33 +671,33 @@ export default function AboutPage() {
       <section className="mb-16">
         <SectionHeader title="LEFYの塾長" icon={User} />
         <div className="grid gap-8 sm:grid-cols-2">
-          <div className="flex flex-col items-center rounded-lg border border-navy-100 bg-white p-6 text-center shadow-sm">
-            <div className="mb-4 h-32 w-32 overflow-hidden rounded-full border-4 border-blue-100">
+          <div className="flex flex-col items-center rounded-lg border border-navy-100 bg-white p-4 text-center shadow-sm">
+            <div className="mb-3 h-24 w-24 overflow-hidden rounded-full border-2 border-blue-100">
               <Image
                 src="/principal-1.jpg"
                 alt="山本航士"
-                width={128}
-                height={128}
+                width={96}
+                height={96}
                 className="h-full w-full object-cover"
               />
             </div>
-            <h3 className="mb-3 text-lg font-bold text-navy-800">山本 航士</h3>
-            <p className="text-sm leading-relaxed text-navy-600">
+            <h3 className="mb-2 text-base font-bold text-navy-800">山本 航士</h3>
+            <p className="text-xs leading-relaxed text-navy-600">
               聖光学院高等学校を卒業し、慶應義塾大学経済学部に入学。慶應義塾大学在学時に服部と出会い、共に学生団体を立ち上げ、法人化。大学卒業後は、コンサルティング会社に入社し、退職後、LEFYを創業。
             </p>
           </div>
-          <div className="flex flex-col items-center rounded-lg border border-navy-100 bg-white p-6 text-center shadow-sm">
-            <div className="mb-4 h-32 w-32 overflow-hidden rounded-full border-4 border-blue-100">
+          <div className="flex flex-col items-center rounded-lg border border-navy-100 bg-white p-4 text-center shadow-sm">
+            <div className="mb-3 h-24 w-24 overflow-hidden rounded-full border-2 border-blue-100">
               <Image
                 src="/principal-2.jpg"
                 alt="服部貴哉"
-                width={128}
-                height={128}
+                width={96}
+                height={96}
                 className="h-full w-full object-cover"
               />
             </div>
-            <h3 className="mb-3 text-lg font-bold text-navy-800">服部 貴哉</h3>
-            <p className="text-sm leading-relaxed text-navy-600">
+            <h3 className="mb-2 text-base font-bold text-navy-800">服部 貴哉</h3>
+            <p className="text-xs leading-relaxed text-navy-600">
               神奈川大学附属高等学校を卒業し、慶應義塾大学法学部に入学。慶應義塾大学在学時に山本と出会い、共に学生団体を立ち上げ、法人化。大学卒業後は、東証プライム市場上場企業の総合商社に入社し、LEFYの創業を機に退職。
             </p>
           </div>
@@ -832,6 +803,25 @@ export default function AboutPage() {
             />
           ))}
         </div>
+
+        {/* Google口コミリンク */}
+        <div className="mt-8 rounded-xl border-2 border-blue-200 bg-gradient-to-r from-blue-50 to-white p-6 text-center">
+          <h3 className="mb-3 text-lg font-bold text-navy-800">Google口コミ</h3>
+          <p className="mb-4 text-sm text-navy-600">
+            Googleマップでも多くの保護者様から高評価をいただいています
+          </p>
+          <Link
+            href="https://www.google.com/search?q=%E3%83%AC%E3%83%95%E3%82%A3%E3%83%BC&oq=%E3%83%AC%E3%83%95%E3%82%A3%E3%83%BC&gs_lcrp=EgZjaHJvbWUyDggAEEUYJxg5GIAEGIoFMgYIARAjGCcyDAgCEAAYQxiABBiKBTIHCAMQABiABDIGCAQQRRg9MgYIBRBFGD0yBggGEEUYPTIGCAcQRRhB0gEHODM5ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8#lrd=0x60185db976248c43:0xde4021bfa552cd8a,1,,,,"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:bg-blue-700 hover:shadow-xl"
+          >
+            Google口コミを見る
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </Link>
+        </div>
       </section>
 
       {/* Section 6: Teachers */}
@@ -883,47 +873,22 @@ export default function AboutPage() {
         </p>
       </section>
 
-      {/* Section 8: Steps */}
+      {/* Section 8: Final Inspiring Message + CTA */}
       <section className="mb-16">
-        <SectionHeader
-          title="無料相談で、次の2週間の「回し方」を仮で作ります"
-          icon={MessageCircle}
-        />
-        <div className="mb-6 grid gap-4 sm:grid-cols-4">
-          {consultationSteps.map((step) => (
-            <div
-              key={step.number}
-              className="rounded-lg border border-navy-100 bg-white p-5 text-center shadow-sm"
-            >
-              <div className="mb-3 flex items-center justify-center">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-blue-800 text-lg font-bold text-white">
-                  {step.number}
-                </div>
-              </div>
-              <h4 className="mb-1 text-base font-semibold text-navy-800">{step.title}</h4>
-              <p className="text-sm text-navy-600">{step.description}</p>
-            </div>
-          ))}
+        <div className="rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 p-8 text-center shadow-xl md:p-12">
+          <h2 className="mb-4 text-2xl font-bold leading-tight text-white md:text-3xl lg:text-4xl">
+            偏差値が伸びるからやる気がでるサイクルを
+            <br />
+            一緒につくりましょう
+          </h2>
+          <p className="mx-auto max-w-2xl text-base text-blue-50 md:text-lg">
+            正しい努力が確実に結果につながる。LEFYでそのサイクルを体感してください。
+          </p>
         </div>
-        <p className="mb-6 text-center text-sm font-semibold text-blue-700">
-          "来週から何をどう進めるか"が具体的に分かります。
-        </p>
-        <div className="flex flex-wrap justify-center gap-3">
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:bg-blue-700 hover:shadow-xl"
-          >
-            無料相談を予約する
-          </Link>
-          <Link
-            href="https://lin.ee/P0lR1LD"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-line px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-line-dark"
-          >
-            <MessageCircle className="h-4 w-4" />
-            LINEで相談する
-          </Link>
+
+        {/* CTA Box */}
+        <div className="mt-8">
+          <CTASection />
         </div>
       </section>
 
