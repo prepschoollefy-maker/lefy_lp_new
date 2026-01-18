@@ -378,10 +378,10 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
       {/* ヘッダー（クリックで展開） */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between p-5 text-left transition-colors hover:bg-blue-50"
+        className="flex w-full items-center justify-between p-3 text-left transition-colors hover:bg-blue-50"
       >
         <div>
-          <h3 className="text-xl font-bold text-navy-800">
+          <h3 className="text-base font-bold text-navy-800">
             {testimonial.studentName}（{testimonial.grade}）
           </h3>
           <p className="mt-1 text-base font-semibold text-blue-600">
@@ -389,19 +389,19 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
           </p>
         </div>
         <ChevronDown
-          className={`h-6 w-6 text-navy-400 transition-transform ${isOpen ? 'rotate-180' : ''
+          className={`h-5 w-5 text-navy-400 transition-transform ${isOpen ? 'rotate-180' : ''
             }`}
         />
       </button>
 
       {/* 展開コンテンツ */}
       {isOpen && (
-        <div className="border-t border-blue-100 p-5">
+        <div className="border-t border-blue-100 p-3">
           {/* タブ切り替え */}
-          <div className="mb-4 flex gap-2">
+          <div className="mb-3 flex gap-2">
             <button
               onClick={() => setActiveTab('student')}
-              className={`rounded-lg px-4 py-2 text-base font-semibold transition-all ${activeTab === 'student'
+              className={`rounded px-3 py-1.5 text-sm font-semibold transition-all ${activeTab === 'student'
                 ? 'bg-blue-600 text-white'
                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
@@ -410,7 +410,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
             </button>
             <button
               onClick={() => setActiveTab('parent')}
-              className={`rounded-lg px-4 py-2 text-base font-semibold transition-all ${activeTab === 'parent'
+              className={`rounded px-3 py-1.5 text-sm font-semibold transition-all ${activeTab === 'parent'
                 ? 'bg-blue-600 text-white'
                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
@@ -420,8 +420,8 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
           </div>
 
           {/* コンテンツ */}
-          <div className="rounded-lg bg-gray-50 p-5">
-            <p className="whitespace-pre-wrap text-base leading-relaxed text-navy-700">
+          <div className="rounded bg-gray-50 p-3">
+            <p className="whitespace-pre-wrap text-sm leading-relaxed text-navy-700">
               {activeTab === 'student'
                 ? testimonial.studentVoice
                 : testimonial.parentVoice}
