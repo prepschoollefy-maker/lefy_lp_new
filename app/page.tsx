@@ -63,18 +63,12 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-blue-50/30">
       <div className="mx-auto max-w-3xl px-4 py-8">
-        <section className="mb-12 text-center animate-fade-in-up">
-          <h1 className="mb-4 text-3xl font-bold text-navy-800 sm:text-4xl">
+        <section className="mb-12 text-center">
+          <h1 className="mb-4 animate-fade-in-up text-3xl font-bold text-navy-800 sm:text-4xl">
             資料請求
             <br />
             ありがとうございます！
           </h1>
-          <p className="mb-2 text-base leading-relaxed text-navy-700">
-            郵送資料が届くまでに2日ほどかかる場合がございます。
-          </p>
-          <p className="mb-2 text-base leading-relaxed text-navy-700">
-            本ページでは、郵送資料の要点をまとめておりますので、お手軽にご確認いただけます。
-          </p>
         </section>
 
         <section className="mb-12">
