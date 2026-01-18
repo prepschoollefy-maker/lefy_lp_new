@@ -63,45 +63,18 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-blue-50/30">
       <div className="mx-auto max-w-3xl px-4 py-8">
-        {/* 感謝セクション - アニメーション＆装飾付き */}
-        <section className="relative mb-12 overflow-hidden">
-          {/* 紙吹雪装飾 */}
-          <div className="pointer-events-none absolute inset-0">
-            <div className="absolute left-[10%] top-[20%] h-3 w-3 animate-float-slow rounded-full bg-blue-400 opacity-60" />
-            <div className="absolute left-[80%] top-[10%] h-2 w-2 animate-float rounded-full bg-yellow-400 opacity-70" />
-            <div className="absolute left-[20%] top-[70%] h-2.5 w-2.5 animate-float-slow rounded-full bg-pink-400 opacity-60" />
-            <div className="absolute left-[70%] top-[60%] h-3 w-3 animate-float rounded-full bg-green-400 opacity-50" />
-            <div className="absolute left-[50%] top-[30%] h-2 w-2 animate-float-slow rounded-full bg-purple-400 opacity-60" />
-            <div className="absolute left-[90%] top-[80%] h-2.5 w-2.5 animate-float rounded-full bg-red-400 opacity-50" />
-            <div className="absolute left-[15%] top-[50%] h-2 w-2 animate-float rounded-full bg-cyan-400 opacity-70" />
-            <div className="absolute left-[85%] top-[40%] h-3 w-3 animate-float-slow rounded-full bg-orange-400 opacity-60" />
-          </div>
-
-          {/* メインコンテンツ */}
-          <div className="relative animate-fade-in-up rounded-2xl bg-white p-8 text-center shadow-xl border-2 border-blue-100">
-
-            <h1 className="mb-6 text-4xl font-bold text-navy-800 sm:text-5xl">
-              資料請求
-              <br />
-              ありがとうございます！
-            </h1>
-
-            <div className="mx-auto max-w-xl space-y-3">
-              <p className="text-base leading-relaxed text-navy-700">
-                📮 郵送資料が届くまでに2日ほどかかる場合がございます。
-              </p>
-              <p className="text-base leading-relaxed text-navy-700">
-                💡 本ページでは、郵送資料の要点をまとめておりますので、お手軽にご確認いただけます。
-              </p>
-            </div>
-
-            {/* 下部装飾ライン */}
-            <div className="mt-6 flex justify-center gap-1">
-              <div className="h-1 w-12 rounded-full bg-gradient-to-r from-blue-400 to-purple-400" />
-              <div className="h-1 w-12 rounded-full bg-gradient-to-r from-purple-400 to-pink-400" />
-              <div className="h-1 w-12 rounded-full bg-gradient-to-r from-pink-400 to-red-400" />
-            </div>
-          </div>
+        <section className="mb-12 text-center animate-fade-in-up">
+          <h1 className="mb-4 text-3xl font-bold text-navy-800 sm:text-4xl">
+            資料請求
+            <br />
+            ありがとうございます！
+          </h1>
+          <p className="mb-2 text-base leading-relaxed text-navy-700">
+            郵送資料が届くまでに2日ほどかかる場合がございます。
+          </p>
+          <p className="mb-2 text-base leading-relaxed text-navy-700">
+            本ページでは、郵送資料の要点をまとめておりますので、お手軽にご確認いただけます。
+          </p>
         </section>
 
         <section className="mb-12">
