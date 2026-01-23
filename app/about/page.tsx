@@ -504,20 +504,20 @@ export default function AboutPage() {
         {/* CTAボタン */}
         <div className="flex flex-wrap justify-center gap-3">
           <Link
-            href="/contact"
+            href="/counseling"
             className="inline-flex items-center justify-center rounded-lg bg-navy-600 px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:bg-navy-700 hover:shadow-xl"
           >
-            学習カウンセリングに申し込む
+            学習相談に申し込む
           </Link>
-          <Link
-            href="https://lin.ee/P0lR1LD"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-line px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-line-dark"
+          <a
+            href="tel:04570755151"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-green-600 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-green-700"
           >
-            <MessageCircle className="h-4 w-4" />
-            LINEで相談する
-          </Link>
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            電話で予約する
+          </a>
         </div>
 
         {/* 大手塾名バッジ行 - グリッドレイアウトで統一 */}
@@ -586,7 +586,7 @@ export default function AboutPage() {
       </div>
 
       {/* Section 4: TwoWays - ステップ型デザイン */}
-      <section className="mb-20">
+      <section className="mb-20 mt-8">
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold text-navy-800 md:text-4xl">
             LEFYには<br />
@@ -595,11 +595,11 @@ export default function AboutPage() {
           <div className="mx-auto mt-3 h-1 w-32 bg-navy-600"></div>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-12">
           {/* パターン1: LEFYを併用し、集団塾の偏差値UP */}
-          <div className="overflow-hidden rounded-xl shadow-lg">
+          <div className="relative rounded-xl shadow-lg" style={{ marginTop: '2rem' }}>
             {/* パターンバッジとヘッダー */}
-            <div className="relative bg-gradient-to-r from-navy-600 to-navy-700 px-6 pt-6 pb-5 md:px-8">
+            <div className="relative overflow-hidden rounded-t-xl bg-gradient-to-r from-navy-600 to-navy-700 px-6 pt-8 pb-5 md:px-8">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                 <div className="rounded-full bg-yellow-400 px-5 py-1.5 text-sm font-bold text-navy-800 shadow-md">
                   パターン1
@@ -669,9 +669,9 @@ export default function AboutPage() {
           </div>
 
           {/* パターン2: LEFYオーダーメイド受験 */}
-          <div className="overflow-hidden rounded-xl shadow-lg">
+          <div className="relative rounded-xl shadow-lg" style={{ marginTop: '2rem' }}>
             {/* パターンバッジとヘッダー */}
-            <div className="relative bg-gradient-to-r from-rose-600 to-rose-700 px-6 pt-6 pb-5 md:px-8">
+            <div className="relative overflow-hidden rounded-t-xl bg-gradient-to-r from-rose-600 to-rose-700 px-6 pt-8 pb-5 md:px-8">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                 <div className="rounded-full bg-yellow-400 px-5 py-1.5 text-sm font-bold text-navy-800 shadow-md">
                   パターン2
