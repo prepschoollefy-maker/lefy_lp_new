@@ -538,27 +538,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Section 2: PainChecklist - 画像セクション */}
-      <section className="mb-20">
-        <div className="flex justify-center">
-          <Image
-            src="/concerns-section.png"
-            alt="こんなお悩みありませんか？"
-            width={1024}
-            height={768}
-            className="h-auto w-full max-w-5xl"
-          />
-        </div>
-      </section>
-
-      {/* Arrow connector image */}
-      <div className="-mt-16 mb-12 flex justify-center">
+      {/* こんなお悩みありませんか？セクション */}
+      <div className="mb-12 flex justify-center">
         <Image
-          src="/arrow-to-lefy.png"
-          alt="お悩みの方はLEFYの個別指導で"
-          width={800}
-          height={300}
-          className="h-auto w-full max-w-3xl"
+          src="/concerns-section.png"
+          alt="こんなお悩みありませんか？"
+          width={1024}
+          height={768}
+          className="h-auto w-full max-w-5xl"
         />
       </div>
 
