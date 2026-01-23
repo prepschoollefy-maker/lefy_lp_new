@@ -1,16 +1,41 @@
 'use client';
 
 import Link from 'next/link';
-import { MessageCircle } from 'lucide-react';
+import { GraduationCap, MessageCircle, ClipboardList } from 'lucide-react';
 
 export function FloatingCTA() {
   return (
-    <Link
-      href="/contact"
-      className="fixed bottom-4 left-0 right-0 z-40 mx-auto flex w-[calc(100%-2rem)] max-w-md items-center justify-center gap-2 rounded-full bg-orange-500 px-6 py-4 text-base font-bold text-navy-900 shadow-2xl transition-all hover:bg-orange-600 hover:shadow-orange-500/50 md:bottom-6"
-    >
-      <MessageCircle className="h-4 w-4" />
-      <span>学習カウンセリングに申し込む</span>
-    </Link>
+    <div className="fixed bottom-0 left-0 right-0 z-40 bg-white shadow-2xl border-t-2 border-navy-200">
+      <div className="mx-auto flex max-w-4xl items-stretch">
+        {/* 体験授業 */}
+        <Link
+          href="#"
+          className="flex flex-1 flex-col items-center justify-center gap-2 border-r border-navy-200 py-4 px-2 text-center transition-all hover:bg-navy-50"
+        >
+          <GraduationCap className="h-6 w-6 text-navy-600" />
+          <span className="text-sm font-bold text-navy-800">体験授業</span>
+        </Link>
+
+        {/* 学習カウンセリング */}
+        <Link
+          href="/counseling"
+          className="flex flex-1 flex-col items-center justify-center gap-2 border-r border-navy-200 py-4 px-2 text-center transition-all hover:bg-navy-50"
+        >
+          <MessageCircle className="h-6 w-6 text-navy-600" />
+          <span className="text-sm font-bold text-navy-800">
+            学習<br />カウンセリング
+          </span>
+        </Link>
+
+        {/* 入塾の流れ */}
+        <Link
+          href="#"
+          className="flex flex-1 flex-col items-center justify-center gap-2 py-4 px-2 text-center transition-all hover:bg-navy-50"
+        >
+          <ClipboardList className="h-6 w-6 text-navy-600" />
+          <span className="text-sm font-bold text-navy-800">入塾の流れ</span>
+        </Link>
+      </div>
+    </div>
   );
 }

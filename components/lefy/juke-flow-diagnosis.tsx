@@ -6,7 +6,8 @@ import { MessageCircle, RotateCcw } from 'lucide-react';
 
 // フローデータ定義
 const flowData = {
-    title: '個別指導を利用すべき？\n判断フローチャート',
+    title: '個別指導を利用すべき？',
+    subtitle: 'お子さんの学年や学力レベルによって個別指導を利用したほうがよいのか、利用の仕方が異なります。',
     nodes: [
         {
             id: 'q1',
@@ -138,96 +139,105 @@ export function JukenFlowDiagnosis() {
     const isResult = currentNode.type === 'result';
 
     return (
-        <div className="rounded-xl border-2 border-blue-100 bg-gradient-to-br from-blue-50 to-white p-6 shadow-lg md:p-8">
-            <h3 className="mb-6 text-center text-xl font-bold text-navy-800 sm:text-2xl">
-                {flowData.title}
-            </h3>
-
-            {!isResult ? (
-                // 質問表示
-                <div className="space-y-6">
-                    <div className="rounded-lg border border-blue-200 bg-white p-6 shadow-sm">
-                        <h4 className="mb-4 text-lg font-semibold leading-relaxed text-navy-800">
-                            {currentNode.question}
-                        </h4>
-                        {currentNode.note && (
-                            <p className="mb-4 text-xs text-navy-500">{currentNode.note}</p>
-                        )}
-                        <div className="flex flex-col gap-3">
-                            {currentNode.options?.map((option, index) => (
-                                <button
-                                    key={index}
-                                    onClick={() => handleOption(option.next)}
-                                    className="group relative overflow-hidden rounded-xl border-2 border-blue-400 bg-gradient-to-r from-blue-50 to-white px-6 py-4 text-left font-semibold text-blue-700 shadow-md transition-all hover:scale-[1.02] hover:border-blue-600 hover:from-blue-600 hover:to-blue-700 hover:text-white hover:shadow-xl"
-                                >
-                                    <span className="relative z-10 flex items-center gap-2 text-base">
-                                        <svg className="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                        </svg>
-                                        {option.label}
-                                    </span>
-                                </button>
-                            ))}
-                        </div>
-                    </div>
-                    <div className="rounded-lg border border-navy-100 bg-navy-50 p-4 text-center">
-                        <p className="text-sm text-navy-600">
-                            選択肢をクリックすると、あなたに合った方針が表示されます
-                        </p>
-                    </div>
+        <div className="-mx-4 md:-mx-8">
+            <div className="bg-gradient-to-br from-navy-600 via-navy-700 to-navy-800 py-12 px-6 md:py-16 md:px-12">
+                <div className="mb-8 text-center">
+                    <h3 className="mb-4 text-3xl font-bold text-white md:text-4xl">
+                        個別指導を利用すべき？<br />判断フローチャート
+                    </h3>
+                    <p className="mx-auto max-w-2xl text-sm text-white md:text-base">
+                        {flowData.subtitle}
+                    </p>
                 </div>
-            ) : (
-                // 結果表示
-                <div className="space-y-6">
-                    <div className="rounded-lg border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white p-6 shadow-md">
-                        <div className="mb-4 flex items-start gap-3">
-                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
-                                ✓
-                            </div>
-                            <div>
-                                <h4 className="mb-2 text-xl font-bold text-blue-700">
-                                    {currentNode.headline}
+
+                <div className="mx-auto max-w-4xl">
+                    {!isResult ? (
+                        // 質問表示
+                        <div className="space-y-6">
+                            <div className="rounded-xl border-2 border-white/20 bg-white p-6 shadow-md">
+                                <h4 className="mb-4 text-lg font-semibold leading-relaxed text-navy-800">
+                                    {currentNode.question}
                                 </h4>
-                                <p className="mb-3 text-sm leading-relaxed text-navy-700">
-                                    {currentNode.body}
+                                {currentNode.note && (
+                                    <p className="mb-4 text-xs text-navy-500">{currentNode.note}</p>
+                                )}
+                                <div className="flex flex-col gap-3">
+                                    {currentNode.options?.map((option, index) => (
+                                        <button
+                                            key={index}
+                                            onClick={() => handleOption(option.next)}
+                                            className="group relative overflow-hidden rounded-xl border-2 border-navy-300 bg-gradient-to-r from-navy-50 to-white px-6 py-4 text-left font-semibold text-navy-700 shadow-md transition-all hover:scale-[1.02] hover:border-navy-600 hover:from-navy-600 hover:to-navy-700 hover:text-white hover:shadow-xl"
+                                        >
+                                            <span className="relative z-10 flex items-center gap-2 text-base">
+                                                <svg className="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                                </svg>
+                                                {option.label}
+                                            </span>
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="rounded-lg border-2 border-yellow-200 bg-white p-4 text-center">
+                                <p className="text-sm text-navy-700">
+                                    選択肢をクリックすると、あなたに合った方針が表示されます
                                 </p>
-                                <p className="text-sm italic text-navy-600">{currentNode.short}</p>
                             </div>
                         </div>
-                    </div>
+                    ) : (
+                        // 結果表示
+                        <div className="space-y-6">
+                            <div className="rounded-xl border-2 border-white/20 bg-white p-6 shadow-lg">
+                                <div className="mb-4 flex items-start gap-3">
+                                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-navy-600 text-lg font-bold text-white">
+                                        ✓
+                                    </div>
+                                    <div>
+                                        <h4 className="mb-2 text-xl font-bold text-navy-700">
+                                            {currentNode.headline}
+                                        </h4>
+                                        <p className="mb-3 text-sm leading-relaxed text-navy-700">
+                                            {currentNode.body}
+                                        </p>
+                                        <p className="text-sm italic text-navy-600">{currentNode.short}</p>
+                                    </div>
+                                </div>
+                            </div>
 
-                    {/* CTA */}
-                    <div className="space-y-3">
-                        <p className="text-center text-sm font-semibold text-navy-700">
-                            次のステップ
-                        </p>
-                        <div className="flex flex-col gap-3 sm:flex-row">
-                            <Link
-                                href="/contact"
-                                className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:bg-blue-700 hover:shadow-xl"
-                            >
-                                無料相談を予約する
-                            </Link>
-                            <Link
-                                href="https://lin.ee/P0lR1LD"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-line px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-line-dark"
-                            >
-                                <MessageCircle className="h-4 w-4" />
-                                LINEで相談する
-                            </Link>
+                            {/* CTA */}
+                            <div className="space-y-3">
+                                <p className="text-center text-sm font-semibold text-white">
+                                    次のステップ
+                                </p>
+                                <div className="flex flex-col gap-3 sm:flex-row">
+                                    <Link
+                                        href="/contact"
+                                        className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-bold text-navy-800 shadow-lg transition-all hover:bg-navy-50 hover:shadow-xl"
+                                    >
+                                        学習カウンセリングに申し込む
+                                    </Link>
+                                    <Link
+                                        href="https://lin.ee/P0lR1LD"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-line px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-line-dark"
+                                    >
+                                        <MessageCircle className="h-4 w-4" />
+                                        LINEで相談する
+                                    </Link>
+                                </div>
+                                <button
+                                    onClick={handleReset}
+                                    className="mx-auto flex items-center gap-2 rounded-lg border-2 border-white/50 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm transition-all hover:bg-white/20"
+                                >
+                                    <RotateCcw className="h-4 w-4" />
+                                    もう一度診断する
+                                </button>
+                            </div>
                         </div>
-                        <button
-                            onClick={handleReset}
-                            className="mx-auto flex items-center gap-2 rounded-lg border border-navy-300 bg-white px-4 py-2 text-sm font-medium text-navy-700 transition-all hover:bg-navy-50"
-                        >
-                            <RotateCcw className="h-4 w-4" />
-                            もう一度診断する
-                        </button>
-                    </div>
+                    )}
                 </div>
-            )}
+            </div>
         </div>
     );
 }

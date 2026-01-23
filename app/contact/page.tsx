@@ -62,27 +62,6 @@ export default function ContactPage() {
           </div>
         </a>
       </section>
-
-      <section className="mt-8 rounded-lg border border-navy-100 bg-white p-4">
-        <h2 className="mb-3 text-sm font-semibold text-navy-800">診断でお伝えすること</h2>
-        <ul className="space-y-2 text-xs text-navy-600">
-          <li className="flex items-start gap-2">
-            <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-navy-400" />
-            現状の学習量と志望校に必要な水準の差
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-navy-400" />
-            優先すべき単元と、後回しでよい単元
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-navy-400" />
-            週単位の学習スケジュール案
-          </li>
-        </ul>
-        <p className="mt-3 text-xs text-navy-400">
-          ※ 無料診断後、入塾を強くお勧めすることはありません
-        </p>
-      </section>
     </div>
   );
 }
