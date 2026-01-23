@@ -1,8 +1,8 @@
 'use client';
 
-import { Header } from '@/components/layout/header';
 import { FloatingCTA } from '@/components/layout/floating-cta';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // ステップデータ
 const steps = [
@@ -13,7 +13,7 @@ const steps = [
         description: `LEFYは、お子様の現状の学力レベルや課題などを詳細に知ることなく、最適な指導はできないと考えています。そのため、約1-2時間の学習カウンセリングの時間を設けています。
 学習カウンセリングでのヒアリング内容、体験授業でのご様子を踏まえ、ご入塾後の学習内容をご提案させていただきます。`,
         bgColor: 'bg-white',
-        textColor: 'text-navy-800',
+        isDark: false,
     },
     {
         number: 2,
@@ -21,7 +21,7 @@ const steps = [
         subtitle: '（1コマ60〜80分）',
         description: '実際の授業を、受講検討科目の数だけご体験いただけます。',
         bgColor: 'bg-gradient-to-br from-sky-100 to-sky-200',
-        textColor: 'text-navy-800',
+        isDark: false,
     },
     {
         number: 3,
@@ -29,7 +29,7 @@ const steps = [
         subtitle: '',
         description: '',
         bgColor: 'bg-gradient-to-br from-sky-200 to-sky-300',
-        textColor: 'text-navy-800',
+        isDark: false,
     },
     {
         number: 4,
@@ -37,7 +37,7 @@ const steps = [
         subtitle: '',
         description: '',
         bgColor: 'bg-gradient-to-br from-sky-300 to-sky-400',
-        textColor: 'text-navy-800',
+        isDark: false,
     },
     {
         number: 5,
@@ -46,7 +46,7 @@ const steps = [
         description: `お手続きが完了しましたら、学習カウンセリング・体験授業での情報をもとに今後の学習計画を作成します。
 生徒の状況に応じて、学習計画シートを作成したり、毎回の講義の1週間前に次回講義の内容をメールでヒアリングする方法を取ったりなど、生徒一人ひとりに合わせた最適なプランをご提案します。`,
         bgColor: 'bg-gradient-to-br from-sky-400 to-navy-500',
-        textColor: 'text-navy-800',
+        isDark: true,
     },
     {
         number: 6,
@@ -54,14 +54,23 @@ const steps = [
         subtitle: '',
         description: '',
         bgColor: 'bg-navy-700',
-        textColor: 'text-white',
+        isDark: true,
     },
 ];
 
 export default function FlowPage() {
     return (
         <div className="min-h-screen bg-gray-50 pb-32">
-            <Header />
+            {/* ヒーロー画像バナー */}
+            <div className="relative h-32 w-full overflow-hidden md:h-48">
+                <Image
+                    src="/flow-hero.jpg"
+                    alt="LEFY教室の様子"
+                    fill
+                    className="object-cover object-center"
+                    priority
+                />
+            </div>
 
             <main className="mx-auto max-w-4xl px-4 pt-8">
                 {/* ページヘッダー */}
@@ -77,7 +86,7 @@ export default function FlowPage() {
                     {steps.map((step, index) => (
                         <div
                             key={step.number}
-                            className={`relative ${step.bgColor} ${step.textColor}`}
+                            className={`relative ${step.bgColor}`}
                             style={{
                                 clipPath: index < steps.length - 1
                                     ? 'polygon(0 0, 100% 0, 100% calc(100% - 20px), 50% 100%, 0 calc(100% - 20px))'
@@ -89,7 +98,7 @@ export default function FlowPage() {
                                 {/* ステップ番号 */}
                                 <div className="flex flex-col items-center">
                                     <span
-                                        className={`text-5xl font-light md:text-7xl ${step.number === 6 ? 'text-white/80' : 'text-navy-300'
+                                        className={`text-5xl font-light md:text-7xl ${step.isDark ? 'text-white/60' : 'text-navy-300'
                                             }`}
                                     >
                                         {step.number}
@@ -97,7 +106,7 @@ export default function FlowPage() {
                                     {/* 縦線 */}
                                     {index < steps.length - 1 && (
                                         <div
-                                            className={`mt-2 h-full w-0.5 ${step.number >= 5 ? 'bg-white/30' : 'bg-navy-200'
+                                            className={`mt-2 h-full w-0.5 ${step.isDark ? 'bg-white/30' : 'bg-navy-200'
                                                 }`}
                                             style={{ minHeight: '40px' }}
                                         />
@@ -106,18 +115,18 @@ export default function FlowPage() {
 
                                 {/* コンテンツ */}
                                 <div className="flex-1 pt-2">
-                                    <h2 className={`text-xl font-bold md:text-2xl ${step.number === 6 ? 'text-white' : 'text-navy-600'
+                                    <h2 className={`text-xl font-bold md:text-2xl ${step.isDark ? 'text-white' : 'text-navy-600'
                                         }`}>
                                         {step.title}
                                     </h2>
                                     {step.subtitle && (
-                                        <p className={`mt-1 text-lg ${step.number === 6 ? 'text-white/80' : 'text-navy-500'
+                                        <p className={`mt-1 text-lg ${step.isDark ? 'text-white/80' : 'text-navy-500'
                                             }`}>
                                             {step.subtitle}
                                         </p>
                                     )}
                                     {step.description && (
-                                        <p className={`mt-4 whitespace-pre-line text-sm leading-relaxed md:text-base ${step.number === 6 ? 'text-white/90' : 'text-navy-700'
+                                        <p className={`mt-4 whitespace-pre-line text-sm leading-relaxed md:text-base ${step.isDark ? 'text-white/90' : 'text-navy-700'
                                             }`}>
                                             {step.description}
                                         </p>
