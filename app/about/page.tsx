@@ -367,16 +367,44 @@ const consultationSteps = [
 // FAQ
 const faqs = [
   {
-    q: '大手塾に通っていますが、併用できますか？',
-    a: 'はい。SAPIX/グノーブル/日能研/四谷大塚/希学園/浜学園など、集団塾の学習サイクルに合わせて宿題・直し・優先順位を整えます。',
+    q: 'どのような先生が担当してくれるのですか？',
+    a: 'LEFYには、指導歴の長いプロ講師から、大学生講師まで幅広い講師が在籍しています。「年齢の高い先生は子供に合わないのかな…」「大学生で大丈夫？」と不安になられる親御様もいらっしゃいますが、LEFYのほとんどの塾生が楽しんで授業に取り組んでいますのでご安心ください。\n\n成績を伸ばすためには、塾生が授業を楽しみ、高いモチベーションで日々の勉強に取り組むことが最も重要です。これを最優先に意識し、最適な講師を手配します。\n\nまた、LEFYの講師採用ハードルは非常に高く、厳選された講師だけが在籍しています。プロ講師には、素晴らしい社会人経験と指導経験をもった講師、有名校の元講師が在籍しています。また、学生講師は東大～早慶以上の難関大生、そして難関中高出身者ばかりです。研修中、また実際に授業を担当後もフィードバックを行い、指導レベル向上に取り組んでいますので、ご安心ください。',
   },
   {
-    q: '集団塾に通っていなくても大丈夫ですか？',
-    a: 'もちろんです。LEFY中心でも、現状から逆算して合格までのルートを設計します。集団が合う・合わないは相性なので、お子さまに合う進め方を一緒に作ります。',
+    q: '最難関校を目指すような生徒さんだけが対象でしょうか？',
+    a: '様々な志望校を掛げる生徒が在籍しています。一人ひとりの目標、現在の学力レベル、課題などに応じた指導を行いますのでご安心ください。',
   },
   {
-    q: '宿題は増えますか？',
-    a: '増やすことが目的ではありません。目標と負担を見ながら「点数に直結する順」に整えます。結果的に、家庭学習が回りやすくなる形を目指します。',
+    q: '同じ先生に担当いただけるのですか？',
+    a: 'LEFYでは、専属アドバイザーと専属講師の2名以上担当制を取っており、同じアドバイザーと専属講師が担当します。やむを得ず専属アドバイザーや専属講師が変更となる場合もありますが、多くの場合は専属アドバイザーもしくは専属講師のどちらかは継続となりますので、ご安心ください。塾生の性格や勉強の習熟状況等を新しい担当者に細かく伝達します。',
+  },
+  {
+    q: '先生を変えることはできますか？',
+    a: 'もし塾生と相性が合わないようなことがあれば変更可能です。ご相談の上、変更させていただきますのでお申し付けください。',
+  },
+  {
+    q: '自習室を利用することはできますか？',
+    a: '空いている自習ブースを利用することができます。以下の時間帯で利用可能です。\n平日（月～金）13時～21時\n休日（土日）：13時～19時\n※ただし、休講日・休館日は終日ご利用になれません。休講日・休館日はLEFY所定の授業カレンダーに記載がございますので、ご面談の際にご案内いたします。',
+  },
+  {
+    q: '土日や祈祭日も授業がありますか？',
+    a: 'LEFYの通常授業は、土日も含め、曜日に関係なく受講可能です。所定の授業カレンダーで指定のとおり授業を行っていますので、詳細はご面談時にご案内いたします。',
+  },
+  {
+    q: '振替はできますか？',
+    a: '基本的には前日の18時までにご連絡いただければ振替可能です。',
+  },
+  {
+    q: '春期・夏期・冬期講習は必須ですか？',
+    a: '必須ではございません。春期・夏期・冬期講習よりも前の時期に、それまでの学習状況や目標を踏まえ、集中学習により効果が最も期待される内容を具体的にご提案します。その後、ご受講をご検討をいただきます。',
+  },
+  {
+    q: '子供の状況が気になるのですが、定期的な面談はありますか？',
+    a: '約2カ月に1度の頻度で指導報告面談を実施しています。2カ月間の学習状況や課題を保護者様にも共有させていただきます。',
+  },
+  {
+    q: '学校や他の塾の宿題でいっぱいいっぱいなのですが、宿題はたくさんでますか？',
+    a: 'LEFYはひとりひとりオーダーメイドの学習計画を作成しますので、宿題の有無や量はご希望に沿って対応いたします。',
   },
 ];
 
@@ -993,7 +1021,7 @@ export default function AboutPage() {
       {/* Section 6: Teachers */}
       <section className="mb-16">
         <div className="mb-6 text-center">
-          <h2 className="text-2xl font-bold text-navy-800 md:text-3xl">講師は「中学受験のプロ」と「最難関卒の伴走者」</h2>
+          <h2 className="text-2xl font-bold text-navy-800 md:text-3xl">講師は中学受験のプロと<br />最難関中高一貫卒業者のみ</h2>
           <div className="mx-auto mt-3 h-1 w-32 bg-navy-600"></div>
         </div>
         <p className="mb-4 text-sm leading-relaxed text-navy-700">
@@ -1158,40 +1186,27 @@ export default function AboutPage() {
               着実に伸びる勉強サイクルを今すぐ実現しましょう。
             </p>
 
-            {/* CTAボタン */}
-            <div className="mx-auto flex max-w-md flex-col gap-4">
+            {/* CTAボタン - コンパクト版 */}
+            <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
               <Link
                 href="/counseling"
-                className="flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-green-500 to-green-600 py-4 px-8 text-lg font-bold text-white shadow-xl transition-all hover:from-green-600 hover:to-green-700 hover:shadow-2xl"
+                className="flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-green-500 to-green-600 py-3 px-6 text-base font-bold text-white shadow-lg transition-all hover:from-green-600 hover:to-green-700"
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-sm font-bold text-green-600">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-xs font-bold text-green-600">
                   無料
                 </span>
                 学習相談に申し込む
-                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                </svg>
               </Link>
 
               <a
                 href="tel:04570755151"
-                className="relative flex flex-col items-center justify-center rounded-full bg-white py-4 px-8 shadow-xl transition-all hover:shadow-2xl"
+                className="flex items-center justify-center gap-2 rounded-lg bg-white py-3 px-6 text-base font-bold text-red-600 shadow-lg transition-all hover:bg-gray-50"
                 style={{ border: '2px solid #e5e7eb' }}
               >
-                <div className="absolute -top-3 rounded-full bg-red-600 px-4 py-1 text-xs font-bold text-white">
-                  21時までお気軽にお電話ください
-                </div>
-                <div className="mt-2 flex items-center gap-2">
-                  <svg className="h-6 w-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                  </svg>
-                  <span className="text-2xl font-bold tracking-wider text-red-600">
-                    045-7075-5151
-                  </span>
-                  <svg className="h-6 w-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                  </svg>
-                </div>
+                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                </svg>
+                045-7075-5151
               </a>
             </div>
           </div>
