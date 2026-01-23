@@ -616,14 +616,15 @@ export default function AboutPage() {
         <div className="space-y-12">
           {/* パターン1: LEFYを併用し、集団塾の偏差値UP */}
           <div className="relative mt-12 rounded-xl shadow-lg">
-            {/* パターンバッジとヘッダー */}
-            <div className="relative overflow-hidden rounded-t-xl bg-gradient-to-r from-navy-600 to-navy-700 px-6 pt-12 pb-5 md:px-8">
-              <div className="absolute -top-5 left-1/2 -translate-x-1/2">
-                <div className="rounded-full bg-yellow-400 px-5 py-1.5 text-sm font-bold text-navy-800 shadow-md">
-                  パターン1
-                </div>
+            {/* パターンバッジ - ヘッダーの外側に配置 */}
+            <div className="absolute -top-4 left-1/2 z-10 -translate-x-1/2">
+              <div className="rounded-full bg-yellow-400 px-5 py-1.5 text-sm font-bold text-navy-800 shadow-md">
+                パターン1
               </div>
-              <h3 className="mt-2 text-center text-xl font-bold text-white md:text-2xl">
+            </div>
+            {/* ヘッダー */}
+            <div className="overflow-hidden rounded-t-xl bg-gradient-to-r from-navy-600 to-navy-700 px-6 pt-8 pb-5 md:px-8">
+              <h3 className="text-center text-xl font-bold text-white md:text-2xl">
                 LEFYを併用し、集団塾の偏差値UP
               </h3>
             </div>
@@ -685,14 +686,15 @@ export default function AboutPage() {
 
           {/* パターン2: LEFYオーダーメイド受験 */}
           <div className="relative mt-12 rounded-xl shadow-lg">
-            {/* パターンバッジとヘッダー */}
-            <div className="relative overflow-hidden rounded-t-xl bg-gradient-to-r from-rose-600 to-rose-700 px-6 pt-12 pb-5 md:px-8">
-              <div className="absolute -top-5 left-1/2 -translate-x-1/2">
-                <div className="rounded-full bg-yellow-400 px-5 py-1.5 text-sm font-bold text-navy-800 shadow-md">
-                  パターン2
-                </div>
+            {/* パターンバッジ - ヘッダーの外側に配置 */}
+            <div className="absolute -top-4 left-1/2 z-10 -translate-x-1/2">
+              <div className="rounded-full bg-yellow-400 px-5 py-1.5 text-sm font-bold text-navy-800 shadow-md">
+                パターン2
               </div>
-              <h3 className="mt-2 text-center text-xl font-bold text-white md:text-2xl">
+            </div>
+            {/* ヘッダー */}
+            <div className="overflow-hidden rounded-t-xl bg-gradient-to-r from-rose-600 to-rose-700 px-6 pt-8 pb-5 md:px-8">
+              <h3 className="text-center text-xl font-bold text-white md:text-2xl">
                 LEFYオーダーメイド受験
               </h3>
             </div>
