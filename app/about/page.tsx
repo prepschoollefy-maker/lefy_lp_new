@@ -795,11 +795,22 @@ export default function AboutPage() {
           </p>
         </div>
 
+        {/* Hero Image */}
+        <div className="mb-10">
+          <Image
+            src="/strengths-hero.jpg"
+            alt="LEFY個別指導の様子"
+            width={1200}
+            height={600}
+            className="h-auto w-full object-cover"
+          />
+        </div>
+
         <div className="grid gap-6 md:grid-cols-3">
           {/* 強み1：ハイレベルな講師 */}
           <div className="border border-gray-200 bg-white p-6">
             <div className="mb-4 inline-block bg-red-600 px-3 py-1">
-              <span className="text-sm font-bold text-white">違い 1</span>
+              <span className="text-sm font-bold text-white">強み 1</span>
             </div>
 
             <h3 className="mb-4 text-lg font-bold text-navy-800">
@@ -818,7 +829,7 @@ export default function AboutPage() {
           {/* 強み2：生徒の発話、筆跡から理解を把握 */}
           <div className="border border-gray-200 bg-white p-6">
             <div className="mb-4 inline-block bg-red-600 px-3 py-1">
-              <span className="text-sm font-bold text-white">違い 2</span>
+              <span className="text-sm font-bold text-white">強み 2</span>
             </div>
 
             <h3 className="mb-4 text-lg font-bold text-navy-800">
@@ -837,7 +848,7 @@ export default function AboutPage() {
           {/* 強み3：自身も中学受験経験のあるプロがサポート */}
           <div className="border border-gray-200 bg-white p-6">
             <div className="mb-4 inline-block bg-red-600 px-3 py-1">
-              <span className="text-sm font-bold text-white">違い 3</span>
+              <span className="text-sm font-bold text-white">強み 3</span>
             </div>
 
             <h3 className="mb-4 text-lg font-bold text-navy-800">
