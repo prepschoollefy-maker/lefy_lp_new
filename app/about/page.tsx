@@ -883,7 +883,7 @@ export default function AboutPage() {
         </div>
 
         {/* 桜の画像 */}
-        <div className="mb-8 overflow-hidden rounded-xl shadow-lg">
+        <div className="mb-10">
           <Image
             src="/sakura-success.png"
             alt="合格おめでとうございます"

@@ -9,7 +9,7 @@ export function FloatingCTA() {
       <div className="mx-auto flex max-w-4xl items-stretch">
         {/* 体験授業 */}
         <Link
-          href="#"
+          href="/trial-lesson"
           className="flex flex-1 flex-col items-center justify-center gap-2 border-r border-white/20 py-4 px-2 text-center transition-all hover:bg-navy-700"
         >
           <GraduationCap className="h-6 w-6 text-white" />
