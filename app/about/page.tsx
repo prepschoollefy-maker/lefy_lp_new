@@ -881,6 +881,18 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold text-navy-800 md:text-4xl">合格者の声</h2>
           <div className="mx-auto mt-3 h-1 w-32 bg-navy-600"></div>
         </div>
+
+        {/* 桜の画像 */}
+        <div className="mb-8 overflow-hidden rounded-xl shadow-lg">
+          <Image
+            src="/sakura-success.png"
+            alt="合格おめでとうございます"
+            width={1200}
+            height={400}
+            className="h-auto w-full object-cover"
+          />
+        </div>
+
         <p className="mb-6 text-base text-navy-600">
           LEFYで夢を叶えた生徒と保護者の声をご紹介します。
         </p>
@@ -926,17 +938,6 @@ export default function AboutPage() {
                 </svg>
               </Link>
             </div>
-          </div>
-
-          {/* 桜の画像 */}
-          <div className="mt-8 overflow-hidden rounded-xl shadow-lg">
-            <Image
-              src="/sakura-success.png"
-              alt="合格おめでとうございます"
-              width={1200}
-              height={400}
-              className="h-auto w-full object-cover"
-            />
           </div>
         </div>
       </section>
