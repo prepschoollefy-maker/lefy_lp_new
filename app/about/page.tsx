@@ -877,17 +877,6 @@ export default function AboutPage() {
 
       {/* Section: 合格者の声 */}
       <section className="mb-20">
-        {/* 桜の画像 */}
-        <div className="mb-8 overflow-hidden rounded-xl shadow-lg">
-          <Image
-            src="/sakura-success.png"
-            alt="合格おめでとうございます"
-            width={1200}
-            height={400}
-            className="h-auto w-full object-cover"
-          />
-        </div>
-
         <div className="mb-8 text-center">
           <h2 className="text-3xl font-bold text-navy-800 md:text-4xl">合格者の声</h2>
           <div className="mx-auto mt-3 h-1 w-32 bg-navy-600"></div>
@@ -938,6 +927,17 @@ export default function AboutPage() {
               </Link>
             </div>
           </div>
+
+          {/* 桜の画像 */}
+          <div className="mt-8 overflow-hidden rounded-xl shadow-lg">
+            <Image
+              src="/sakura-success.png"
+              alt="合格おめでとうございます"
+              width={1200}
+              height={400}
+              className="h-auto w-full object-cover"
+            />
+          </div>
         </div>
       </section>
 
@@ -953,19 +953,21 @@ export default function AboutPage() {
           </p>
 
           {/* 年度選択ボタン */}
-          <div className="mb-6 flex justify-center gap-3">
-            {([2026, 2025, 2024, 2023] as const).map((year) => (
-              <button
-                key={year}
-                onClick={() => setSelectedYear(year)}
-                className={`rounded-lg px-6 py-2.5 text-base font-semibold transition-all ${selectedYear === year
-                  ? 'bg-rose-600 text-white shadow-md'
-                  : 'bg-white/70 text-rose-800 hover:bg-white'
-                  }`}
-              >
-                {year}年
-              </button>
-            ))}
+          <div className="mb-6 overflow-x-auto">
+            <div className="flex justify-center gap-3 min-w-max px-4">
+              {([2026, 2025, 2024, 2023] as const).map((year) => (
+                <button
+                  key={year}
+                  onClick={() => setSelectedYear(year)}
+                  className={`flex-shrink-0 rounded-lg px-6 py-2.5 text-base font-semibold transition-all ${selectedYear === year
+                    ? 'bg-rose-600 text-white shadow-md'
+                    : 'bg-white/70 text-rose-800 hover:bg-white'
+                    }`}
+                >
+                  {year}年
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* 選択された年度の合格校 - カテゴリ別表示 */}
