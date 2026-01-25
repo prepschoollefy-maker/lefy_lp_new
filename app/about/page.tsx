@@ -784,92 +784,73 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Section: LEFYの個別指導の強み - TOMAS風デザイン */}
+      {/* Section: LEFYの個別指導の強み - TOMASスタイル */}
       <section className="mb-20">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold text-navy-800 md:text-4xl">
+        <div className="mb-10 text-center">
+          <h2 className="mb-2 text-3xl font-bold text-navy-800 md:text-4xl">
             LEFYの個別指導の強み
           </h2>
-          <div className="mx-auto mt-3 h-1 w-32 bg-navy-600"></div>
-          <p className="mt-4 text-base text-navy-600">
+          <p className="text-base text-navy-600">
             完全1対1の"本物"の個別指導を追求しています
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-3">
           {/* 強み1：ハイレベルな講師 */}
-          <div className="group relative overflow-hidden rounded-2xl border-2 border-navy-100 bg-gradient-to-br from-white to-slate-50/50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl hover:border-navy-300">
-            {/* 番号バッジ */}
-            <div className="absolute -top-4 left-6 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-red-500 to-red-600 text-xl font-bold text-white shadow-lg">
-              1
+          <div className="border border-gray-200 bg-white p-6">
+            <div className="mb-4 inline-block bg-red-600 px-3 py-1">
+              <span className="text-sm font-bold text-white">違い 1</span>
             </div>
 
-            <div className="mt-6">
-              <h3 className="mb-4 text-xl font-bold text-navy-800">
-                ハイレベルな講師
-              </h3>
-              <div className="space-y-3 text-sm leading-relaxed text-navy-700">
-                <p>
-                  LEFYは品質の高い個別指導を作りたいという思いから創業された塾です。
-                </p>
-                <p>
-                  指導にあたる講師は経験豊富な社会人講師と、最難関中高大の大学生／大学院生のみ。指導力、ソフトスキルの両面を基準とし、<span className="font-bold text-red-600">LEFYの講師の採用率は20%未満</span>。
-                </p>
-              </div>
+            <h3 className="mb-4 text-lg font-bold text-navy-800">
+              ハイレベルな講師
+            </h3>
+            <div className="space-y-3 text-sm leading-relaxed text-navy-700">
+              <p>
+                LEFYは品質の高い個別指導を作りたいという思いから創業された塾です。
+              </p>
+              <p>
+                指導にあたる講師は経験豊富な社会人講師と、最難関中高大の大学生／大学院生のみ。指導力、ソフトスキルの両面を基準とし、<span className="font-bold text-red-600">LEFYの講師の採用率は20%未満</span>。
+              </p>
             </div>
-
-            {/* ホバー効果用の装飾 */}
-            <div className="absolute bottom-0 right-0 h-32 w-32 translate-x-8 translate-y-8 rounded-full bg-gradient-to-br from-red-100 to-red-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
           </div>
 
           {/* 強み2：生徒の発話、筆跡から理解を把握 */}
-          <div className="group relative overflow-hidden rounded-2xl border-2 border-navy-100 bg-gradient-to-br from-white to-slate-50/50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl hover:border-navy-300">
-            {/* 番号バッジ */}
-            <div className="absolute -top-4 left-6 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-red-500 to-red-600 text-xl font-bold text-white shadow-lg">
-              2
+          <div className="border border-gray-200 bg-white p-6">
+            <div className="mb-4 inline-block bg-red-600 px-3 py-1">
+              <span className="text-sm font-bold text-white">違い 2</span>
             </div>
 
-            <div className="mt-6">
-              <h3 className="mb-4 text-xl font-bold text-navy-800">
-                生徒の発話、筆跡から<br />理解を把握
-              </h3>
-              <div className="space-y-3 text-sm leading-relaxed text-navy-700">
-                <p>
-                  個別指導でも、先生が説明して終わりでは集団授業と何も変わりません。
-                </p>
-                <p>
-                  LEFYでは<span className="font-bold text-red-600">生徒からの発話や筆跡から理解状況把握</span>。これは中学受験に精通した講師にしかできません。
-                </p>
-              </div>
+            <h3 className="mb-4 text-lg font-bold text-navy-800">
+              生徒の発話、筆跡から理解を把握
+            </h3>
+            <div className="space-y-3 text-sm leading-relaxed text-navy-700">
+              <p>
+                個別指導でも、先生が説明して終わりでは集団授業と何も変わりません。
+              </p>
+              <p>
+                LEFYでは<span className="font-bold text-red-600">生徒からの発話や筆跡から理解状況把握</span>。これは中学受験に精通した講師にしかできません。
+              </p>
             </div>
-
-            {/* ホバー効果用の装飾 */}
-            <div className="absolute bottom-0 right-0 h-32 w-32 translate-x-8 translate-y-8 rounded-full bg-gradient-to-br from-red-100 to-red-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
           </div>
 
           {/* 強み3：自身も中学受験経験のあるプロがサポート */}
-          <div className="group relative overflow-hidden rounded-2xl border-2 border-navy-100 bg-gradient-to-br from-white to-slate-50/50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl hover:border-navy-300">
-            {/* 番号バッジ */}
-            <div className="absolute -top-4 left-6 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-red-500 to-red-600 text-xl font-bold text-white shadow-lg">
-              3
+          <div className="border border-gray-200 bg-white p-6">
+            <div className="mb-4 inline-block bg-red-600 px-3 py-1">
+              <span className="text-sm font-bold text-white">違い 3</span>
             </div>
 
-            <div className="mt-6">
-              <h3 className="mb-4 text-xl font-bold text-navy-800">
-                自身も中学受験経験の<br />あるプロがサポート
-              </h3>
-              <div className="space-y-3 text-sm leading-relaxed text-navy-700">
-                <p>
-                  中学受験の仕組みを知っていても、当事者として中身を知らない限り、浅はかなアドバイスとなります。
-                </p>
-                <p>
-                  LEFYでは、<span className="font-bold text-red-600">自身が中学受験を経験した講師が受験本番までサポート</span>します。
-                </p>
-              </div>
+            <h3 className="mb-4 text-lg font-bold text-navy-800">
+              自身も中学受験経験のあるプロがサポート
+            </h3>
+            <div className="space-y-3 text-sm leading-relaxed text-navy-700">
+              <p>
+                中学受験の仕組みを知っていても、当事者として中身を知らない限り、浅はかなアドバイスとなります。
+              </p>
+              <p>
+                LEFYでは、<span className="font-bold text-red-600">自身が中学受験を経験した講師が受験本番までサポート</span>します。
+              </p>
             </div>
-
-            {/* ホバー効果用の装飾 */}
-            <div className="absolute bottom-0 right-0 h-32 w-32 translate-x-8 translate-y-8 rounded-full bg-gradient-to-br from-red-100 to-red-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
           </div>
         </div>
       </section>
