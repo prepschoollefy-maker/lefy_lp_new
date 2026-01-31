@@ -1,9 +1,11 @@
 import { google } from 'googleapis';
-import path from 'path';
 
-// サービスアカウント認証
+// サービスアカウント認証（環境変数から）
 const auth = new google.auth.GoogleAuth({
-    keyFile: path.join(process.cwd(), 'lefy-lp-f519b691d0a6.json'),
+    credentials: {
+        client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+        private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+    },
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
 });
 
