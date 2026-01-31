@@ -201,9 +201,7 @@ export function JukenFlowDiagnosis() {
                                         前の質問に戻る
                                     </button>
                                 )}
-                            </div>
-                            <div className="rounded-lg border-2 border-yellow-200 bg-white p-4 text-center">
-                                <p className="text-sm text-navy-700">
+                                <p className="mt-4 text-center text-xs text-navy-500">
                                     選択肢をクリックすると、あなたに合った方針が表示されます
                                 </p>
                             </div>

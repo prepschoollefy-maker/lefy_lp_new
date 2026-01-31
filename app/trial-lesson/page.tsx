@@ -735,7 +735,7 @@ export default function CounselingPage() {
                     <p className="text-xs text-navy-600">
                         ※ 送信いただいた内容は、info@lefy.jp へ通知されます。<br />
                         ※ 3営業日以内に担当者よりご連絡させていただきます。<br />
-                        ※ 無料カウンセリング後、入塾を強くお勧めすることはありません。
+                        ※ 無料学習相談後、入塾を強くお勧めすることはありません。
                     </p>
                 </div>
             </section>

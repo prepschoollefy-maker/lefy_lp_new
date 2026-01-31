@@ -10,7 +10,7 @@ import { JukenFlowDiagnosis } from '@/components/lefy/juke-flow-diagnosis';
 
 // 大手塾名データ（市進を削除）
 const cramSchools = [
-  'SAPIX', 'Gnoble', '日能研', '四谷大塚', '希学園', '浜学園', '早稲アカ'
+  'SAPIX', 'Gnoble', '日能研', '四谷大塚', '早稲田アカデミー', '希学園', '浜学園'
 ];
 
 // 年度別・学校種別合格実績データ
@@ -396,7 +396,7 @@ const faqs = [
     a: '空いている自習ブースを利用することができます。以下の時間帯で利用可能です。\n平日（月～金）13時～21時\n休日（土日）：13時～19時\n※ただし、休講日・休館日は終日ご利用になれません。休講日・休館日はLEFY所定の授業カレンダーに記載がございますので、ご面談の際にご案内いたします。',
   },
   {
-    q: '土日や祈祭日も授業がありますか？',
+    q: '土日や祝祭日も授業がありますか？',
     a: 'LEFYの通常授業は、土日も含め、曜日に関係なく受講可能です。所定の授業カレンダーで指定のとおり授業を行っていますので、詳細はご面談時にご案内いたします。',
   },
   {
@@ -528,7 +528,7 @@ export default function AboutPage() {
         {/* 説明テキスト */}
         <div className="mb-6 space-y-3 text-base leading-relaxed text-navy-700">
           <p className="text-center">
-            <span className="font-semibold text-navy-800">SAPIX・グノーブル・日能研・四谷大塚・希学園・浜学園</span>
+            <span className="font-semibold text-navy-800">SAPIX・グノーブル・日能研・四谷大塚・早稲田アカデミー・希学園・浜学園</span>
             など、集団塾の学習サイクルに合わせます。
           </p>
           <p className="mx-auto max-w-2xl rounded-lg bg-navy-50 p-3 text-center text-base">
@@ -554,7 +554,7 @@ export default function AboutPage() {
           </Link>
 
           <a
-            href="tel:04570755151"
+            href="tel:0456209150"
             className="relative flex flex-col items-center justify-center rounded-full bg-white py-4 px-8 shadow-xl transition-all hover:shadow-2xl"
             style={{ border: '2px solid #e5e7eb' }}
           >
@@ -566,7 +566,7 @@ export default function AboutPage() {
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
               <span className="text-2xl font-bold tracking-wider text-red-600">
-                045-7075-5151
+                045-620-9150
               </span>
               <svg className="h-6 w-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
@@ -676,7 +676,7 @@ export default function AboutPage() {
                   </p>
 
                   <div className="mb-4 flex flex-wrap gap-2">
-                    {['SAPIX', 'Gnoble', '日能研', '四谷大塚', '希学園', '浜学園'].map((tag) => (
+                    {['SAPIX', 'Gnoble', '日能研', '四谷大塚', '早稲田アカデミー', '希学園', '浜学園'].map((tag) => (
                       <span
                         key={tag}
                         className="rounded-full bg-navy-600 px-3 py-1 text-xs font-semibold text-white"
@@ -1312,14 +1312,14 @@ export default function AboutPage() {
               </Link>
 
               <a
-                href="tel:04570755151"
+                href="tel:0456209150"
                 className="flex items-center justify-center gap-2 rounded-lg bg-white py-3 px-6 text-base font-bold text-red-600 shadow-lg transition-all hover:bg-gray-50"
                 style={{ border: '2px solid #e5e7eb' }}
               >
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
-                045-7075-5151
+                045-620-9150
               </a>
             </div>
           </div>
