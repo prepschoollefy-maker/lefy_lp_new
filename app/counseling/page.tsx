@@ -534,7 +534,7 @@ export default function CounselingPage() {
                         className="flex w-full items-center justify-center gap-2 rounded-lg bg-navy-600 px-6 py-4 text-base font-bold text-white shadow-lg transition-all hover:bg-navy-700 hover:shadow-xl disabled:opacity-50"
                     >
                         <Send className="h-5 w-5" />
-                        {isSubmitting ? '送信中...' : 'カウンセリングを申し込む'}
+                        {isSubmitting ? '送信中...' : '学習相談を申し込む'}
                     </button>
                 </form>
 
