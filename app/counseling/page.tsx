@@ -133,8 +133,7 @@ export default function CounselingPage() {
                 </h1>
                 <div className="mx-auto mt-3 h-1 w-32 bg-navy-600"></div>
                 <p className="mt-6 text-base text-navy-600">
-                    お子さまの学習状況や目標に合わせて、最適な学習プランをご提案いたします。<br />
-                    無料でご相談いただけますので、お気軽にお申し込みください。
+                    お通いの集団塾で偏差値を伸ばすため、志望校に合格するための地に足の着いた取り組みをご提案します。お気軽にお申し付けください。
                 </p>
             </section>
 
