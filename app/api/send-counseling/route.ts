@@ -101,7 +101,7 @@ export async function POST(request: Request) {
 
     // 管理者への通知メール
     const notificationData = await resend.emails.send({
-      from: 'LEFY LP <notice@send.lefy.jp>',
+      from: 'LEFY LP <onboarding@resend.dev>',
       to: process.env.NOTIFICATION_EMAIL || 'notice@lefy.jp',
       subject: '【LEFY LP】学習相談の申し込み',
       html: htmlContent,
@@ -159,7 +159,7 @@ export async function POST(request: Request) {
     `;
 
     const autoReplyData = await resend.emails.send({
-      from: 'LEFY <info@send.lefy.jp>',
+      from: 'LEFY <onboarding@resend.dev>',
       to: body.email,
       subject: '【LEFY】学習相談の申し込みを受け付けました',
       html: autoReplyHtml,
