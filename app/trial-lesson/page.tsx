@@ -506,19 +506,6 @@ export default function CounselingPage() {
                     </div>
 
                     {/* ご入塾後、ご通塾可能な曜日と時間帯 */}
-                    <div>
-                        <label className="mb-3 block text-sm font-bold text-navy-800">
-                            体験授業後のフィードバック <span className="text-red-600">*</span>
-                        </label>
-                        <select
-                            required
-                            className="w-full rounded-lg border-2 border-navy-200 px-4 py-3 text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
-                        >
-                            <option value="">選択してください</option>
-                        </select>
-                    </div>
-
-                    {/* ご入塾後、ご通塾可能な曜日と時間帯 */}
                     <div className="rounded-lg border-2 border-yellow-200 bg-yellow-50 p-4">
                         <p className="mb-4 text-sm text-navy-700">
                             ご入塾後、ご通塾可能な曜日と時間帯を複数ご選択ください。
