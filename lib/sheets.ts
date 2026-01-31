@@ -10,12 +10,19 @@ const getCredentials = () => {
     return JSON.parse(jsonString);
 };
 
-const auth = new google.auth.GoogleAuth({
-    credentials: getCredentials(),
-    scopes: ['https://www.googleapis.com/auth/spreadsheets'],
-});
+// 遅延初期化（ビルド時エラー回避）
+let sheetsClient: ReturnType<typeof google.sheets> | null = null;
 
-const sheets = google.sheets({ version: 'v4', auth });
+const getSheets = () => {
+    if (!sheetsClient) {
+        const auth = new google.auth.GoogleAuth({
+            credentials: getCredentials(),
+            scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+        });
+        sheetsClient = google.sheets({ version: 'v4', auth });
+    }
+    return sheetsClient;
+};
 
 /**
  * スプレッドシートに行を追加する
@@ -24,7 +31,7 @@ export async function appendRowToSheet(spreadsheetId: string, rowData: string[])
     try {
         console.log('[Sheets] Appending row to sheet:', spreadsheetId);
 
-        const response = await sheets.spreadsheets.values.append({
+        const response = await getSheets().spreadsheets.values.append({
             spreadsheetId,
             range: 'Sheet1!A:Z',
             valueInputOption: 'USER_ENTERED',
