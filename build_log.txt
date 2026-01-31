@@ -1,0 +1,45 @@
+﻿
+> nextjs@0.1.0 build
+> next build
+
+   Creating an optimized production build...
+node.exe : Failed to c
+ompile.
+発生場所 行:1 文字:1
++ & "C:\Program Files\
+nodejs/node.exe" "C:\P
+rogram Files\nodejs/no
+de_mo ...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (Failed to    
+ compile.:String)     
+[], RemoteExcepti    o
+n
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+
+./node_modules/resend/
+dist/index.mjs
+Module not found: Can'
+t resolve '@react-emai
+l/render'
+
+https://nextjs.org/doc
+s/messages/module-not-
+found
+
+Import trace for reque
+sted module:
+./app/api/send-counsel
+ing/route.ts
+
+
+> Build failed because
+ of webpack errors

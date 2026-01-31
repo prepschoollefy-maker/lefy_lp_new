@@ -1,0 +1,19 @@
+﻿c282b3b Fix: Update email sender domain to send.lefy.jp
+89209be Redesign floating CTA bar with modern glassmorphism and gradients
+1b41162 Update CTA section buttons to green counseling and phone buttons
+cd6e57c Add scroll indicator for year selection and new fields to trial lesson form
+eaf88f7 Link trial lesson button and update sakura image styling
+64ada2d Move sakura image to correct position and add trial lesson page
+4c2e473 Move sakura image to after testimonials and make year buttons scrollable
+df6d66e Update FAQ, add sakura image to testimonials, and add 2026 achievements
+e3afa79 fix: 譎る俣蜑ｲ縺ｮ繧ｵ繧､繧ｺ縺ｨ蜿ｯ隱ｭ諤ｧ繧呈隼蝟・fdd7a7d feat: 繝ｩ繝吶Ν繧・蠑ｷ縺ｿ'縺ｫ螟画峩縲√ヲ繝ｼ繝ｭ繝ｼ逕ｻ蜒剰ｿｽ蜉
+7a8ba2a fix: TOMAS繧ｹ繧ｿ繧､繝ｫ螳悟・貅匁侠 - 荳ｸ隗呈賜髯､縲∝屁隗偵Λ繝吶Ν菴ｿ逕ｨ
+082ffd7 fix: TOMAS繝・じ繧､繝ｳ縺ｫ蜷医ｏ縺帙※繧ｷ繝ｳ繝励Ν蛹・- 驕主ｺｦ縺ｪ陬・｣ｾ繧貞炎髯､
+26fc3de feat: 譎る俣蜑ｲ繝・じ繧､繝ｳ謾ｹ蝟・→LEFY蛟句挨謖・ｰ弱・蠑ｷ縺ｿ繧ｻ繧ｯ繧ｷ繝ｧ繝ｳ霑ｽ蜉
+1424e32 Adjust hero image size and position, add CTA button in step 1
+195756f Fix flow page: remove duplicate header, add hero image, fix step 5 text color
+60b2cb5 Add enrollment flow page with 6 steps and update floating CTA link
+7c9c059 Update FAQ content, instructor title, and resize bottom CTA section
+e66c085 Fix badge placement by moving outside overflow container, update floating CTA to navy
+594aed8 Fix badge overflow, update CTA text and phone number, update pattern content, add CTA to bottom
+eff5d82 Redesign CTA buttons and fix badge overflow completely

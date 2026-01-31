@@ -2,9 +2,10 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { appendRowToSheet, formatCounselingData } from '@/lib/sheets';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
+  // Initialize Resend client here to avoid build-time errors
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
   try {
     const body = await request.json();
 
@@ -53,6 +54,10 @@ export async function POST(request: Request) {
             <tr>
               <th>学年</th>
               <td>${body.grade}</td>
+            </tr>
+            <tr>
+              <th>学校名</th>
+              <td>${body.schoolName || '（記載なし）'}</td>
             </tr>
             <tr>
               <th>メールアドレス</th>

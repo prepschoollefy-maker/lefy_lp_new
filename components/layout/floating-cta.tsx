@@ -29,7 +29,7 @@ export function FloatingCTA() {
           <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-green-400 to-emerald-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
         </Link>
 
-        {/* 学習カウンセリング - グラデーション2 */}
+        {/* 学習相談 - グラデーション2 */}
         <Link
           href="/counseling"
           className="group flex flex-1 flex-col items-center justify-center gap-2 py-4 px-2 text-center transition-all duration-300 hover:scale-105 relative overflow-hidden"
@@ -43,8 +43,8 @@ export function FloatingCTA() {
           </div>
 
           {/* テキスト */}
-          <span className="relative z-10 text-xs font-bold text-white group-hover:text-blue-300 transition-colors duration-300 leading-tight">
-            学習<br />カウンセリング
+          <span className="relative z-10 text-xs font-bold text-white group-hover:text-blue-300 transition-colors duration-300">
+            学習相談
           </span>
 
           {/* 下線アニメーション */}

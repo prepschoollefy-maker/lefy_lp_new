@@ -1,0 +1,105 @@
+﻿
+> nextjs@0.1.0 build
+> next build
+
+   Creating an optimized production build...
+node.exe : Browserslis
+t: caniuse-lite is out
+dated. Please run:
+発生場所 行:1 文字:1
++ & "C:\Program Files\
+nodejs/node.exe" "C:\P
+rogram Files\nodejs/no
+de_mo ...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (Browsersli   
+ st: c...ed. Pleas    
+e run::String) []    ,
+ RemoteException
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+  npx update-browsersl
+ist-db@latest
+  Why you should do it
+ regularly: https://gi
+thub.com/browserslist/
+update-db#readme
+ 笨・Compiled successfully
+   Skipping linting
+   Checking validity of types...
+   Collecting page data...
+Error: Missing API key
+. Pass it to the const
+ructor `new Resend("re
+_123")`
+    at new U (C:\Users
+\koji0\OneDrive\繝・せ繧ｯ繝
+医ャ繝予lefy_lp\.next\serv
+er\chunks\249.js:32:16
+131)
+    at 10192 (C:\Users
+\koji0\OneDrive\繝・せ繧ｯ繝
+医ャ繝予lefy_lp\.next\serv
+er\app\api\send-trial-
+lesson\route.js:1:2111
+)
+    at t (C:\Users\koj
+i0\OneDrive\繝・せ繧ｯ繝医ャ繝予
+lefy_lp\.next\server\w
+ebpack-runtime.js:1:14
+3)
+    at r (C:\Users\koj
+i0\OneDrive\繝・せ繧ｯ繝医ャ繝予
+lefy_lp\.next\server\a
+pp\api\send-trial-less
+on\route.js:160:1316)
+    at C:\Users\koji0\
+OneDrive\繝・せ繧ｯ繝医ャ繝予lef
+y_lp\.next\server\app\
+api\send-trial-lesson\
+route.js:160:1347
+    at t.X (C:\Users\k
+oji0\OneDrive\繝・せ繧ｯ繝医ャ
+繝予lefy_lp\.next\server
+\webpack-runtime.js:1:
+1275)
+    at C:\Users\koji0\
+OneDrive\繝・せ繧ｯ繝医ャ繝予lef
+y_lp\.next\server\app\
+api\send-trial-lesson\
+route.js:160:1329
+    at Object.<anonymo
+us> (C:\Users\koji0\On
+eDrive\繝・せ繧ｯ繝医ャ繝予lefy_
+lp\.next\server\app\ap
+i\send-trial-lesson\ro
+ute.js:160:1375)
+    at Module._compile
+ (node:internal/module
+s/cjs/loader:1761:14)
+    at Object..js (nod
+e:internal/modules/cjs
+/loader:1893:10)
+
+> Build error occurred
+Error: Failed to colle
+ct page data for /api/
+send-trial-lesson
+    at C:\Users\koji0\
+OneDrive\繝・せ繧ｯ繝医ャ繝予lef
+y_lp\node_modules\next
+\dist\build\utils.js:1
+195:15
+    at process.process
+TicksAndRejections (no
+de:internal/process/ta
+sk_queues:103:5) {
+  type: 'Error'
+}

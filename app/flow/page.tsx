@@ -8,10 +8,10 @@ import Image from 'next/image';
 const steps = [
     {
         number: 1,
-        title: '学習カウンセリング',
+        title: '学習相談',
         subtitle: '（1-2 時間）',
-        description: `LEFYは、お子様の現状の学力レベルや課題などを詳細に知ることなく、最適な指導はできないと考えています。そのため、約1-2時間の学習カウンセリングの時間を設けています。
-学習カウンセリングでのヒアリング内容、体験授業でのご様子を踏まえ、ご入塾後の学習内容をご提案させていただきます。`,
+        description: `LEFYは、お子様の現状の学力レベルや課題などを詳細に知ることなく、最適な指導はできないと考えています。そのため、約1-2時間の学習相談の時間を設けています。
+学習相談でのヒアリング内容、体験授業でのご様子を踏まえ、ご入塾後の学習内容をご提案させていただきます。`,
         bgColor: 'bg-white',
         isDark: false,
         hasCTA: true,
@@ -47,7 +47,7 @@ const steps = [
         number: 5,
         title: '学習計画を検討、作成',
         subtitle: '',
-        description: `お手続きが完了しましたら、学習カウンセリング・体験授業での情報をもとに今後の学習計画を作成します。
+        description: `お手続きが完了しましたら、学習相談・体験授業での情報をもとに今後の学習計画を作成します。
 生徒の状況に応じて、学習計画シートを作成したり、毎回の講義の1週間前に次回講義の内容をメールでヒアリングする方法を取ったりなど、生徒一人ひとりに合わせた最適なプランをご提案します。`,
         bgColor: 'bg-gradient-to-br from-sky-400 to-navy-500',
         isDark: true,
@@ -160,7 +160,7 @@ export default function FlowPage() {
                 {/* CTA セクション */}
                 <div className="mt-12 rounded-2xl bg-navy-800 p-8 text-center">
                     <h3 className="mb-4 text-xl font-bold text-white">
-                        まずは学習カウンセリングから
+                        まずは学習相談から
                     </h3>
                     <p className="mb-6 text-sm text-white/80">
                         お子様の現状をヒアリングし、最適な学習プランをご提案します。

@@ -18,6 +18,8 @@ export default function CounselingPage() {
         relationship: '',
         relationshipOther: '',
         grade: '',
+        schoolName: '',
+        availableSchedule: {},
         firstChoiceDate: '',
         firstChoiceStartTime: '',
         firstChoiceEndTime: '',
@@ -320,6 +322,22 @@ export default function CounselingPage() {
                         </select>
                     </div>
 
+                    {/* 学校名 */}
+                    <div>
+                        <label htmlFor="schoolName" className="mb-2 block text-sm font-bold text-navy-800">
+                            学校名
+                        </label>
+                        <input
+                            type="text"
+                            id="schoolName"
+                            name="schoolName"
+                            value={formData.schoolName}
+                            onChange={handleChange}
+                            className="w-full rounded-lg border-2 border-navy-200 px-4 py-3 text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
+                            placeholder="例： 横浜市立○○小学校"
+                        />
+                    </div>
+
                     {/* 希望日入力の説明 */}
                     <div className="rounded-lg bg-blue-50 p-4">
                         <p className="text-sm text-navy-700">
@@ -521,6 +539,116 @@ export default function CounselingPage() {
                                 placeholder="ご指定内容をご記載ください。例：サピックスのデイリーサポート"
                             />
                         )}
+                    </div>
+
+                    {/* ご入塾後、ご通塾可能な曜日と時間帯 */}
+                    <div>
+                        <label className="mb-3 block text-sm font-bold text-navy-800">
+                            体験授業後のフィードバック <span className="text-red-600">*</span>
+                        </label>
+                        <select
+                            required
+                            className="w-full rounded-lg border-2 border-navy-200 px-4 py-3 text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
+                        >
+                            <option value="">選択してください</option>
+                        </select>
+                    </div>
+
+                    {/* ご入塾後、ご通塾可能な曜日と時間帯 */}
+                    <div className="rounded-lg border-2 border-yellow-200 bg-yellow-50 p-4">
+                        <p className="mb-4 text-sm text-navy-700">
+                            ご入塾後、ご通塾可能な曜日と時間帯を複数ご選択ください。
+                        </p>
+                        <p className="mb-4 text-xs text-blue-700">
+                            ※ご入塾後に担当する講師の体験授業を担当するためです
+                        </p>
+
+                        <div className="overflow-x-auto">
+                            <table className="w-full border-collapse text-sm">
+                                <thead>
+                                    <tr className="bg-blue-100">
+                                        <th className="border border-navy-200 px-2 py-2.5 text-left text-xs font-semibold text-navy-700 sm:px-3">時間帯</th>
+                                        <th className="border border-navy-200 px-2 py-2.5 text-center text-xs font-semibold text-navy-700 sm:px-3">月</th>
+                                        <th className="border border-navy-200 px-2 py-2.5 text-center text-xs font-semibold text-navy-700 sm:px-3">火</th>
+                                        <th className="border border-navy-200 px-2 py-2.5 text-center text-xs font-semibold text-navy-700 sm:px-3">水</th>
+                                        <th className="border border-navy-200 px-2 py-2.5 text-center text-xs font-semibold text-navy-700 sm:px-3">木</th>
+                                        <th className="border border-navy-200 px-2 py-2.5 text-center text-xs font-semibold text-navy-700 sm:px-3">金</th>
+                                        <th className="border border-navy-200 px-2 py-2.5 text-center text-xs font-semibold text-navy-700 sm:px-3">土</th>
+                                        <th className="border border-navy-200 px-2 py-2.5 text-center text-xs font-semibold text-navy-700 sm:px-3">日</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="bg-white">
+                                    {[
+                                        { time: '12:30-13:50', weekdays: false, sat: true, sun: true },
+                                        { time: '14:00-15:20', weekdays: false, sat: true, sun: true },
+                                        { time: '15:30-16:50', weekdays: true, sat: true, sun: true },
+                                        { time: '17:00-18:20', weekdays: true, sat: true, sun: true },
+                                        { time: '18:30-19:50', weekdays: true, sat: true, sun: true },
+                                        { time: '20:00-21:20', weekdays: true, sat: true, sun: false },
+                                    ].map((row, index) => (
+                                        <tr key={index} className="hover:bg-blue-50">
+                                            <td className="border border-navy-200 bg-gray-50 px-2 py-2.5 text-xs font-medium text-navy-700 sm:px-3">{row.time}</td>
+                                            {['月', '火', '水', '木', '金'].map((day) => {
+                                                const isDisabled = !row.weekdays;
+                                                const checkboxId = `schedule-${row.time}-${day}`;
+                                                return (
+                                                    <td key={day} className="border border-navy-200 px-2 py-2 text-center">
+                                                        {isDisabled ? (
+                                                            <span className="text-gray-400">×</span>
+                                                        ) : (
+                                                            <input
+                                                                type="checkbox"
+                                                                id={checkboxId}
+                                                                onChange={(e) => {
+                                                                    setFormData({
+                                                                        ...formData,
+                                                                        availableSchedule: {
+                                                                            ...formData.availableSchedule,
+                                                                            [checkboxId]: e.target.checked
+                                                                        }
+                                                                    });
+                                                                }}
+                                                                className="h-4 w-4 cursor-pointer rounded border-navy-300 text-navy-600 focus:ring-navy-500"
+                                                            />
+                                                        )}
+                                                    </td>
+                                                );
+                                            })}
+                                            {['土', '日'].map((day) => {
+                                                const isDisabled = (day === '土' && !row.sat) || (day === '日' && !row.sun);
+                                                const checkboxId = `schedule-${row.time}-${day}`;
+                                                return (
+                                                    <td key={day} className="border border-navy-200 px-2 py-2 text-center">
+                                                        {isDisabled ? (
+                                                            <span className="text-gray-400">×</span>
+                                                        ) : (
+                                                            <input
+                                                                type="checkbox"
+                                                                id={checkboxId}
+                                                                onChange={(e) => {
+                                                                    setFormData({
+                                                                        ...formData,
+                                                                        availableSchedule: {
+                                                                            ...formData.availableSchedule,
+                                                                            [checkboxId]: e.target.checked
+                                                                        }
+                                                                    });
+                                                                }}
+                                                                className="h-4 w-4 cursor-pointer rounded border-navy-300 text-navy-600 focus:ring-navy-500"
+                                                            />
+                                                        )}
+                                                    </td>
+                                                );
+                                            })}
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p className="mt-4 text-xs text-navy-600">
+                            体験授業の候補日を3つ教えてください。
+                        </p>
                     </div>
 
                     {/* メールアドレス */}

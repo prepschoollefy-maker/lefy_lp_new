@@ -67,7 +67,7 @@ export function formatTrialLessonData(body: {
     phone2: string;
     phone3: string;
     message?: string;
-    availableSlots?: string[];
+    availableSchedule?: { [key: string]: boolean };
     feedback?: string;
 }): string[] {
     const timestamp = new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' });
@@ -77,17 +77,13 @@ export function formatTrialLessonData(body: {
     const phone = `${body.phone1}-${body.phone2}-${body.phone3}`;
 
     // 通塾可能時間帯のフォーマット
-    const formatAvailableSlots = (slots: string[] | undefined) => {
-        if (!slots || slots.length === 0) return '';
-        const slotsByDay: { [key: string]: string[] } = {};
-        slots.forEach(slot => {
-            const [day, time] = slot.split('_');
-            if (!slotsByDay[day]) slotsByDay[day] = [];
-            slotsByDay[day].push(time);
-        });
-        return Object.entries(slotsByDay)
-            .map(([day, times]) => `${day}: ${times.join(', ')}`)
-            .join(' / ');
+    const formatAvailableSchedule = (scheduleObj: { [key: string]: boolean } | undefined) => {
+        if (!scheduleObj || Object.keys(scheduleObj).length === 0) return '';
+        const selectedSlots = Object.entries(scheduleObj)
+            .filter(([_, isSelected]) => isSelected)
+            .map(([slotId]) => slotId.replace('schedule-', ''))
+            .join(', ');
+        return selectedSlots || '';
     };
 
     return [
@@ -107,7 +103,7 @@ export function formatTrialLessonData(body: {
         body.subject || '',
         body.lessonContentPreference || '',
         body.lefyDecideDetails || body.specifyDetails || '',
-        formatAvailableSlots(body.availableSlots),
+        formatAvailableSchedule(body.availableSchedule),
         body.feedback || '',
         body.message || '',
     ];

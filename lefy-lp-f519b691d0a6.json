@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "lefy-lp",
+  "private_key_id": "f519b691d0a6da50edd9b38fc480066178bfab3e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCvjrfltfrUyeXx\nMP1muKR8+HflOwh+VYXKaGU1EVwZ7ukUZv0WYuZ/mjlsQ9cJRElGSYziHCa0cHh0\nQlMukRaB5Zz6RVHBittohrqKsFcUzOEz5PIqNL2OQQ48aCcIXhTQ7DMd4AY2rcYv\np3emMwZlS62LBqnXZXUibeywaiO34qGzYWMoRdkPt4EOsJNu82oSgSPzp0KlqDiu\npkWdFQWAN205FUOZu5DLLAXQRSWwdzmYVZtvWl74QBXXIbSgfSR12Bp3R/NW9TRK\nPZlO7rlLaBmvPJMvNDQ5tTgPanblRDEpE3aF+aEwIfIthNJj1Rdu1TRGHSuzB5aU\nIbk4ZKJlAgMBAAECggEAB4iz6qdDIvOhKxcjoM9mu7g8CPneFPHdooCVa1AZ6EEA\n/q+mx9mps6suMK++oDaugFYythdoL9Et0itwf2yZjyyH7pOf/RLU9Kjng4Eq04kx\nVvVJ0TbfNaYkEsKTfj/vW8HvNaaCDcGqYiwpLdg9u4YiZfd8vXIsszQNdsqvSrpc\nRyga/7DDmTGcCm8NJbSWa/2dgUWxs09elxQScgbCsPr/zZlcow8JJ9cxo9oTpi7n\nLCCjxA71jr4Np4CanYTbijmRohPXsea+P6xHLetSyF09/U3KuOdXk7acNkpw8qB8\niyEp+AObzRroIMpNMtMRNgC3vQ+WHh0kTqrLxDW4QQKBgQDwzAkLJieDtK2c/rKi\neoAYrldS6EFUSWkhqsnKMNymi88oAfcUUY8FVHHMn2v7hYwXV2TeemNYlr6g9J8B\nrzGvS13j24V9CyKsL8w60GSYOLPSTfiqmCfZLusuAhBH2Xjg+xwuxG37ZmZfVj4j\nr3bIuRVxw6MJX1lxZIVQoOf/IQKBgQC6pDoQkwwl79dOgk63UH+A2iuXh1oxFEl5\nu8HD0mteekidRTYaIGGup7YJw5oWEtafFn7hB3esnVe7d6wmHreh2a9twSwF6DRG\nntUNSNYRoLJVzYK2JVsLzWCwFfCfLeNT2vr1LsPe4pAW2ckeSU1UHpFRBm4DCuJm\nMXev6DmOxQKBgCBerVCMXn98CGK0cnsZEKNAvIhupGmaPMHD3cCKdP8GiGCOcxKO\nLDXBNlMVk0SKnVx96RdnSHeePB4TBFULohg4f3SkC/vVRWH0QvYdEYjNBo9c3/K+\n5YxynDbhHCMsfu1vlEhNK6PCDjz+sPfHHKa7CsDyVbZq1PFDXBCMsONBAoGANToU\nnRlyg3cszeT3kevREOwnNmWRYSHJ+n+DONdPa3gwMTnFvhmyAd8uWQaBcP4aWvBN\natt4U6/jj0EHxS9Ja0zrbL+EUILyNZmiZNF6yzgq47FiL5PjrS/6/PykzKCHjiiL\nHVUi4vN16C5f3tVEylKVWqgcw51dB4vf+DigAYkCgYEAkZLiTIuBTmpavlxf7Y9J\nZ0H9FxpTlKraOpSOMKczFZ2An8piWbcWl/yg2XKtQlw1vO+N4ZKTjSaPcVPdYI+g\nmsmhmuxb791uMH2bbDd8RCCIDEoJ6wGZ3gs0e6ee79bgYRX2857oNN11UIgPrhB0\nqTF42jBAx28olA+LqoSLaEw=\n-----END PRIVATE KEY-----\n",
+  "client_email": "lefy-lp-sheets@lefy-lp.iam.gserviceaccount.com",
+  "client_id": "111493611970509985532",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/lefy-lp-sheets%40lefy-lp.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

@@ -2,26 +2,23 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { appendRowToSheet, formatTrialLessonData } from '@/lib/sheets';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
+  // Initialize Resend client here to avoid build-time errors
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
   try {
     const body = await request.json();
 
     // 通塾可能時間帯のフォーマット
-    const formatAvailableSlots = (slots: string[]) => {
-      if (!slots || slots.length === 0) return '（選択なし）';
+    const formatAvailableSchedule = (scheduleObj: { [key: string]: boolean }) => {
+      if (!scheduleObj || Object.keys(scheduleObj).length === 0) return '（選択なし）';
 
-      const slotsByDay: { [key: string]: string[] } = {};
-      slots.forEach(slot => {
-        const [day, time] = slot.split('_');
-        if (!slotsByDay[day]) slotsByDay[day] = [];
-        slotsByDay[day].push(time);
-      });
+      const selectedSlots = Object.entries(scheduleObj)
+        .filter(([_, isSelected]) => isSelected)
+        .map(([slotId]) => slotId.replace('schedule-', ''))
+        .join(', ');
 
-      return Object.entries(slotsByDay)
-        .map(([day, times]) => `${day}: ${times.join(', ')}`)
-        .join(' / ');
+      return selectedSlots || '（選択なし）';
     };
 
     // 電話番号のフォーマット
@@ -71,6 +68,10 @@ export async function POST(request: Request) {
               <td>${body.grade}</td>
             </tr>
             <tr>
+              <th>学校名</th>
+              <td>${body.schoolName || '（記載なし）'}</td>
+            </tr>
+            <tr>
               <th>メールアドレス</th>
               <td>${body.email}</td>
             </tr>
@@ -110,7 +111,7 @@ export async function POST(request: Request) {
           <h3 style="color: #1e3a8a; margin-top: 30px;">通塾可能時間帯</h3>
           <table>
             <tr>
-              <td colspan="2">${formatAvailableSlots(body.availableSlots || [])}</td>
+              <td colspan="2">${formatAvailableSchedule(body.availableSchedule || {})}</td>
             </tr>
           </table>
 

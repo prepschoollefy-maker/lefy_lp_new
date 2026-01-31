@@ -50,7 +50,7 @@ const webPages = [
   {
     title: '授業料／システム',
     summary: '単純明快なシステム。思わぬ追加費用や押し売りはありません。',
-    points: ['料金の目安が分かる', '時間割'],
+    points: ['料金の目安が分かる', '時間割', '教室風景'],
     readTime: '1分',
     href: '/pricing',
     icon: Coins,

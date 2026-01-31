@@ -1,0 +1,75 @@
+﻿
+> nextjs@0.1.0 build
+> next build
+
+   Creating an optimized production build...
+node.exe : Browserslis
+t: caniuse-lite is out
+dated. Please run:
+発生場所 行:1 文字:1
++ & "C:\Program Files\
+nodejs/node.exe" "C:\P
+rogram Files\nodejs/no
+de_mo ...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (Browsersli   
+ st: c...ed. Pleas    
+e run::String) []    ,
+ RemoteException
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+  npx update-browsersl
+ist-db@latest
+  Why you should do it
+ regularly: https://gi
+thub.com/browserslist/
+update-db#readme
+ 笨・Compiled successfully
+   Skipping linting
+   Checking validity of types...
+   Collecting page data...
+   Generating static pages (0/15)...
+
+   Generating static pages (3/15)
+
+
+   Generating static pages (7/15)
+
+
+   Generating static pages (11/15)
+
+
+ 笨・Generating static pages (15/15)
+   Finalizing page optimization...
+
+Route (app)                              Size     First Load JS
+笏・笳・/                                    187 B          86.2 kB
+笏・笳・/_not-found                          872 B          80.2 kB
+笏・笳・/about                               20.8 kB         113 kB
+笏・ﾎｻ /api/send-counseling                 0 B                0 B
+笏・ﾎｻ /api/send-trial-lesson               0 B                0 B
+笏・笳・/contact                             187 B          86.2 kB
+笏・笳・/counseling                          5.01 kB          91 kB
+笏・笳・/flow                                3.13 kB        95.4 kB
+笏・笳・/line                                187 B          86.2 kB
+笏・笳・/pricing                             17 kB           103 kB
+笏・笳・/privacy                             187 B          86.2 kB
+笏・笳・/trial-lesson                        5.39 kB        91.4 kB
+笏・笳・/why-private                         187 B          86.2 kB
++ First Load JS shared by all            79.3 kB
+  笏・chunks/864-5d64a529544a6902.js       26.5 kB
+  笏・chunks/fd9d1056-d63624a1d4a86408.js  50.9 kB
+  笏・chunks/main-app-15a48b6b92dee529.js  219 B
+  笏・chunks/webpack-a4330b2984cea93a.js   1.68 kB
+
+
+ﾎｻ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
+笳・ (Static)  automatically rendered as static HTML (uses no initial props)
+

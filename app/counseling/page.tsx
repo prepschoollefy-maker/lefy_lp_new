@@ -18,6 +18,7 @@ export default function CounselingPage() {
         relationship: '',
         relationshipOther: '',
         grade: '',
+        schoolName: '',
         firstChoiceDate: '',
         firstChoiceStartTime: '',
         firstChoiceEndTime: '',
@@ -106,7 +107,7 @@ export default function CounselingPage() {
                     <CheckCircle className="mx-auto mb-4 h-16 w-16 text-green-600" />
                     <h2 className="mb-3 text-2xl font-bold text-navy-800">お申し込みありがとうございます</h2>
                     <p className="mb-6 text-navy-600">
-                        学習カウンセリングのお申し込みを受け付けました。<br />
+                        学習相談のお申し込みを受け付けました。<br />
                         担当者より3営業日以内にご連絡させていただきます。
                     </p>
                     <Link
@@ -134,7 +135,7 @@ export default function CounselingPage() {
             {/* ヘッダー */}
             <section className="mb-8 text-center">
                 <h1 className="mb-3 text-3xl font-bold text-navy-800 md:text-4xl">
-                    学習カウンセリング
+                    学習相談
                 </h1>
                 <div className="mx-auto mt-3 h-1 w-32 bg-navy-600"></div>
                 <p className="mt-6 text-base text-navy-600">
@@ -314,6 +315,22 @@ export default function CounselingPage() {
                             <option value="高校3年生">高校3年生</option>
                             <option value="その他">その他</option>
                         </select>
+                    </div>
+
+                    {/* 学校名 */}
+                    <div>
+                        <label htmlFor="schoolName" className="mb-2 block text-sm font-bold text-navy-800">
+                            学校名
+                        </label>
+                        <input
+                            type="text"
+                            id="schoolName"
+                            name="schoolName"
+                            value={formData.schoolName}
+                            onChange={handleChange}
+                            className="w-full rounded-lg border-2 border-navy-200 px-4 py-3 text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
+                            placeholder="例： 横浜市立○○小学校"
+                        />
                     </div>
 
                     {/* 希望日入力の説明 */}

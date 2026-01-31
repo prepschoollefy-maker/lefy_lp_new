@@ -1,0 +1,88 @@
+﻿
+> nextjs@0.1.0 build
+> next build
+
+   Creating an optimized production build...
+node.exe : Browserslist: cani
+use-lite is outdated. Please 
+run:
+発生場所 行:1 文字:1
++ & "C:\Program Files\nodejs/
+node.exe" "C:\Program Files\n
+odejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (Browser  
+  slist: c...ed. Please ru   
+ n::String) [], RemoteExc    
+eption
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+  npx update-browserslist-db@
+latest
+  Why you should do it regula
+rly: https://github.com/brows
+erslist/update-db#readme
+ 笨・Compiled successfully
+   Skipping linting
+   Checking validity of types...
+   Collecting page data...
+Error: Missing API key. Pass 
+it to the constructor `new Re
+send("re_123")`
+    at new U (C:\Users\koji0\
+OneDrive\繝・せ繧ｯ繝医ャ繝予lefy_lp\.n
+ext\server\chunks\249.js:32:1
+6131)
+    at 10192 (C:\Users\koji0\
+OneDrive\繝・せ繧ｯ繝医ャ繝予lefy_lp\.n
+ext\server\app\api\send-trial
+-lesson\route.js:1:2111)
+    at t (C:\Users\koji0\OneD
+rive\繝・せ繧ｯ繝医ャ繝予lefy_lp\.next\
+server\webpack-runtime.js:1:1
+43)
+    at r (C:\Users\koji0\OneD
+rive\繝・せ繧ｯ繝医ャ繝予lefy_lp\.next\
+server\app\api\send-trial-les
+son\route.js:160:1316)
+    at C:\Users\koji0\OneDriv
+e\繝・せ繧ｯ繝医ャ繝予lefy_lp\.next\ser
+ver\app\api\send-trial-lesson
+\route.js:160:1347
+    at t.X (C:\Users\koji0\On
+eDrive\繝・せ繧ｯ繝医ャ繝予lefy_lp\.nex
+t\server\webpack-runtime.js:1
+:1275)
+    at C:\Users\koji0\OneDriv
+e\繝・せ繧ｯ繝医ャ繝予lefy_lp\.next\ser
+ver\app\api\send-trial-lesson
+\route.js:160:1329
+    at Object.<anonymous> (C:
+\Users\koji0\OneDrive\繝・せ繧ｯ繝医
+ャ繝予lefy_lp\.next\server\app\a
+pi\send-trial-lesson\route.js
+:160:1375)
+    at Module._compile (node:
+internal/modules/cjs/loader:1
+761:14)
+    at Object..js (node:inter
+nal/modules/cjs/loader:1893:1
+0)
+
+> Build error occurred
+Error: Failed to collect page
+ data for /api/send-trial-les
+son
+    at C:\Users\koji0\OneDriv
+e\繝・せ繧ｯ繝医ャ繝予lefy_lp\node_modu
+les\next\dist\build\utils.js:
+1195:15
+    at process.processTicksAn
+dRejections (node:internal/pr
+ocess/task_queues:103:5) {
+  type: 'Error'
+}

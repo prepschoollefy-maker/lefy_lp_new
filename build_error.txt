@@ -1,0 +1,49 @@
+﻿
+> nextjs@0.1.0 build
+> next build
+
+   Creating an optimized production build...
+node.exe : Failed to c
+ompile.
+発生場所 行:1 文字:1
++ & "C:\Program Files\
+nodejs/node.exe" "C:\P
+rogram Files\nodejs/no
+de_mo ...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo    
+          : NotSpecifi
+ed    : (Failed to com
+pil    e.:String) [], 
+Remo    teException
+    + FullyQualifiedEr
+r    orId : NativeComm
+an    dError
+ 
+
+./app/api/send-counsel
+ing/route.ts
+Module not found: Can'
+t resolve '@/lib/sheet
+s'
+
+https://nextjs.org/doc
+s/messages/module-not-
+found
+
+./app/api/send-trial-l
+esson/route.ts
+Module not found: Can'
+t resolve '@/lib/sheet
+s'
+
+https://nextjs.org/doc
+s/messages/module-not-
+found
+
+
+> Build failed because
+ of webpack errors

@@ -117,6 +117,21 @@ export default function PricingPage() {
       </section>
 
       <section className="mb-10">
+        <SectionHeader title="教室風景" />
+        <div className="overflow-hidden rounded-xl border border-navy-100 bg-white shadow-sm">
+          <video
+            controls
+            className="w-full"
+            preload="metadata"
+          >
+            <source src="/classroom-tour.mov" type="video/quicktime" />
+            <source src="/classroom-tour.mov" type="video/mp4" />
+            お使いのブラウザは動画タグをサポートしていません。
+          </video>
+        </div>
+      </section>
+
+      <section className="mb-10">
         <SectionHeader title="よくある質問" />
         <Accordion type="single" collapsible className="rounded-lg border border-navy-100 bg-white">
           {faqs.map((faq, index) => (

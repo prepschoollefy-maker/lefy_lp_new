@@ -238,7 +238,7 @@ export function JukenFlowDiagnosis() {
                                         href="/contact"
                                         className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-bold text-navy-800 shadow-lg transition-all hover:bg-navy-50 hover:shadow-xl"
                                     >
-                                        学習カウンセリングに申し込む
+                                        学習相談に申し込む
                                     </Link>
                                     <Link
                                         href="https://lin.ee/P0lR1LD"

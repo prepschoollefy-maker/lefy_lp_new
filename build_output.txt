@@ -1,0 +1,49 @@
+﻿
+> nextjs@0.1.0 build
+> next build
+
+   Creating an optimized production build...
+node.exe : Failed to compile.
+発生場所 行:1 文字:1
++ & "C:\Program Files\nodejs/
+node.exe" "C:\Program Files\n
+odejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (Failed   
+  to compile.:String) [],    
+ RemoteException
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+
+./lib/sheets.ts
+Module not found: Can't resol
+ve 'googleapis'
+
+https://nextjs.org/docs/messa
+ges/module-not-found
+
+Import trace for requested mo
+dule:
+./app/api/send-counseling/rou
+te.ts
+
+./node_modules/resend/dist/in
+dex.mjs
+Module not found: Can't resol
+ve '@react-email/render'
+
+https://nextjs.org/docs/messa
+ges/module-not-found
+
+Import trace for requested mo
+dule:
+./app/api/send-counseling/rou
+te.ts
+
+
+> Build failed because of web
+pack errors
