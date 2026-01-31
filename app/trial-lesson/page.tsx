@@ -37,6 +37,7 @@ export default function CounselingPage() {
         phone1: '',
         phone2: '',
         phone3: '',
+        feedback: '',
         message: '',
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -612,6 +613,28 @@ export default function CounselingPage() {
                         <p className="mt-4 text-xs text-navy-600">
                             体験授業の候補日を3つ教えてください。
                         </p>
+                    </div>
+
+                    {/* 体験授業後のフィードbackック */}
+                    <div className="rounded-lg bg-blue-50 p-4">
+                        <p className="mb-4 text-sm text-navy-700">
+                            体験授業は80分です。体験授業終了後、5分～10分ほどで体験授業時のお子様の様子、およびそれを踏まえた今後の学習の進め方等についてお話しします。以下から必要・不要をご選択ください。
+                        </p>
+                        <label htmlFor="feedback" className="mb-2 block text-sm font-bold text-navy-800">
+                            体験授業後のフィードバック <span className="text-red-600">*</span>
+                        </label>
+                        <select
+                            id="feedback"
+                            name="feedback"
+                            value={formData.feedback}
+                            onChange={handleChange}
+                            required
+                            className="w-full rounded-lg border-2 border-navy-200 px-4 py-3 text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
+                        >
+                            <option value="">選択してください</option>
+                            <option value="必要">必要</option>
+                            <option value="不要">不要</option>
+                        </select>
                     </div>
 
                     {/* メールアドレス */}
