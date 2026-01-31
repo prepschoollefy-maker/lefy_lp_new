@@ -15,8 +15,7 @@ export default function CounselingPage() {
         parentFirstName: '',
         parentLastNameKana: '',
         parentFirstNameKana: '',
-        relationship: '',
-        relationshipOther: '',
+
         grade: '',
         schoolName: '',
         availableSchedule: {},
@@ -63,11 +62,6 @@ export default function CounselingPage() {
         }
         setEmailError('');
 
-        // その他選択時の関係入力チェック
-        if (formData.relationship === 'その他' && !formData.relationshipOther.trim()) {
-            alert('「その他」を選択した場合は、生徒との関係を入力してください');
-            return;
-        }
 
         setIsSubmitting(true);
 
@@ -260,37 +254,6 @@ export default function CounselingPage() {
                         </div>
                     </div>
 
-                    {/* 生徒との関係 */}
-                    <div>
-                        <label htmlFor="relationship" className="mb-2 block text-sm font-bold text-navy-800">
-                            生徒との関係 <span className="text-red-600">*</span>
-                        </label>
-                        <select
-                            id="relationship"
-                            name="relationship"
-                            value={formData.relationship}
-                            onChange={handleChange}
-                            required
-                            className="w-full rounded-lg border-2 border-navy-200 px-4 py-3 text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
-                        >
-                            <option value="">選択してください</option>
-                            <option value="本人">本人</option>
-                            <option value="親">親</option>
-                            <option value="兄弟">兄弟</option>
-                            <option value="その他">その他</option>
-                        </select>
-                        {formData.relationship === 'その他' && (
-                            <input
-                                type="text"
-                                name="relationshipOther"
-                                value={formData.relationshipOther}
-                                onChange={handleChange}
-                                required
-                                className="mt-3 w-full rounded-lg border-2 border-navy-200 px-4 py-3 text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
-                                placeholder="生徒との関係を入力してください"
-                            />
-                        )}
-                    </div>
 
                     {/* 学年 */}
                     <div>

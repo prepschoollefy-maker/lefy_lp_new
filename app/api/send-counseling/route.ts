@@ -3,7 +3,6 @@ import { Resend } from 'resend';
 import { appendRowToSheet, formatCounselingData } from '@/lib/sheets';
 
 export async function POST(request: Request) {
-  // Initialize Resend client here to avoid build-time errors
   const resend = new Resend(process.env.RESEND_API_KEY);
 
   try {

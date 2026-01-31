@@ -71,9 +71,6 @@ export function formatTrialLessonData(body: {
     feedback?: string;
 }): string[] {
     const timestamp = new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' });
-    const relationship = body.relationship === 'その他'
-        ? body.relationshipOther || 'その他'
-        : body.relationship;
     const phone = `${body.phone1}-${body.phone2}-${body.phone3}`;
 
     // 通塾可能時間帯のフォーマット
@@ -87,25 +84,31 @@ export function formatTrialLessonData(body: {
     };
 
     return [
-        timestamp,
-        `${body.studentLastName} ${body.studentFirstName}`,
-        `${body.studentLastNameKana} ${body.studentFirstNameKana}`,
-        `${body.parentLastName} ${body.parentFirstName}`,
-        `${body.parentLastNameKana} ${body.parentFirstNameKana}`,
-        relationship,
-        body.grade,
-        body.schoolName || '',
-        body.email,
-        phone,
-        `${body.firstChoiceDate} ${body.firstChoiceStartTime}〜${body.firstChoiceEndTime}`,
-        `${body.secondChoiceDate} ${body.secondChoiceStartTime}〜${body.secondChoiceEndTime}`,
-        `${body.thirdChoiceDate} ${body.thirdChoiceStartTime}〜${body.thirdChoiceEndTime}`,
-        body.subject || '',
-        body.lessonContentPreference || '',
-        body.lefyDecideDetails || body.specifyDetails || '',
-        formatAvailableSchedule(body.availableSchedule),
-        body.feedback || '',
-        body.message || '',
+        timestamp,  // A列: 申込時刻
+        body.studentLastName,  // B列: 生徒姓
+        body.studentFirstName,  // C列: 生徒名
+        body.studentLastNameKana,  // D列: 生徒姓(かな)
+        body.studentFirstNameKana,  // E列: 生徒名(かな)
+        body.parentLastName,  // F列: 保護者姓
+        body.parentFirstName,  // G列: 保護者名
+        body.parentLastNameKana,  // H列: 保護者姓(かな)
+        body.parentFirstNameKana,  // I列: 保護者名(かな)
+        body.grade,  // J列: 学年
+        body.schoolName || '',  // K列: 学校名
+        body.email,  // L列: メールアドレス
+        phone,  // M列: 電話番号
+        body.subject || '',  // N列: 希望科目
+        body.lessonContentPreference || '',  // O列: 授業内容
+        formatAvailableSchedule(body.availableSchedule),  // P列: 連絡可能時間帯
+        body.feedback || '',  // Q列: フィードバック
+        body.firstChoiceDate,  // R列: 第1希望日
+        `${body.firstChoiceStartTime}〜${body.firstChoiceEndTime}`,  // S列: 第1希望時間
+        body.secondChoiceDate,  // T列: 第2希望日
+        `${body.secondChoiceStartTime}〜${body.secondChoiceEndTime}`,  // U列: 第2希望時間
+        body.thirdChoiceDate,  // V列: 第3希望日
+        `${body.thirdChoiceStartTime}〜${body.thirdChoiceEndTime}`,  // W列: 第3希望時間
+        body.message || '',  // X列: その他要望
+        body.lefyDecideDetails || body.specifyDetails || '',  // Y列: 授業内容詳細
     ];
 }
 
@@ -141,25 +144,28 @@ export function formatCounselingData(body: {
     message?: string;
 }): string[] {
     const timestamp = new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' });
-    const relationship = body.relationship === 'その他'
-        ? body.relationshipOther || 'その他'
-        : body.relationship;
     const phone = `${body.phone1}-${body.phone2}-${body.phone3}`;
 
     return [
-        timestamp,
-        `${body.studentLastName} ${body.studentFirstName}`,
-        `${body.studentLastNameKana} ${body.studentFirstNameKana}`,
-        `${body.parentLastName} ${body.parentFirstName}`,
-        `${body.parentLastNameKana} ${body.parentFirstNameKana}`,
-        relationship,
-        body.grade,
-        body.schoolName || '',
-        body.email,
-        phone,
-        `${body.firstChoiceDate} ${body.firstChoiceStartTime}〜${body.firstChoiceEndTime}`,
-        `${body.secondChoiceDate} ${body.secondChoiceStartTime}〜${body.secondChoiceEndTime}`,
-        `${body.thirdChoiceDate} ${body.thirdChoiceStartTime}〜${body.thirdChoiceEndTime}`,
-        body.message || '',
+        timestamp,  // A列: 申込時刻
+        body.studentLastName,  // B列: 生徒姓
+        body.studentFirstName,  // C列: 生徒名
+        body.studentLastNameKana,  // D列: 生徒姓(かな)
+        body.studentFirstNameKana,  // E列: 生徒名(かな)
+        body.parentLastName,  // F列: 保護者姓
+        body.parentFirstName,  // G列: 保護者名
+        body.parentLastNameKana,  // H列: 保護者姓(かな)
+        body.parentFirstNameKana,  // I列: 保護者名(かな)
+        body.grade,  // J列: 学年
+        body.schoolName || '',  // K列: 学校名
+        body.email,  // L列: メールアドレス
+        phone,  // M列: 連絡先番号
+        body.firstChoiceDate,  // N列: 第1希望日
+        `${body.firstChoiceStartTime}〜${body.firstChoiceEndTime}`,  // O列: 第1希望時間
+        body.secondChoiceDate,  // P列: 第2希望日
+        `${body.secondChoiceStartTime}〜${body.secondChoiceEndTime}`,  // Q列: 第2希望時間
+        body.thirdChoiceDate,  // R列: 第3希望日
+        `${body.thirdChoiceStartTime}〜${body.thirdChoiceEndTime}`,  // S列: 第3希望時間
+        body.message || '',  // T列: 相談内容
     ];
 }
