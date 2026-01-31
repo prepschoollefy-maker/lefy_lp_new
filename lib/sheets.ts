@@ -1,11 +1,17 @@
 import { google } from 'googleapis';
 
-// サービスアカウント認証（環境変数から）
+// サービスアカウント認証（Base64エンコードされた認証情報から）
+const getCredentials = () => {
+    const base64Credentials = process.env.GOOGLE_CREDENTIALS_BASE64;
+    if (!base64Credentials) {
+        throw new Error('GOOGLE_CREDENTIALS_BASE64 environment variable is not set');
+    }
+    const jsonString = Buffer.from(base64Credentials, 'base64').toString('utf8');
+    return JSON.parse(jsonString);
+};
+
 const auth = new google.auth.GoogleAuth({
-    credentials: {
-        client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-        private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
-    },
+    credentials: getCredentials(),
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
 });
 
