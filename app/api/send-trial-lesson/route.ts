@@ -118,15 +118,15 @@ export async function POST(request: Request) {
           <table>
             <tr>
               <th>第1希望</th>
-              <td>${body.firstChoiceDate} ${body.firstChoiceStartTime}〜${body.firstChoiceEndTime}</td>
+              <td>${body.firstChoiceDate} ${body.firstChoiceTimeSlot || ''}</td>
             </tr>
             <tr>
               <th>第2希望</th>
-              <td>${body.secondChoiceDate} ${body.secondChoiceStartTime}〜${body.secondChoiceEndTime}</td>
+              <td>${body.secondChoiceDate} ${body.secondChoiceTimeSlot || ''}</td>
             </tr>
             <tr>
               <th>第3希望</th>
-              <td>${body.thirdChoiceDate} ${body.thirdChoiceStartTime}〜${body.thirdChoiceEndTime}</td>
+              <td>${body.thirdChoiceDate} ${body.thirdChoiceTimeSlot || ''}</td>
             </tr>
           </table>
 
@@ -184,7 +184,7 @@ export async function POST(request: Request) {
             <strong>■ 受付内容</strong><br>
             生徒氏名: ${body.studentLastName} ${body.studentFirstName} 様<br>
             学年: ${body.grade}<br>
-            第1希望日時: ${body.firstChoiceDate} ${body.firstChoiceStartTime}〜${body.firstChoiceEndTime}
+            第1希望日時: ${body.firstChoiceDate} ${body.firstChoiceTimeSlot || ''}
           </div>
 
           <p>

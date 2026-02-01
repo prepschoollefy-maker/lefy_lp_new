@@ -65,14 +65,11 @@ export function formatTrialLessonData(body: {
     grade: string;
     schoolName?: string;
     firstChoiceDate: string;
-    firstChoiceStartTime: string;
-    firstChoiceEndTime: string;
+    firstChoiceTimeSlot: string;
     secondChoiceDate: string;
-    secondChoiceStartTime: string;
-    secondChoiceEndTime: string;
+    secondChoiceTimeSlot: string;
     thirdChoiceDate: string;
-    thirdChoiceStartTime: string;
-    thirdChoiceEndTime: string;
+    thirdChoiceTimeSlot: string;
     subject?: string;
     lessonContentPreference?: string;
     lefyDecideDetails?: string;
@@ -117,11 +114,11 @@ export function formatTrialLessonData(body: {
         formatAvailableSchedule(body.availableSchedule),  // P列: 連絡可能時間帯
         body.feedback || '',  // Q列: フィードバック
         body.firstChoiceDate,  // R列: 第1希望日
-        `${body.firstChoiceStartTime}〜${body.firstChoiceEndTime}`,  // S列: 第1希望時間
+        body.firstChoiceTimeSlot || '',  // S列: 第1希望時間
         body.secondChoiceDate,  // T列: 第2希望日
-        `${body.secondChoiceStartTime}〜${body.secondChoiceEndTime}`,  // U列: 第2希望時間
+        body.secondChoiceTimeSlot || '',  // U列: 第2希望時間
         body.thirdChoiceDate,  // V列: 第3希望日
-        `${body.thirdChoiceStartTime}〜${body.thirdChoiceEndTime}`,  // W列: 第3希望時間
+        body.thirdChoiceTimeSlot || '',  // W列: 第3希望時間
         body.message || '',  // X列: その他要望
         body.lefyDecideDetails || body.specifyDetails || '',  // Y列: 授業内容詳細
     ];
