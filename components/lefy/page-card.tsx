@@ -9,9 +9,10 @@ interface PageCardProps {
   readTime: string;
   href: string;
   icon: LucideIcon;
+  label?: string;
 }
 
-export function PageCard({ title, summary, points, readTime, href, icon: Icon }: PageCardProps) {
+export function PageCard({ title, summary, points, readTime, href, icon: Icon, label }: PageCardProps) {
   return (
     <Link
       href={href}
@@ -24,6 +25,11 @@ export function PageCard({ title, summary, points, readTime, href, icon: Icon }:
           <Icon className="h-6 w-6 text-white" />
         </div>
         <div className="flex-1">
+          {label && (
+            <span className="mb-1 inline-block rounded-full bg-navy-100 px-2 py-0.5 text-xs font-semibold text-navy-700">
+              {label}
+            </span>
+          )}
           <h3 className="text-lg font-bold text-navy-800">{title}</h3>
           <p className="mt-1.5 text-base text-gray-600">{summary}</p>
         </div>

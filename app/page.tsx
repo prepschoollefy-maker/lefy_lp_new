@@ -38,7 +38,22 @@ const webPages = [
     readTime: '2分',
     href: '/about',
     icon: BookOpen,
+    label: process.env.NEXT_PUBLIC_SHOW_IKKAN_PAGE === 'true' ? '中学受験生向け' : undefined,
   },
+  // 中高一貫校向けページ（開発中は表示、本番は非表示）
+  ...(process.env.NEXT_PUBLIC_SHOW_IKKAN_PAGE === 'true' ? [{
+    title: 'LEFYってどんな塾？',
+    summary: (
+      <>
+        中高一貫校生・大学受験生向け。学校の定期テスト対策から大学受験まで対応。
+      </>
+    ),
+    points: ['どんな生徒が通ってるの？', 'LEFYの活用の仕方は？', '成績UP／合格実績'],
+    readTime: '2分',
+    href: '/about-ikkan',
+    icon: BookOpen,
+    label: '中高一貫校・大学受験向け',
+  }] : []),
   // {
   //   title: '中学受験で個別指導が必須な背景',
   //   summary: '活用有無・方法で偏差値に大きな差が生まれている',
