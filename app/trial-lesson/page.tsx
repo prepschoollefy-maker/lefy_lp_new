@@ -40,6 +40,7 @@ export default function CounselingPage() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [emailError, setEmailError] = useState('');
+    const [validationErrors, setValidationErrors] = useState<string[]>([]);
 
     // 時間帯のオプション（曜日に応じて変更）
     const weekdayTimeSlots = ['17:00-18:20', '18:30-19:50', '20:00-21:20'];
@@ -61,6 +62,62 @@ export default function CounselingPage() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        // カスタムバリデーション（モバイル対応）
+        const errors: string[] = [];
+
+        if (!formData.studentLastName || !formData.studentFirstName) {
+            errors.push('お子様のお名前を入力してください');
+        }
+        if (!formData.studentLastNameKana || !formData.studentFirstNameKana) {
+            errors.push('お子様のお名前（フリガナ）を入力してください');
+        }
+        if (!formData.parentLastName || !formData.parentFirstName) {
+            errors.push('保護者様のお名前を入力してください');
+        }
+        if (!formData.parentLastNameKana || !formData.parentFirstNameKana) {
+            errors.push('保護者様のお名前（フリガナ）を入力してください');
+        }
+        if (!formData.grade) {
+            errors.push('学年を選択してください');
+        }
+        if (!formData.schoolName) {
+            errors.push('学校名を入力してください');
+        }
+        if (!formData.firstChoiceDate || !formData.firstChoiceTimeSlot) {
+            errors.push('第1希望日を入力してください');
+        }
+        if (!formData.secondChoiceDate || !formData.secondChoiceTimeSlot) {
+            errors.push('第2希望日を入力してください');
+        }
+        if (!formData.thirdChoiceDate || !formData.thirdChoiceTimeSlot) {
+            errors.push('第3希望日を入力してください');
+        }
+        if (!formData.subject) {
+            errors.push('科目を選択してください');
+        }
+        if (!formData.lessonContentPreference) {
+            errors.push('体験授業の内容を選択してください');
+        }
+        if (!formData.feedback) {
+            errors.push('体験授業後のフィードバックを選択してください');
+        }
+        if (!formData.email) {
+            errors.push('メールアドレスを入力してください');
+        }
+        if (!formData.emailConfirm) {
+            errors.push('メールアドレス（確認）を入力してください');
+        }
+        if (!formData.phone1 || !formData.phone2 || !formData.phone3) {
+            errors.push('電話番号を入力してください');
+        }
+
+        if (errors.length > 0) {
+            setValidationErrors(errors);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+        setValidationErrors([]);
 
         // メールアドレス一致チェック
         if (formData.email !== formData.emailConfirm) {
@@ -153,6 +210,18 @@ export default function CounselingPage() {
             {/* フォーム */}
             <section className="rounded-2xl border-2 border-navy-200 bg-white p-3 shadow-lg md:p-6">
                 <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* バリデーションエラー表示 */}
+                    {validationErrors.length > 0 && (
+                        <div className="rounded-lg border-2 border-red-300 bg-red-50 p-4">
+                            <p className="mb-2 font-bold text-red-700">入力内容に不足があります</p>
+                            <ul className="list-disc pl-5 text-sm text-red-600">
+                                {validationErrors.map((error, index) => (
+                                    <li key={index}>{error}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+
                     {/* 生徒ご本人の氏名 */}
                     <div>
                         <label className="mb-2 block text-sm font-bold text-navy-800">
@@ -295,7 +364,7 @@ export default function CounselingPage() {
                     {/* 学校名 */}
                     <div>
                         <label htmlFor="schoolName" className="mb-2 block text-sm font-bold text-navy-800">
-                            学校名
+                            学校名 <span className="text-red-600">*</span>
                         </label>
                         <input
                             type="text"
@@ -303,6 +372,7 @@ export default function CounselingPage() {
                             name="schoolName"
                             value={formData.schoolName}
                             onChange={handleChange}
+                            required
                             className="w-full rounded-lg border-2 border-navy-200 px-4 py-3 text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
                             placeholder="例： 横浜市立○○小学校"
                         />
