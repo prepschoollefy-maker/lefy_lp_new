@@ -68,7 +68,7 @@ export default function PricingPage() {
           <div>
             <h3 className="mb-1 text-base font-bold text-navy-800">安心してご検討ください</h3>
             <p className="text-sm leading-relaxed text-navy-600">
-              押し売りはしません。料金はシンプルで明確です。ご不明点があればお気軽にお問い合わせください。
+              料金はシンプルで明確です。ご不明点があればお気軽にお問い合わせください。
             </p>
           </div>
         </div>

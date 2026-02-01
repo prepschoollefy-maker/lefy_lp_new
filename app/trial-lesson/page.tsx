@@ -20,14 +20,11 @@ export default function CounselingPage() {
         schoolName: '',
         availableSchedule: {},
         firstChoiceDate: '',
-        firstChoiceStartTime: '',
-        firstChoiceEndTime: '',
+        firstChoiceTimeSlot: '',
         secondChoiceDate: '',
-        secondChoiceStartTime: '',
-        secondChoiceEndTime: '',
+        secondChoiceTimeSlot: '',
         thirdChoiceDate: '',
-        thirdChoiceStartTime: '',
-        thirdChoiceEndTime: '',
+        thirdChoiceTimeSlot: '',
         subject: '',
         lessonContentPreference: '',
         lefyDecideDetails: '',
@@ -44,14 +41,23 @@ export default function CounselingPage() {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [emailError, setEmailError] = useState('');
 
-    // 時間選択肢生成（13:00-21:00、30分刻み）
-    const timeOptions = [];
-    for (let hour = 13; hour <= 21; hour++) {
-        timeOptions.push(`${hour}:00`);
-        if (hour < 21) {
-            timeOptions.push(`${hour}:30`);
+    // 時間帯のオプション（曜日に応じて変更）
+    const weekdayTimeSlots = ['17:00-18:20', '18:30-19:50', '20:00-21:20'];
+    const weekendTimeSlots = ['12:30-13:50', '14:00-15:20', '15:30-16:50', '17:00-18:20', '18:30-19:50'];
+
+    // 日付から曜日を判定して適切な時間帯オプションを返す
+    const getTimeSlotOptions = (dateStr: string) => {
+        if (!dateStr) return [];
+        const date = new Date(dateStr);
+        const dayOfWeek = date.getDay(); // 0=日, 1=月, 2=火, 3=水, 4=木, 5=金, 6=土
+        if (dayOfWeek === 0 || dayOfWeek === 6) {
+            // 土日
+            return weekendTimeSlots;
+        } else {
+            // 平日（月～金）
+            return weekdayTimeSlots;
         }
-    }
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -302,209 +308,6 @@ export default function CounselingPage() {
                         />
                     </div>
 
-                    {/* 希望日入力の説明 */}
-                    <div className="rounded-lg bg-blue-50 p-4">
-                        <p className="text-sm text-navy-700">
-                            各希望日ごとに、お越しいただける時間帯をご入力ください。所要時間は30分から1時間程度です。<br />
-                            <span className="text-xs text-navy-600">例：2026/1/1 15:00～18:00</span>
-                        </p>
-                    </div>
-
-                    {/* 第1希望日 */}
-                    <div className="rounded-lg bg-navy-50 p-3 md:p-4">
-                        <label className="mb-3 block text-sm font-bold text-navy-800">
-                            第1希望日 <span className="text-red-600">*</span>
-                        </label>
-                        <div className="space-y-3">
-                            <DateField
-                                label=""
-                                name="firstChoiceDate"
-                                value={formData.firstChoiceDate}
-                                onChange={(v) => setFormData({ ...formData, firstChoiceDate: v })}
-                                required
-                            />
-                            <div className="flex items-center gap-2">
-                                <select
-                                    name="firstChoiceStartTime"
-                                    value={formData.firstChoiceStartTime}
-                                    onChange={handleChange}
-                                    required
-                                    className="flex-1 rounded-lg border-2 border-navy-200 px-2 py-3 text-sm text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
-                                >
-                                    <option value="">--:--</option>
-                                    {timeOptions.map((time) => (
-                                        <option key={time} value={time}>{time}</option>
-                                    ))}
-                                </select>
-                                <span className="shrink-0 text-sm text-navy-600">～</span>
-                                <select
-                                    name="firstChoiceEndTime"
-                                    value={formData.firstChoiceEndTime}
-                                    onChange={handleChange}
-                                    required
-                                    className="flex-1 rounded-lg border-2 border-navy-200 px-2 py-3 text-sm text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
-                                >
-                                    <option value="">--:--</option>
-                                    {timeOptions.map((time) => (
-                                        <option key={time} value={time}>{time}</option>
-                                    ))}
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* 第2希望日 */}
-                    <div className="rounded-lg bg-navy-50 p-3 md:p-4">
-                        <label className="mb-3 block text-sm font-bold text-navy-800">
-                            第2希望日 <span className="text-red-600">*</span>
-                        </label>
-                        <div className="space-y-3">
-                            <DateField
-                                label=""
-                                name="secondChoiceDate"
-                                value={formData.secondChoiceDate}
-                                onChange={(v) => setFormData({ ...formData, secondChoiceDate: v })}
-                                required
-                            />
-                            <div className="flex items-center gap-2">
-                                <select
-                                    name="secondChoiceStartTime"
-                                    value={formData.secondChoiceStartTime}
-                                    onChange={handleChange}
-                                    required
-                                    className="flex-1 rounded-lg border-2 border-navy-200 px-2 py-3 text-sm text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
-                                >
-                                    <option value="">--:--</option>
-                                    {timeOptions.map((time) => (
-                                        <option key={time} value={time}>{time}</option>
-                                    ))}
-                                </select>
-                                <span className="shrink-0 text-sm text-navy-600">～</span>
-                                <select
-                                    name="secondChoiceEndTime"
-                                    value={formData.secondChoiceEndTime}
-                                    onChange={handleChange}
-                                    required
-                                    className="flex-1 rounded-lg border-2 border-navy-200 px-2 py-3 text-sm text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
-                                >
-                                    <option value="">--:--</option>
-                                    {timeOptions.map((time) => (
-                                        <option key={time} value={time}>{time}</option>
-                                    ))}
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* 第3希望日 */}
-                    <div className="rounded-lg bg-navy-50 p-3 md:p-4">
-                        <label className="mb-3 block text-sm font-bold text-navy-800">
-                            第3希望日 <span className="text-red-600">*</span>
-                        </label>
-                        <div className="space-y-3">
-                            <DateField
-                                label=""
-                                name="thirdChoiceDate"
-                                value={formData.thirdChoiceDate}
-                                onChange={(v) => setFormData({ ...formData, thirdChoiceDate: v })}
-                                required
-                            />
-                            <div className="flex items-center gap-2">
-                                <select
-                                    name="thirdChoiceStartTime"
-                                    value={formData.thirdChoiceStartTime}
-                                    onChange={handleChange}
-                                    required
-                                    className="flex-1 rounded-lg border-2 border-navy-200 px-2 py-3 text-sm text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
-                                >
-                                    <option value="">--:--</option>
-                                    {timeOptions.map((time) => (
-                                        <option key={time} value={time}>{time}</option>
-                                    ))}
-                                </select>
-                                <span className="shrink-0 text-sm text-navy-600">～</span>
-                                <select
-                                    name="thirdChoiceEndTime"
-                                    value={formData.thirdChoiceEndTime}
-                                    onChange={handleChange}
-                                    required
-                                    className="flex-1 rounded-lg border-2 border-navy-200 px-2 py-3 text-sm text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
-                                >
-                                    <option value="">--:--</option>
-                                    {timeOptions.map((time) => (
-                                        <option key={time} value={time}>{time}</option>
-                                    ))}
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* 科目 */}
-                    <div>
-                        <label htmlFor="subject" className="mb-2 block text-sm font-bold text-navy-800">
-                            科目 <span className="text-red-600">*</span>
-                        </label>
-                        <select
-                            id="subject"
-                            name="subject"
-                            value={formData.subject}
-                            onChange={handleChange}
-                            required
-                            className="w-full rounded-lg border-2 border-navy-200 px-4 py-3 text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
-                        >
-                            <option value="">選択してください</option>
-                            <option value="算数">算数</option>
-                            <option value="国語">国語</option>
-                            <option value="理科">理科</option>
-                            <option value="社会">社会</option>
-                        </select>
-                    </div>
-
-                    {/* 体験授業で扱ってほしい内容 */}
-                    <div>
-                        <label htmlFor="lessonContentPreference" className="mb-2 block text-sm font-bold text-navy-800">
-                            体験授業で扱ってほしい内容 <span className="text-red-600">*</span>
-                        </label>
-                        <select
-                            id="lessonContentPreference"
-                            name="lessonContentPreference"
-                            value={formData.lessonContentPreference}
-                            onChange={handleChange}
-                            required
-                            className="w-full rounded-lg border-2 border-navy-200 px-4 py-3 text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
-                        >
-                            <option value="">選択してください</option>
-                            <option value="LEFYに決めてほしい">LEFYに決めてほしい</option>
-                            <option value="指定する">指定する</option>
-                        </select>
-
-                        {/* LEFYに決めてほしい場合の詳細 */}
-                        {formData.lessonContentPreference === 'LEFYに決めてほしい' && (
-                            <textarea
-                                name="lefyDecideDetails"
-                                value={formData.lefyDecideDetails}
-                                onChange={handleChange}
-                                required
-                                rows={4}
-                                className="mt-3 w-full rounded-lg border-2 border-navy-200 px-4 py-3 text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
-                                placeholder="現在お通いの集団塾、および毎月のテストの成績をご入力ください。"
-                            />
-                        )}
-
-                        {/* 指定する場合の詳細 */}
-                        {formData.lessonContentPreference === '指定する' && (
-                            <textarea
-                                name="specifyDetails"
-                                value={formData.specifyDetails}
-                                onChange={handleChange}
-                                required
-                                rows={4}
-                                className="mt-3 w-full rounded-lg border-2 border-navy-200 px-4 py-3 text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
-                                placeholder="ご指定内容をご記載ください。例：サピックスのデイリーサポート"
-                            />
-                        )}
-                    </div>
-
                     {/* ご入塾後、ご通塾可能な曜日と時間帯 */}
                     <div className="rounded-lg border-2 border-yellow-200 bg-yellow-50 p-4">
                         <p className="mb-4 text-sm text-navy-700">
@@ -596,10 +399,164 @@ export default function CounselingPage() {
                                 </tbody>
                             </table>
                         </div>
+                    </div>
 
-                        <p className="mt-4 text-xs text-navy-600">
-                            体験授業の候補日を3つ教えてください。
+                    {/* 希望日入力の説明 */}
+                    <div className="rounded-lg bg-blue-50 p-4">
+                        <p className="text-sm text-navy-700">
+                            各希望日ごとに、ご来塾可能な時間帯をご選択ください。<br />
+                            <span className="text-xs text-navy-600">※平日と土日で選択可能な時間帯が異なります</span>
                         </p>
+                    </div>
+
+                    {/* 第1希望日 */}
+                    <div className="rounded-lg bg-navy-50 p-3 md:p-4">
+                        <label className="mb-3 block text-sm font-bold text-navy-800">
+                            第1希望日 <span className="text-red-600">*</span>
+                        </label>
+                        <div className="space-y-3">
+                            <DateField
+                                label=""
+                                name="firstChoiceDate"
+                                value={formData.firstChoiceDate}
+                                onChange={(v) => setFormData({ ...formData, firstChoiceDate: v, firstChoiceTimeSlot: '' })}
+                                required
+                            />
+                            <select
+                                name="firstChoiceTimeSlot"
+                                value={formData.firstChoiceTimeSlot}
+                                onChange={handleChange}
+                                required
+                                className="w-full rounded-lg border-2 border-navy-200 px-4 py-3 text-sm text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
+                            >
+                                <option value="">時間帯を選択</option>
+                                {getTimeSlotOptions(formData.firstChoiceDate).map((slot) => (
+                                    <option key={slot} value={slot}>{slot}</option>
+                                ))}
+                            </select>
+                        </div>
+                    </div>
+
+                    {/* 第2希望日 */}
+                    <div className="rounded-lg bg-navy-50 p-3 md:p-4">
+                        <label className="mb-3 block text-sm font-bold text-navy-800">
+                            第2希望日 <span className="text-red-600">*</span>
+                        </label>
+                        <div className="space-y-3">
+                            <DateField
+                                label=""
+                                name="secondChoiceDate"
+                                value={formData.secondChoiceDate}
+                                onChange={(v) => setFormData({ ...formData, secondChoiceDate: v, secondChoiceTimeSlot: '' })}
+                                required
+                            />
+                            <select
+                                name="secondChoiceTimeSlot"
+                                value={formData.secondChoiceTimeSlot}
+                                onChange={handleChange}
+                                required
+                                className="w-full rounded-lg border-2 border-navy-200 px-4 py-3 text-sm text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
+                            >
+                                <option value="">時間帯を選択</option>
+                                {getTimeSlotOptions(formData.secondChoiceDate).map((slot) => (
+                                    <option key={slot} value={slot}>{slot}</option>
+                                ))}
+                            </select>
+                        </div>
+                    </div>
+
+                    {/* 第3希望日 */}
+                    <div className="rounded-lg bg-navy-50 p-3 md:p-4">
+                        <label className="mb-3 block text-sm font-bold text-navy-800">
+                            第3希望日 <span className="text-red-600">*</span>
+                        </label>
+                        <div className="space-y-3">
+                            <DateField
+                                label=""
+                                name="thirdChoiceDate"
+                                value={formData.thirdChoiceDate}
+                                onChange={(v) => setFormData({ ...formData, thirdChoiceDate: v, thirdChoiceTimeSlot: '' })}
+                                required
+                            />
+                            <select
+                                name="thirdChoiceTimeSlot"
+                                value={formData.thirdChoiceTimeSlot}
+                                onChange={handleChange}
+                                required
+                                className="w-full rounded-lg border-2 border-navy-200 px-4 py-3 text-sm text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
+                            >
+                                <option value="">時間帯を選択</option>
+                                {getTimeSlotOptions(formData.thirdChoiceDate).map((slot) => (
+                                    <option key={slot} value={slot}>{slot}</option>
+                                ))}
+                            </select>
+                        </div>
+                    </div>
+
+                    {/* 科目 */}
+                    <div>
+                        <label htmlFor="subject" className="mb-2 block text-sm font-bold text-navy-800">
+                            科目 <span className="text-red-600">*</span>
+                        </label>
+                        <select
+                            id="subject"
+                            name="subject"
+                            value={formData.subject}
+                            onChange={handleChange}
+                            required
+                            className="w-full rounded-lg border-2 border-navy-200 px-4 py-3 text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
+                        >
+                            <option value="">選択してください</option>
+                            <option value="算数">算数</option>
+                            <option value="国語">国語</option>
+                            <option value="理科">理科</option>
+                            <option value="社会">社会</option>
+                        </select>
+                    </div>
+
+                    {/* 体験授業で扱ってほしい内容 */}
+                    <div>
+                        <label htmlFor="lessonContentPreference" className="mb-2 block text-sm font-bold text-navy-800">
+                            体験授業で扱ってほしい内容 <span className="text-red-600">*</span>
+                        </label>
+                        <select
+                            id="lessonContentPreference"
+                            name="lessonContentPreference"
+                            value={formData.lessonContentPreference}
+                            onChange={handleChange}
+                            required
+                            className="w-full rounded-lg border-2 border-navy-200 px-4 py-3 text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
+                        >
+                            <option value="">選択してください</option>
+                            <option value="LEFYに決めてほしい">LEFYに決めてほしい</option>
+                            <option value="指定する">指定する</option>
+                        </select>
+
+                        {/* LEFYに決めてほしい場合の詳細 */}
+                        {formData.lessonContentPreference === 'LEFYに決めてほしい' && (
+                            <textarea
+                                name="lefyDecideDetails"
+                                value={formData.lefyDecideDetails}
+                                onChange={handleChange}
+                                required
+                                rows={4}
+                                className="mt-3 w-full rounded-lg border-2 border-navy-200 px-4 py-3 text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
+                                placeholder="現在お通いの集団塾、および毎月のテストの成績をご入力ください。"
+                            />
+                        )}
+
+                        {/* 指定する場合の詳細 */}
+                        {formData.lessonContentPreference === '指定する' && (
+                            <textarea
+                                name="specifyDetails"
+                                value={formData.specifyDetails}
+                                onChange={handleChange}
+                                required
+                                rows={4}
+                                className="mt-3 w-full rounded-lg border-2 border-navy-200 px-4 py-3 text-navy-800 transition-colors focus:border-navy-600 focus:outline-none"
+                                placeholder="ご指定内容をご記載ください。例：サピックスのデイリーサポート"
+                            />
+                        )}
                     </div>
 
                     {/* 体験授業後のフィードbackック */}
@@ -733,9 +690,8 @@ export default function CounselingPage() {
                 {/* 注意事項 */}
                 <div className="mt-6 rounded-lg bg-navy-50 p-4">
                     <p className="text-xs text-navy-600">
-                        ※ 送信いただいた内容は、info@lefy.jp へ通知されます。<br />
                         ※ 3営業日以内に担当者よりご連絡させていただきます。<br />
-                        ※ 無料学習相談後、入塾を強くお勧めすることはありません。
+                        ※ 強引な入塾の勧誘などはございませんのでお気軽にお申込みください。
                     </p>
                 </div>
             </section>

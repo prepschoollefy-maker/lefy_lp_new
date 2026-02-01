@@ -541,9 +541,8 @@ export default function CounselingPage() {
                 {/* 注意事項 */}
                 <div className="mt-6 rounded-lg bg-navy-50 p-4">
                     <p className="text-xs text-navy-600">
-                        ※ 送信いただいた内容は、info@lefy.jp へ通知されます。<br />
                         ※ 3営業日以内に担当者よりご連絡させていただきます。<br />
-                        ※ 無料学習相談後、入塾を強くお勧めすることはありません。
+                        ※ 強引な入塾の勧誘などはございませんのでお気軽にお申込みください。
                     </p>
                 </div>
             </section>

@@ -389,7 +389,7 @@ const faqs = [
   },
   {
     q: '先生を変えることはできますか？',
-    a: 'もし塾生と相性が合わないようなことがあれば変更可能です。ご相談の上、変更させていただきますのでお申し付けください。',
+    a: 'もし講師との相性が合わないと感じた場合や、指導内容に満足いただけない場合にはお申し付けください。別の講師をご案内いたします。',
   },
   {
     q: '自習室を利用することはできますか？',
@@ -605,12 +605,12 @@ export default function AboutPage() {
               <div key={index} className="flex items-start gap-4 md:gap-6">
                 {/* 丸い画像 */}
                 <div className="shrink-0">
-                  <div className="h-20 w-20 overflow-hidden rounded-full bg-white shadow-lg md:h-24 md:w-24">
+                  <div className="h-28 w-28 overflow-hidden rounded-full bg-white shadow-lg md:h-32 md:w-32">
                     <Image
                       src={concern.image}
                       alt={concern.title}
-                      width={96}
-                      height={96}
+                      width={128}
+                      height={128}
                       className="h-full w-full object-cover"
                     />
                   </div>
@@ -618,8 +618,8 @@ export default function AboutPage() {
 
                 {/* テキスト */}
                 <div className="flex-1 text-white">
-                  <h3 className="mb-2 text-lg font-bold md:text-xl">{concern.title}</h3>
-                  <div className="text-sm leading-relaxed text-navy-50 md:text-base">
+                  <h3 className="mb-2 text-xl font-bold md:text-2xl">{concern.title}</h3>
+                  <div className="text-base leading-relaxed text-navy-50 md:text-lg">
                     {concern.description}
                   </div>
                 </div>
