@@ -1,4 +1,4 @@
-import { FileText, BookOpen, Coins, HelpCircle, MessageSquare, CheckCircle } from 'lucide-react';
+import { BookOpen, Coins } from 'lucide-react';
 import { PDFCard } from '@/components/lefy/pdf-card';
 import { PageCard } from '@/components/lefy/page-card';
 import { SectionHeader } from '@/components/lefy/section-header';
@@ -25,56 +25,9 @@ const pdfResources = [
   },
 ];
 
-const webPages = [
-  {
-    title: 'LEFYってどんな塾？',
-    summary: (
-      <>
-        <span className="font-semibold text-red-600">SAPIX、グノーブル、四谷大塚、日能研</span>
-        など大手集団塾生の偏差値向上を狙います。個別だけの中学受験も対応。
-      </>
-    ),
-    points: ['どんな生徒が通ってるの？', 'LEFYの活用の仕方は？', 'LEFYでの偏差値UP／合格事例'],
-    readTime: '2分',
-    href: '/about',
-    icon: BookOpen,
-    label: process.env.NEXT_PUBLIC_SHOW_IKKAN_PAGE === 'true' ? '中学受験生向け' : undefined,
-  },
-  // 中高一貫校向けページ（開発中は表示、本番は非表示）
-  ...(process.env.NEXT_PUBLIC_SHOW_IKKAN_PAGE === 'true' ? [{
-    title: 'LEFYってどんな塾？',
-    summary: (
-      <>
-        中高一貫校生・大学受験生向け。学校の定期テスト対策から大学受験まで対応。
-      </>
-    ),
-    points: ['どんな生徒が通ってるの？', 'LEFYの活用の仕方は？', '成績UP／合格実績'],
-    readTime: '2分',
-    href: '/about-ikkan',
-    icon: BookOpen,
-    label: '中高一貫校・大学受験向け',
-  }] : []),
-  // {
-  //   title: '中学受験で個別指導が必須な背景',
-  //   summary: '活用有無・方法で偏差値に大きな差が生まれている',
-  //   points: ['個別利用が増えている3つの理由', '必要な対策の考え方'],
-  //   readTime: '2分',
-  //   href: '/why-private',
-  //   icon: HelpCircle,
-  // },
-  {
-    title: '授業料／システム',
-    summary: '単純明快なシステム。思わぬ追加費用はありません。',
-    points: ['料金の目安が分かる', '時間割', '教室風景'],
-    readTime: '1分',
-    href: '/pricing',
-    icon: Coins,
-  },
-];
-
-
-
 export default function Home() {
+  const showIkkanPage = process.env.NEXT_PUBLIC_SHOW_IKKAN_PAGE === 'true';
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-blue-50/30">
       <div className="mx-auto max-w-3xl px-4 py-8">
@@ -94,9 +47,44 @@ export default function Home() {
 
         <section className="mb-12">
           <div className="space-y-4">
-            {webPages.map((page) => (
-              <PageCard key={page.href} {...page} />
-            ))}
+            {/* 中学受験向け */}
+            <PageCard
+              title="LEFYってどんな塾？"
+              summary={
+                <>
+                  <span className="font-semibold text-red-600">SAPIX、グノーブル、四谷大塚、日能研</span>
+                  など大手集団塾生の偏差値向上を狙います。個別だけの中学受験も対応。
+                </>
+              }
+              points={['どんな生徒が通ってるの？', 'LEFYの活用の仕方は？', 'LEFYでの偏差値UP／合格事例']}
+              readTime="2分"
+              href="/about"
+              icon={BookOpen}
+              label={showIkkanPage ? '中学受験生向け' : undefined}
+            />
+
+            {/* 中高一貫校向け（開発中は表示、本番は非表示） */}
+            {showIkkanPage && (
+              <PageCard
+                title="LEFYってどんな塾？"
+                summary="中高一貫校生・大学受験生向け。学校の定期テスト対策から大学受験まで対応。"
+                points={['どんな生徒が通ってるの？', 'LEFYの活用の仕方は？', '成績UP／合格実績']}
+                readTime="2分"
+                href="/about-ikkan"
+                icon={BookOpen}
+                label="中高一貫校・大学受験向け"
+              />
+            )}
+
+            {/* 授業料／システム */}
+            <PageCard
+              title="授業料／システム"
+              summary="単純明快なシステム。思わぬ追加費用はありません。"
+              points={['料金の目安が分かる', '時間割', '教室風景']}
+              readTime="1分"
+              href="/pricing"
+              icon={Coins}
+            />
           </div>
         </section>
 
