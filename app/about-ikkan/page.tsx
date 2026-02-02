@@ -1107,8 +1107,14 @@ export default function AboutPage() {
             </div>
           </div>
 
+
           {/* スクロールヒント - モバイル */}
           <p className="mt-2 text-center text-xs text-navy-400 md:hidden">← スワイプして他の実績を見る →</p>
+
+          {/* 注記 */}
+          <p className="mt-4 text-center text-xs text-navy-500">
+            ※個人情報の観点から、点数や偏差値は下一桁を0か5に統一し、概数で表記しています。
+          </p>
         </div>
       </section>
 
