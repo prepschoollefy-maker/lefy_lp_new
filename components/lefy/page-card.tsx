@@ -26,7 +26,7 @@ export function PageCard({ title, summary, points, readTime, href, icon: Icon, l
         </div>
         <div className="flex-1">
           {label && (
-            <span className="mb-1 inline-block rounded-full bg-navy-100 px-2 py-0.5 text-xs font-semibold text-navy-700">
+            <span className="mb-1 inline-block rounded-full bg-navy-600 px-3 py-1 text-sm font-bold text-white shadow-sm">
               {label}
             </span>
           )}
