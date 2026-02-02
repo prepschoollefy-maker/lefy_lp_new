@@ -1041,43 +1041,43 @@ export default function AboutPage() {
                           const hasRank = subjectData.before.rank !== undefined;
 
                           return (
-                            <div key={idx} className={idx > 0 ? 'border-t border-navy-100 pt-5' : ''}>
+                            <div key={idx} className={idx > 0 ? 'border-t border-navy-100 pt-3' : ''}>
                               {/* 科目名 */}
-                              <div className="mb-3 flex items-center justify-center">
-                                <span className="rounded-full bg-navy-100 px-4 py-1 text-sm font-bold text-navy-800">
+                              <div className="mb-2 flex items-center justify-center">
+                                <span className="rounded-full bg-navy-100 px-3 py-0.5 text-xs font-bold text-navy-800">
                                   {subjectData.subject}
                                 </span>
                               </div>
 
                               {/* スコア比較 */}
-                              <div className="mb-3 grid grid-cols-2 gap-3">
+                              <div className="mb-2 grid grid-cols-2 gap-2">
                                 {/* Before */}
-                                <div className="rounded-lg border-2 border-gray-300 bg-gray-50 p-3 text-center">
-                                  <div className="mb-1 text-xs font-semibold text-gray-600">入塾前</div>
-                                  <div className="text-2xl font-bold text-gray-700">{subjectData.before.score}点</div>
+                                <div className="rounded-lg border-2 border-gray-300 bg-gray-50 p-2 text-center">
+                                  <div className="mb-0.5 text-xs font-semibold text-gray-600">入塾前</div>
+                                  <div className="text-xl font-bold text-gray-700">{subjectData.before.score}点</div>
                                   {hasRank && subjectData.before.rank && subjectData.before.total && (
-                                    <div className="mt-1 text-xs text-gray-500">
+                                    <div className="mt-0.5 text-xs text-gray-500">
                                       {subjectData.before.rank}位/{subjectData.before.total}人
                                     </div>
                                   )}
                                   {!hasRank && subjectData.before.average && (
-                                    <div className="mt-1 text-xs text-gray-500">
+                                    <div className="mt-0.5 text-xs text-gray-500">
                                       （平均{subjectData.before.average}点）
                                     </div>
                                   )}
                                 </div>
 
                                 {/* After */}
-                                <div className="rounded-lg border-2 border-emerald-400 bg-emerald-50 p-3 text-center">
-                                  <div className="mb-1 text-xs font-semibold text-emerald-700">入塾後</div>
-                                  <div className="text-2xl font-bold text-emerald-600">{subjectData.after.score}点</div>
+                                <div className="rounded-lg border-2 border-emerald-400 bg-emerald-50 p-2 text-center">
+                                  <div className="mb-0.5 text-xs font-semibold text-emerald-700">入塾後</div>
+                                  <div className="text-xl font-bold text-emerald-600">{subjectData.after.score}点</div>
                                   {hasRank && subjectData.after.rank && subjectData.after.total && (
-                                    <div className="mt-1 text-xs text-emerald-600">
+                                    <div className="mt-0.5 text-xs text-emerald-600">
                                       {subjectData.after.rank}位/{subjectData.after.total}人
                                     </div>
                                   )}
                                   {!hasRank && subjectData.after.average && (
-                                    <div className="mt-1 text-xs text-emerald-600">
+                                    <div className="mt-0.5 text-xs text-emerald-600">
                                       （平均{subjectData.after.average}点）
                                     </div>
                                   )}
@@ -1085,11 +1085,11 @@ export default function AboutPage() {
                               </div>
 
                               {/* 成長幅 */}
-                              <div className="flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-amber-100 to-orange-100 py-2">
-                                <svg className="h-4 w-4 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                              <div className="flex items-center justify-center gap-1.5 rounded-lg bg-gradient-to-r from-amber-100 to-orange-100 py-1.5">
+                                <svg className="h-3.5 w-3.5 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
                                   <path fillRule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clipRule="evenodd" />
                                 </svg>
-                                <span className="text-base font-bold text-orange-700">+{scoreImprovement}点UP</span>
+                                <span className="text-sm font-bold text-orange-700">+{scoreImprovement}点UP</span>
                               </div>
                             </div>
                           );
