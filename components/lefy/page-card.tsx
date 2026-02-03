@@ -6,7 +6,7 @@ interface PageCardProps {
   title: string;
   summary: string | ReactNode;
   points: string[];
-  readTime: string;
+  readTime?: string;
   href: string;
   icon: LucideIcon;
   label?: string;
@@ -28,8 +28,8 @@ export function PageCard({ title, summary, points, readTime, href, icon: Icon, l
           {label && (
             <span
               className={`mb-1 inline-block rounded-full px-4 py-1.5 text-sm font-bold text-white shadow-md ${label.includes('中学受験')
-                  ? 'bg-gradient-to-r from-blue-500 to-blue-600'
-                  : 'bg-gradient-to-r from-orange-500 to-red-600'
+                ? 'bg-gradient-to-r from-blue-500 to-blue-600'
+                : 'bg-gradient-to-r from-orange-500 to-red-600'
                 }`}
             >
               {label.includes('中学受験') ? '🎓 ' : '🏫 '}
@@ -54,10 +54,12 @@ export function PageCard({ title, summary, points, readTime, href, icon: Icon, l
       </div>
 
       <div className="flex items-center justify-between">
-        <span className="flex items-center gap-1 text-sm text-gray-500">
-          <Clock className="h-3 w-3" />
-          読む目安 {readTime}
-        </span>
+        {readTime && (
+          <span className="flex items-center gap-1 text-sm text-gray-500">
+            <Clock className="h-3 w-3" />
+            読む目安 {readTime}
+          </span>
+        )}
         <span className="flex items-center gap-1.5 text-base font-semibold text-navy-600 transition-all group-hover:gap-2 group-hover:text-navy-500">
           ページを開く
           <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

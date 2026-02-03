@@ -8,25 +8,21 @@ const pdfResources = [
   {
     title: 'パンフレット',
     description: '講師紹介・指導体制など',
-    readTime: '3分',
     href: 'https://xn----17tzfsi7izese635z79az7km36a8rso6h.my.canva.site/dag-elfuxj8',
   },
   {
     title: '授業料・システムのご案内',
     description: '料金体系とシステムの詳細',
-    readTime: '1分',
     href: 'https://xn----17tzfsi7izese635z79az7km36a8rso6h.my.canva.site/tuition-system',
   },
   {
     title: '【中学受験】1対1個別指導の使い方-わが子の力を最大化する-',
     description: '個別指導の効果的な活用方法',
-    readTime: '2分',
     href: '/送付資料_中学受験.pdf',
   },
   {
     title: '中高一貫校生 定期テスト対策／大学受験対策',
     description: '1対1の個別指導で一人ひとりに最適な学習を',
-    readTime: '2分',
     href: 'https://xn----17tzfsi7izese635z79az7km36a8rso6h.my.canva.site/dagkothlcoi',
   },
 ];
@@ -63,7 +59,6 @@ export default function Home() {
                 </>
               }
               points={['どんな生徒が通ってるの？', 'LEFYの活用の仕方は？', 'LEFYでの偏差値UP／合格事例']}
-              readTime="2分"
               href="/about"
               icon={BookOpen}
               label={showIkkanPage ? '中学受験生向け' : undefined}
@@ -75,7 +70,6 @@ export default function Home() {
                 title="LEFYってどんな塾？"
                 summary="中高一貫校生・大学受験生向け。学校の定期テスト対策から大学受験まで対応。"
                 points={['どんな生徒が通ってるの？', 'LEFYの活用の仕方は？', '成績UP／合格実績']}
-                readTime="2分"
                 href="/about-ikkan"
                 icon={BookOpen}
                 label="中高一貫校・大学受験向け"
@@ -87,7 +81,6 @@ export default function Home() {
               title="授業料／システム"
               summary="単純明快なシステム。思わぬ追加費用はありません。"
               points={['料金の目安が分かる', '時間割', '教室風景']}
-              readTime="1分"
               href="/pricing"
               icon={Coins}
             />

@@ -4,7 +4,7 @@ import Link from 'next/link';
 interface PDFCardProps {
   title: string;
   description: string;
-  readTime: string;
+  readTime?: string;
   href: string;
 }
 
@@ -30,9 +30,11 @@ export function PDFCard({ title, description, readTime, href }: PDFCardProps) {
         {description}
       </p>
 
-      <div className="mt-auto flex items-center justify-center gap-2 text-xs text-gray-500">
-        <span>読む目安 {readTime}</span>
-      </div>
+      {readTime && (
+        <div className="mt-auto flex items-center justify-center gap-2 text-xs text-gray-500">
+          <span>読む目安 {readTime}</span>
+        </div>
+      )}
 
       <div className="mt-2 flex items-center justify-center gap-1 text-xs font-semibold text-blue-600 transition-all group-hover:gap-2">
         <span>詳細を見る</span>
