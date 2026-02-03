@@ -856,21 +856,21 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* 強み3：自身も中学受験経験のあるプロがサポート */}
+          {/* 強み3：自身も中高一貫校卒の講師がサポート */}
           <div className="border border-gray-200 bg-white p-6">
             <div className="mb-4 inline-block bg-red-600 px-3 py-1">
               <span className="text-sm font-bold text-white">強み 3</span>
             </div>
 
             <h3 className="mb-4 text-lg font-bold text-navy-800">
-              自身も中学受験経験のあるプロがサポート
+              自身も中高一貫校卒の講師がサポート
             </h3>
             <div className="space-y-3 text-sm leading-relaxed text-navy-700">
               <p>
-                中学受験の仕組みを知っていても、当事者として中身を知らない限り、的確なアドバイスはできません。
+                中高一貫校の学習進度や定期テストの対策のコツ、現役生の成績の追い上げ方は、自分自身が中高一貫校を卒業していないと的確なアドバイスができません。
               </p>
               <p>
-                LEFYでは、<span className="font-bold text-red-600">自身が中学受験を経験した講師が受験本番までサポート</span>します。
+                LEFYでは、<span className="font-bold text-red-600">中高一貫校を卒業し、東大～早慶など難関大に合格した講師がサポート</span>します。
               </p>
             </div>
           </div>

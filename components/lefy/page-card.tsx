@@ -26,7 +26,13 @@ export function PageCard({ title, summary, points, readTime, href, icon: Icon, l
         </div>
         <div className="flex-1">
           {label && (
-            <span className="mb-1 inline-block rounded-full bg-navy-600 px-3 py-1 text-sm font-bold text-white shadow-sm">
+            <span
+              className={`mb-1 inline-block rounded-full px-4 py-1.5 text-sm font-bold text-white shadow-md ${label.includes('中学受験')
+                  ? 'bg-gradient-to-r from-blue-500 to-blue-600'
+                  : 'bg-gradient-to-r from-orange-500 to-red-600'
+                }`}
+            >
+              {label.includes('中学受験') ? '🎓 ' : '🏫 '}
               {label}
             </span>
           )}
