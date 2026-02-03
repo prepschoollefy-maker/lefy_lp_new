@@ -383,7 +383,7 @@ export default function CounselingPage() {
                             ご入塾後、ご通塾可能な曜日と時間帯を複数ご選択ください。
                         </p>
                         <p className="mb-4 text-xs text-blue-700">
-                            ※ご入塾後に担当する講師の体験授業を担当するためです
+                            ※ご入塾後に担当可能な講師で体験授業を担当するためです
                         </p>
 
                         <div className="overflow-x-auto">

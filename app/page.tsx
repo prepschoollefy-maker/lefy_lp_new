@@ -23,6 +23,12 @@ const pdfResources = [
     readTime: '2分',
     href: '/送付資料_中学受験.pdf',
   },
+  {
+    title: '中高一貫校生 定期テスト対策／大学受験対策',
+    description: '1対1の個別指導で一人ひとりに最適な学習を',
+    readTime: '2分',
+    href: 'https://xn----17tzfsi7izese635z79az7km36a8rso6h.my.canva.site/dagkothlcoi',
+  },
 ];
 
 export default function Home() {
