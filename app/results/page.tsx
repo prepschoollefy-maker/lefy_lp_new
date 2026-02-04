@@ -242,12 +242,12 @@ export default function ResultsPage() {
                     </p>
 
                     <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-                        <Link href="/counseling" className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-xl bg-white py-4 px-8 text-base font-bold text-navy-800 shadow-xl transition-all hover:shadow-2xl">
-                            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#D9EEEF] text-xs font-bold text-navy-800">無料</span>
+                        <Link href="/counseling" className="flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-green-500 to-green-600 py-4 px-8 text-base font-bold text-white shadow-xl transition-all hover:from-green-600 hover:to-green-700">
+                            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-xs font-bold text-green-600">無料</span>
                             学習相談に申し込む
                         </Link>
 
-                        <a href="tel:0456209150" className="inline-flex items-center justify-center gap-3 rounded-xl border-2 border-white/30 bg-white/10 py-4 px-8 text-base font-bold text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/20">
+                        <a href="tel:0456209150" className="flex items-center justify-center gap-2 rounded-lg bg-white py-4 px-8 text-base font-bold text-red-600 shadow-xl transition-all hover:bg-gray-50" style={{ border: '2px solid #e5e7eb' }}>
                             <Phone className="h-5 w-5" />
                             045-620-9150
                         </a>
