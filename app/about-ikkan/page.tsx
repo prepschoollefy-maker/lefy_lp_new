@@ -851,7 +851,7 @@ export default function AboutPage() {
                 個別指導でも、先生が説明して終わりでは集団授業と何も変わりません。
               </p>
               <p>
-                LEFYでは<span className="font-bold text-red-600">生徒からの発話や筆跡から理解状況を把握</span>。これは中学受験に精通した講師にしかできません。
+                LEFYでは<span className="font-bold text-red-600">生徒からの発話や筆跡から理解状況を把握</span>。
               </p>
             </div>
           </div>
