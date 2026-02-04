@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Award, Star, Phone, CheckCircle, ChevronDown } from 'lucide-react';
+import { Award, Phone, CheckCircle, ChevronDown } from 'lucide-react';
 
 // 年度別・学校種別合格実績データ（aboutページから再利用）
 interface SchoolCategory {
@@ -257,9 +257,73 @@ lefyの先生方には心より感謝しています。本当にありがとう�
     }
 ];
 
+// TestimonialCard コンポーネント（aboutページと同じ）
+function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
+    const [isOpen, setIsOpen] = useState(false);
+    const [activeTab, setActiveTab] = useState<'student' | 'parent'>('student');
+
+    return (
+        <div className="rounded-lg border-2 border-navy-100 bg-white shadow-sm">
+            {/* ヘッダー（クリックで展開） */}
+            <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="flex w-full items-center justify-between p-3 text-left transition-colors hover:bg-navy-50"
+            >
+                <div>
+                    <h3 className="text-base font-bold text-navy-800">
+                        {testimonial.studentName}（{testimonial.grade}）
+                    </h3>
+                    <p className="mt-1 text-base font-semibold text-navy-600">
+                        {testimonial.school} 合格
+                    </p>
+                </div>
+                <ChevronDown
+                    className={`h-5 w-5 text-navy-400 transition-transform ${isOpen ? 'rotate-180' : ''
+                        }`}
+                />
+            </button>
+
+            {/* 展開コンテンツ */}
+            {isOpen && (
+                <div className="border-t border-navy-100 p-3">
+                    {/* タブ切り替え */}
+                    <div className="mb-3 flex gap-2">
+                        <button
+                            onClick={() => setActiveTab('student')}
+                            className={`rounded px-3 py-1.5 text-sm font-semibold transition-all ${activeTab === 'student'
+                                ? 'bg-navy-600 text-white'
+                                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                }`}
+                        >
+                            生徒の声
+                        </button>
+                        <button
+                            onClick={() => setActiveTab('parent')}
+                            className={`rounded px-3 py-1.5 text-sm font-semibold transition-all ${activeTab === 'parent'
+                                ? 'bg-navy-600 text-white'
+                                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                }`}
+                        >
+                            保護者の声
+                        </button>
+                    </div>
+
+                    {/* コンテンツ */}
+                    <div className="rounded bg-gray-50 p-3">
+                        <p className="whitespace-pre-wrap text-sm leading-relaxed text-navy-700">
+                            {activeTab === 'student'
+                                ? testimonial.studentVoice
+                                : testimonial.parentVoice}
+                        </p>
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+}
+
 export default function ResultsPage() {
     const [selectedYear, setSelectedYear] = useState<2026 | 2025 | 2024 | 2023>(2026);
-    const [expandedTestimonial, setExpandedTestimonial] = useState<string | null>(null);
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-white">
@@ -312,8 +376,8 @@ export default function ResultsPage() {
                                     key={year}
                                     onClick={() => setSelectedYear(year)}
                                     className={`flex-shrink-0 rounded-lg px-6 py-2.5 text-sm font-semibold transition-all ${selectedYear === year
-                                            ? 'bg-navy-700 text-white shadow-lg shadow-navy-700/20'
-                                            : 'bg-white text-slate-600 shadow-sm hover:bg-slate-50'
+                                        ? 'bg-navy-700 text-white shadow-lg shadow-navy-700/20'
+                                        : 'bg-white text-slate-600 shadow-sm hover:bg-slate-50'
                                         }`}
                                 >
                                     {year}年度
@@ -387,42 +451,16 @@ export default function ResultsPage() {
                         <h2 className="mb-4 text-3xl font-bold text-navy-800 md:text-4xl">合格者の声</h2>
                     </div>
 
-                    <div className="space-y-6">
+                    <p className="mb-6 text-base text-navy-600 text-center">
+                        LEFYで夢を叶えた生徒と保護者の声をご紹介します。
+                    </p>
+
+                    <div className="space-y-4">
                         {testimonials.map((testimonial) => (
-                            <div key={testimonial.id} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-200/50 md:p-8">
-                                <div className="mb-4 flex items-start gap-4">
-                                    <div className="flex-shrink-0 rounded-xl bg-gradient-to-br from-[#D9EEEF] to-[#B8DFE6] p-3">
-                                        <Star className="h-5 w-5 text-navy-700" />
-                                    </div>
-                                    <div className="flex-1">
-                                        <h3 className="text-lg font-bold text-navy-800">{testimonial.studentName}</h3>
-                                        <p className="mt-0.5 text-sm text-slate-500">{testimonial.grade}</p>
-                                        <div className="mt-2 inline-block rounded-full bg-navy-700 px-3 py-1">
-                                            <p className="text-sm font-semibold text-white">{testimonial.school} 合格</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* 生徒の声 */}
-                                <div className="mb-4">
-                                    <h4 className="mb-2 text-sm font-semibold text-navy-700">生徒の声</h4>
-                                    <p className="whitespace-pre-line text-sm leading-relaxed text-slate-700">{testimonial.studentVoice}</p>
-                                </div>
-
-                                {/* 保護者の声 - 折りたたみ可能 */}
-                                <div>
-                                    <button
-                                        onClick={() => setExpandedTestimonial(expandedTestimonial === testimonial.id ? null : testimonial.id)}
-                                        className="mb-2 flex items-center gap-2 text-sm font-semibold text-navy-700 transition-colors hover:text-navy-900"
-                                    >
-                                        保護者の声
-                                        <ChevronDown className={`h-4 w-4 transition-transform ${expandedTestimonial === testimonial.id ? 'rotate-180' : ''}`} />
-                                    </button>
-                                    {expandedTestimonial === testimonial.id && (
-                                        <p className="whitespace-pre-line text-sm leading-relaxed text-slate-700">{testimonial.parentVoice}</p>
-                                    )}
-                                </div>
-                            </div>
+                            <TestimonialCard
+                                key={testimonial.id}
+                                testimonial={testimonial}
+                            />
                         ))}
                     </div>
                 </div>
