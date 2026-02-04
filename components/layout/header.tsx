@@ -4,11 +4,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Youtube } from 'lucide-react';
 
-export function Header() {
+interface HeaderProps {
+  logoHref?: string; // ロゴのリンク先（デフォルトは "/"）
+}
+
+export function Header({ logoHref = "/" }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50 border-b border-orange-200 bg-gradient-to-r from-orange-400 to-yellow-400 shadow-md">
       <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-3">
-        <Link href="/" className="block">
+        <Link href={logoHref} className="block">
           <Image
             src="/lefy-logo.png"
             alt="LEFY"
