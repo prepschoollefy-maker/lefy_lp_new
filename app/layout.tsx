@@ -1,5 +1,6 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
 import './globals.css';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
@@ -10,6 +11,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
+
+  // resultsページの場合はロゴリンクをlefy.jpに変更
+  const logoHref = pathname === '/results' ? 'https://lefy.jp/' : '/';
+
   return (
     <html lang="ja">
       <head>
@@ -17,7 +23,7 @@ export default function RootLayout({
         <meta name="description" content="中学受験個別指導塾LEFY（レフィー）の資料請求ありがとうございます。" />
       </head>
       <body className="bg-white text-navy-800 antialiased">
-        <Header />
+        <Header logoHref={logoHref} />
         <main className="min-h-screen">{children}</main>
         <Footer />
         <FloatingCTA />
