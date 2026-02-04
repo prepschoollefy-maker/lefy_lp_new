@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Award, Phone, CheckCircle, ChevronDown } from 'lucide-react';
+import { Award, CheckCircle, ChevronDown } from 'lucide-react';
 
 // 年度別・学校種別合格実績データ（aboutページから再利用）
 interface SchoolCategory {
@@ -463,40 +463,6 @@ export default function ResultsPage() {
                             />
                         ))}
                     </div>
-                </div>
-            </section>
-
-            {/* CTAセクション */}
-            <section className="relative overflow-hidden bg-gradient-to-br from-navy-800 to-slate-900 py-16 px-4 md:py-20 md:px-8">
-                <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-0 right-0 h-96 w-96 rounded-full bg-[#D9EEEF] blur-3xl"></div>
-                </div>
-
-                <div className="relative z-10 mx-auto max-w-3xl text-center">
-                    <div className="mb-4 inline-block rounded-full bg-[#D9EEEF]/20 px-4 py-1.5 backdrop-blur-sm">
-                        <span className="text-sm font-semibold text-[#D9EEEF]">CONTACT</span>
-                    </div>
-
-                    <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">無料学習相談実施中</h2>
-
-                    <p className="mb-10 text-base leading-relaxed text-slate-300 md:text-lg">
-                        お子様の現状や目標をお伺いし、最適な学習プランをご提案します。<br className="hidden sm:block" />
-                        まずはお気軽にご相談ください。
-                    </p>
-
-                    <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-                        <Link href="/counseling" className="flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-green-500 to-green-600 py-4 px-8 text-base font-bold text-white shadow-xl transition-all hover:from-green-600 hover:to-green-700">
-                            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-xs font-bold text-green-600">無料</span>
-                            学習相談に申し込む
-                        </Link>
-
-                        <a href="tel:0456209150" className="flex items-center justify-center gap-2 rounded-lg bg-white py-4 px-8 text-base font-bold text-red-600 shadow-xl transition-all hover:bg-gray-50" style={{ border: '2px solid #e5e7eb' }}>
-                            <Phone className="h-5 w-5" />
-                            045-620-9150
-                        </a>
-                    </div>
-
-                    <p className="mt-6 text-sm text-slate-400">受付時間: 平日・土日 9:00〜21:00</p>
                 </div>
             </section>
 
