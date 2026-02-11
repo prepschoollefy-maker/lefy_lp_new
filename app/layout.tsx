@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className="bg-white text-navy-800 antialiased">
         <Header logoHref={logoHref} />
         <main className="min-h-screen">{children}</main>
-        <Footer />
+        <Footer logoHref={logoHref} />
         {pathname !== '/results' && <FloatingCTA />}
       </body>
     </html>

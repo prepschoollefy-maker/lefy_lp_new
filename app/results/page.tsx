@@ -492,9 +492,9 @@ export default function ResultsPage() {
             <footer className="border-t border-slate-200 bg-white py-8 px-4 text-center">
                 <p className="text-sm text-slate-500">© 2026 LEFY 中学受験専門個別指導. All rights reserved.</p>
                 <div className="mt-4">
-                    <Link href="/" className="text-sm font-medium text-navy-700 transition-colors hover:text-navy-900">
+                    <a href="https://lefy.jp/" className="text-sm font-medium text-navy-700 transition-colors hover:text-navy-900">
                         ホームページへ戻る
-                    </Link>
+                    </a>
                 </div>
             </footer>
         </div>
