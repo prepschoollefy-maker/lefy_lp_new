@@ -580,6 +580,18 @@ export default function CounselingPage() {
                             <option value="国語">国語</option>
                             <option value="理科">理科</option>
                             <option value="社会">社会</option>
+                            <option value="数学">数学</option>
+                            <option value="英語">英語</option>
+                            <option value="現代文">現代文</option>
+                            <option value="古文・漢文">古文・漢文</option>
+                            <option value="物理">物理</option>
+                            <option value="化学">化学</option>
+                            <option value="生物">生物</option>
+                            <option value="地学">地学</option>
+                            <option value="日本史">日本史</option>
+                            <option value="世界史">世界史</option>
+                            <option value="地理">地理</option>
+                            <option value="小論文">小論文</option>
                         </select>
                     </div>
 
