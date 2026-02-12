@@ -473,8 +473,8 @@ export default function CounselingPage() {
                     {/* 希望日入力の説明 */}
                     <div className="rounded-lg bg-blue-50 p-4">
                         <p className="text-sm text-navy-700">
-                            各希望日ごとに、ご来塾可能な時間帯をご選択ください。<br />
-                            <span className="text-xs text-navy-600">※平日と土日で選択可能な時間帯が異なります</span>
+                            体験授業のご受講希望日をご入力ください。<br />
+                            <span className="text-xs text-navy-600">※上でお選びいただいたご通塾可能曜日・時間帯と一致する必要はございません。</span>
                         </p>
                     </div>
 
