@@ -22,6 +22,7 @@ export default function RootLayout({
       <head>
         <title>LEFY - 中学受験個別指導塾</title>
         <meta name="description" content="中学受験個別指導塾LEFY（レフィー）の資料請求ありがとうございます。" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
       </head>
       <body className="bg-white text-navy-800 antialiased">
         <Header logoHref={logoHref} />
