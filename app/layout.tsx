@@ -14,7 +14,8 @@ export default function RootLayout({
   const pathname = usePathname();
 
   // resultsページの場合はロゴリンクをlefy.jpに変更
-  const logoHref = pathname === '/results' ? 'https://lefy.jp/' : '/';
+  const isResultsPage = pathname === '/results' || pathname.startsWith('/results/');
+  const logoHref = isResultsPage ? 'https://lefy.jp/' : '/';
 
   return (
     <html lang="ja">
@@ -26,7 +27,7 @@ export default function RootLayout({
         <Header logoHref={logoHref} />
         <main className="min-h-screen">{children}</main>
         <Footer logoHref={logoHref} />
-        {pathname !== '/results' && <FloatingCTA />}
+        {!isResultsPage && <FloatingCTA />}
       </body>
     </html>
   );
