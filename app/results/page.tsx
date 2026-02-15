@@ -76,7 +76,7 @@ export default function ResultsPage() {
                                         </span>
                                     ))}
                                     <span className="rounded-full bg-navy-50 px-2.5 py-1 text-xs font-medium text-navy-500">
-                                        ...他多数
+                                        ...他
                                     </span>
                                 </div>
 
@@ -123,7 +123,7 @@ export default function ResultsPage() {
                                         </span>
                                     ))}
                                     <span className="rounded-full bg-rose-50 px-2.5 py-1 text-xs font-medium text-rose-500">
-                                        ...他多数
+                                        ...他
                                     </span>
                                 </div>
 

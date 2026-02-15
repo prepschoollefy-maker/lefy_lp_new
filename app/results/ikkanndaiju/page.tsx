@@ -3,7 +3,84 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { GraduationCap, TrendingUp, ChevronDown, ArrowLeft } from 'lucide-react';
+import { GraduationCap, TrendingUp, ChevronDown, ArrowLeft, Award } from 'lucide-react';
+
+// LEFYの塾生が通っている中高一貫校（カテゴリ別）
+const ikkanSchoolsByCategory = {
+  boys: [
+    '浅野', '麻布', '鎌倉学園', '学習院', 'サレジオ学院',
+    '芝', '逗子開成', '聖光学院', '高輪'
+  ],
+  girls: [
+    '頌栄女子学院', '洗足学園', '田園調布学園', '田園調布雙葉',
+    '東洋英和女学院', 'フェリス女学院', '横浜共立学園', '横浜女学院', '横浜雙葉'
+  ],
+  coed: [
+    '青山学院中等部', '横浜市立南高附属', '神奈川大学附属', '関東学院',
+    '慶應湘南藤沢(SFC)', '品川翔英', '湘南学園', '山手学院', '横国大附属横浜'
+  ]
+};
+
+// IkkanSchoolsSection コンポーネント
+function IkkanSchoolsSection() {
+  const [selectedCategory, setSelectedCategory] = useState<'boys' | 'girls' | 'coed'>('boys');
+
+  const categoryLabels = {
+    boys: '男子校',
+    girls: '女子校',
+    coed: '共学'
+  };
+
+  const categoryColors = {
+    boys: 'border-blue-400 hover:border-blue-600',
+    girls: 'border-fuchsia-500 hover:border-fuchsia-600',
+    coed: 'border-green-400 hover:border-green-600'
+  };
+
+  const buttonColors = {
+    boys: { active: 'bg-blue-600 text-white shadow-md', inactive: 'bg-white/70 text-blue-800 hover:bg-white' },
+    girls: { active: 'bg-fuchsia-600 text-white shadow-md', inactive: 'bg-white/70 text-fuchsia-800 hover:bg-white' },
+    coed: { active: 'bg-green-600 text-white shadow-md', inactive: 'bg-white/70 text-green-800 hover:bg-white' }
+  };
+
+  return (
+    <div className="rounded-xl border-2 border-navy-100 bg-gradient-to-br from-navy-50 to-white p-6">
+      <h3 className="mb-5 text-center text-xl font-bold text-navy-800">
+        LEFYの塾生が通っている中高一貫校
+      </h3>
+
+      <div className="mb-6 flex justify-center gap-3">
+        {(['boys', 'girls', 'coed'] as const).map((category) => (
+          <button
+            key={category}
+            onClick={() => setSelectedCategory(category)}
+            className={`rounded-lg px-6 py-2.5 text-base font-semibold transition-all ${selectedCategory === category
+              ? buttonColors[category].active
+              : buttonColors[category].inactive
+              }`}
+          >
+            {categoryLabels[category]}
+          </button>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5">
+        {ikkanSchoolsByCategory[selectedCategory].map((school, index) => (
+          <div
+            key={index}
+            className={`flex items-center justify-center rounded border-2 bg-white px-2 py-2 text-center text-sm font-semibold text-navy-800 shadow-sm transition-all hover:shadow-md ${categoryColors[selectedCategory]}`}
+          >
+            {school}
+          </div>
+        ))}
+      </div>
+
+      <p className="mt-4 text-center text-xs text-navy-500">
+        ※一部のみ記載
+      </p>
+    </div>
+  );
+}
 
 // 大学合格実績データ
 const universityAchievements = [
@@ -521,6 +598,13 @@ export default function ResultsIkkanPage() {
               />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* LEFYの塾生が通っている中高一貫校セクション */}
+      <section className="bg-gradient-to-br from-slate-100 to-slate-50 py-16 px-4 md:py-20 md:px-8">
+        <div className="mx-auto max-w-5xl">
+          <IkkanSchoolsSection />
         </div>
       </section>
 
