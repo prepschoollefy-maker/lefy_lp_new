@@ -112,7 +112,7 @@ export default function ResultsPage() {
                                     中高一貫校生 成績UP・<br />大学受験の合格実績はこちら
                                 </h3>
                                 <p className="mb-4 text-sm leading-relaxed text-navy-600">
-                                    中高一貫校生の定期テスト成績UP実績と、慶應義塾大学など大学合格実績をご紹介します。
+                                    中高一貫校生の定期テスト成績UP実績と、大学受験の合格実績をご紹介します。
                                 </p>
 
                                 {/* 実績プレビュー */}
